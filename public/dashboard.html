@@ -1,0 +1,2969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Route AI — Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #0a0a0f;
+      --surface:  #111118;
+      --border:   #1e1e2e;
+      --border2:  #2a2a3e;
+      --text:     #e2e2f0;
+      --muted:    #6b6b8a;
+      --accent:   #7c6af7;
+      --accent2:  #4fd9b3;
+      --warn:     #f7a26a;
+      --danger:   #f76a6a;
+      --mono:     'IBM Plex Mono', monospace;
+      --sans:     'Syne', sans-serif;
+    }
+
+    html { font-size: 14px; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* grid noise texture */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 40px 40px;
+      opacity: 0.3;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .shell {
+
+      position: relative;
+
+      z-index: 1;
+
+      width: 100%;
+
+      max-width: 1500px;
+
+      margin: 0 auto;
+
+      padding: 28px 24px;
+
+      overflow-x: hidden;
+    }
+
+    /* ── HEADER ── */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border2);
+      gap: 24px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-icon {
+      width: 32px; height: 32px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+    }
+
+    .logo-text {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .logo-text span { color: var(--accent); }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .analytics-link {
+
+      text-decoration: none;
+
+      color: #cbd5e1;
+
+      font-family: var(--mono);
+
+      font-size: 0.74rem;
+
+      padding: 8px 14px;
+
+      border-radius: 10px;
+
+      border:
+        1px solid rgba(255,255,255,0.08);
+
+      background:
+      rgba(255,255,255,0.03);
+
+      transition:
+        all 0.2s ease;
+    }
+
+    .analytics-link:hover {
+
+      transform: translateY(-2px);
+
+      border-color:
+      rgba(124,106,247,0.25);
+
+      box-shadow:
+        0 0 20px rgba(124,106,247,0.12);
+    }
+
+    .status-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--accent2);
+      box-shadow: 0 0 8px var(--accent2);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    .status-label {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    /* ── STATS ROW ── */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      margin-bottom: 32px;
+    }
+
+    @media (max-width: 1100px) {
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border2);
+      border-radius: 12px;
+      padding: 16px;
+      position: relative;
+      overflow: hidden;
+      transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .stat-card.primary {
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(139,92,246,0.16),
+          rgba(15,23,42,0.96)
+        );
+
+      border-color:
+      rgba(139,92,246,0.35);
+    }
+
+    .stat-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+      box-shadow:
+        0 12px 30px rgba(0,0,0,0.35),
+        0 0 20px rgba(139,92,246,0.10);
+    }
+
+    .stat-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .stat-card:hover::after { opacity: 1; }
+
+    .stat-label {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+
+    .stat-value {
+      font-size: 1.45rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      word-break: break-word;
+      font-size: clamp(1.3rem, 2vw, 2rem);
+      line-height: 1.1;
+    }
+
+    .stat-value.green  { color: var(--accent2); }
+    .stat-value.purple { color: var(--accent); }
+    .stat-value.orange { color: var(--warn); }
+    .stat-value.red    { color: var(--danger); }
+
+    .stat-sub {
+      margin-top: 4px;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    /* ── TWO-COL LAYOUT ── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: 900px) {
+      .two-col { grid-template-columns: 1fr; }
+    }
+
+    /* ── PANEL ── */
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border2);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .panel-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .panel-action {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--accent);
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px 8px;
+      border-radius: 4px;
+      transition: background 0.15s;
+    }
+
+    .panel-action:hover { background: rgba(124,106,247,0.12); }
+
+    /* ── MODEL BREAKDOWN ── */
+    .model-list { padding: 16px 20px; display: flex; flex-direction: column; gap: 12px; }
+
+    .model-row { display: flex; flex-direction: column; gap: 4px; }
+
+    .model-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .model-name {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--text);
+    }
+
+    .model-count {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    .bar-track {
+      height: 4px;
+      background: var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 2px;
+      transition: width 0.6s cubic-bezier(0.16,1,0.3,1);
+    }
+
+    /* ── LOGS TABLE ── */
+    .logs-scroll {
+
+      max-height: 420px;
+
+      overflow-y: auto;
+
+      overflow-x: auto;
+
+      width: 100%;
+    }
+
+    .logs-scroll::-webkit-scrollbar { width: 4px; }
+    .logs-scroll::-webkit-scrollbar-track { background: transparent; }
+    .logs-scroll::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+
+    .log-row {
+      display: grid;
+      grid-template-columns: 
+      90px 
+      130px 
+      110px 
+      90px 
+      90px 
+      90px 
+      minmax(220px, 1fr);
+
+      gap: 18px;
+      align-items: center;
+      padding: 12px 22px;
+      border-bottom: 1px solid var(--border);
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      transition: background 0.1s;
+      cursor: pointer;
+    }
+
+    .log-row:hover { background: rgba(255,255,255,0.02); }
+    .log-row.header { color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; cursor: default; font-size: 0.65rem; }
+    .log-row.header:hover { background: transparent; }
+
+    .log-row.error { opacity: 0.6; }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 0.65rem;
+      font-weight: 600;
+      font-family: var(--mono);
+      letter-spacing: 0.02em;
+    }
+
+    .badge-live {
+      background: rgba(34,197,94,0.15);
+      color: #4ade80;
+      border: 1px solid rgba(34,197,94,0.25);
+    }
+
+    .badge-error {
+      background: rgba(239,68,68,0.15);
+      color: #f87171;
+      border: 1px solid rgba(239,68,68,0.25);
+    }
+
+    .badge-fallback {
+      background: rgba(251,191,36,0.20);
+      color: #fbbf24;
+      border: 1px solid rgba(251,191,36,0.35);
+      box-shadow: 0 0 12px rgba(251,191,36,0.15);
+    }
+
+    .badge-cached {
+      background: rgba(59,130,246,0.15);
+      color: #60a5fa;
+      border: 1px solid rgba(59,130,246,0.25);
+    }
+
+    .complexity-simple  { color: var(--accent2); }
+    .complexity-medium  { color: var(--warn); }
+    .complexity-complex { color: var(--danger); }
+
+    .prompt-preview {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: var(--muted);
+      max-width: 260px;
+    }
+
+    /* ── DETAIL MODAL ── */
+    .modal-overlay {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(4px);
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .modal-overlay.open { display: flex; }
+
+    .modal {
+      background: var(--surface);
+      border: 1px solid var(--border2);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 620px;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0;
+      background: var(--surface);
+    }
+
+    .modal-title { font-weight: 700; font-size: 0.9rem; }
+
+    .modal-close {
+      background: none; border: none;
+      color: var(--muted); cursor: pointer;
+      font-size: 1.2rem; line-height: 1;
+      padding: 4px; border-radius: 4px;
+      transition: color 0.15s;
+    }
+
+    .modal-close:hover { color: var(--text); }
+
+    .modal-body { padding: 20px 24px; display: flex; flex-direction: column; gap: 16px; }
+
+    .detail-row { display: flex; flex-direction: column; gap: 4px; }
+
+    .detail-label {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .detail-value {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      color: var(--text);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 10px 12px;
+      white-space: pre-wrap;
+      word-break: break-word;
+      line-height: 1.5;
+    }
+
+    /* ── TEST PANEL ── */
+    .test-panel {
+      box-shadow:
+        0 10px 30px rgba(0,0,0,0.25);
+
+      background:
+      linear-gradient(
+        180deg,
+      rgba(17,17,24,0.96),
+      rgba(8,8,14,0.98)
+      );
+      border: 1px solid var(--border2);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+
+    .test-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+      margin-bottom: 16px;
+    }
+
+    .prompt-row {
+
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1fr)
+        110px;
+
+      gap: 12px;
+
+      margin-bottom: 12px;
+    }
+
+    .controls-row {
+
+      display: flex;
+
+      gap: 12px;
+
+      flex-wrap: wrap;
+
+      margin-bottom: 16px;
+    }
+
+    .small-control {
+
+      width: 180px;
+
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 900px) {
+
+      .prompt-row {
+
+        grid-template-columns: 1fr;
+      }
+
+      .test-btn:hover {
+        transform: translateY(-1px);
+      }
+
+      .controls-row {
+
+        flex-direction: column;
+      }
+
+      .small-control {
+
+        width: 100%;
+      }
+    }
+
+    .test-input {
+      flex: 1;
+      min-width: 0;
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border2);
+      border-radius: 8px;
+      padding: 10px 14px;
+      color: var(--text);
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    .test-input:focus { border-color: var(--accent); }
+
+    select.test-input {
+      cursor: pointer;
+      min-width: 120px;
+      flex: 0;
+    }
+
+    .test-btn {
+      width: 100%;
+      min-height: 42px;
+      box-shadow:
+        0 0 20px rgba(124,106,247,0.25);
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: opacity 0.15s, transform 0.1s;
+    }
+
+    .test-btn:hover { opacity: 0.9; }
+    .test-btn:active { transform: scale(0.97); }
+    .test-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    .test-result {
+      background: 
+      linear-gradient(
+        180deg,
+      rgba(15,23,42,0.95),
+      rgba(2,6,23,0.98)
+      );
+
+      border:
+      1px solid rgba(255,255,255,0.04);
+      border-radius: 8px;
+      padding: 14px;
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      line-height: 1.6;
+      min-height: 220px;
+      height: auto;
+      color: #dbe4ff;
+      white-space: pre-wrap;
+      word-break: break-word;
+      padding-top: 12px;
+      max-height: 520px;
+      overflow-y: auto;
+      scroll-behavior: smooth;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.02),
+        0 10px 30px rgba(0,0,0,0.20);
+
+      scrollbar-width: thin;
+    }
+
+    .test-result::-webkit-scrollbar {
+      width: 6px; 
+    }
+
+    .test-result::-webkit-scrollbar-thumb {
+      background: rgba(139,92,246,0.4);
+      border-radius: 999px;
+    }
+
+    .empty-state {
+
+      color: rgba(203,213,225,0.45);
+
+      font-style: italic;
+    }
+
+    .test-meta {
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 14px;
+
+      margin-top: 14px;
+
+      align-items: flex-start;
+    }
+
+    .test-meta-item {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    .test-meta-item strong { color: var(--accent2); }
+
+    .meta-strip {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+
+      margin-top: 14px;
+    }
+
+    .meta-chip {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 6px;
+
+      padding: 8px 12px;
+
+      border-radius: 10px;
+
+      background:
+      rgba(255,255,255,0.04);
+
+      border:
+        1px solid rgba(255,255,255,0.08);
+
+      font-size: 0.74rem;
+
+      font-family: var(--mono);
+
+      color: #dbe4ff;
+
+      font-weight: 600;
+    }
+
+    .meta-chip.success {
+
+      color: #4ade80;
+
+      border-color:
+      rgba(74,222,128,0.20);
+    }
+
+    .provider-chip,
+    .latency-chip,
+    .health-chip {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+      padding: 8px 14px;
+
+      border-radius: 999px;
+
+      font-size: 0.72rem;
+
+      font-family: var(--mono);
+
+      border:
+        1px solid rgba(255,255,255,0.08);
+
+      background:
+      rgba(255,255,255,0.03);
+
+      backdrop-filter: blur(10px);
+
+      transition: all 0.2s ease;
+
+      font-weight: 600;
+    }
+
+    .conf-score{
+
+    font-size:16px;
+
+    font-weight:700;
+
+    line-height:1;
+
+  }
+
+  .conf-level{
+
+    font-size:11px;
+
+    opacity:.75;
+
+    margin-top:2px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.08em;
+
+  }
+
+  .confidence-chip{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    font-size:.72rem;
+
+    font-family:var(--mono);
+
+    font-weight:600;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    background:rgba(255,255,255,.03);
+
+    backdrop-filter:blur(10px);
+
+  }
+
+  .confidence-chip.green{
+
+    color:#4ade80;
+
+    border-color:rgba(74,222,128,.25);
+
+    background:rgba(74,222,128,.08);
+
+  }
+
+  .confidence-chip.yellow{
+
+    color:#facc15;
+
+    border-color:rgba(250,204,21,.25);
+
+    background:rgba(250,204,21,.08);
+
+  }
+
+  .confidence-chip.orange{
+
+    color:#fb923c;
+
+    border-color:rgba(251,146,60,.25);
+
+    background:rgba(251,146,60,.08);
+
+  }
+
+    .provider-chip {
+
+      color: #4fd9b3;
+
+      border-color:
+      rgba(79,217,179,0.18);
+
+      box-shadow:
+        0 0 18px rgba(79,217,179,0.08);
+    }
+
+    .provider-dot {
+
+      width: 8px;
+
+      height: 8px;
+
+      border-radius: 999px;
+
+      background: #4fd9b3;
+
+      box-shadow:
+        0 0 12px #4fd9b3;
+    }
+
+    .latency-chip {
+
+      color: #e2e8f0;
+    }
+
+    .health-chip.stable {
+
+      color: #d8b4fe;
+
+      border-color:
+      rgba(216,180,254,0.2);
+
+      background:
+      rgba(168,85,247,0.08);
+    }
+
+    .health-chip.fallback {
+
+      color: #fbbf24;
+
+      border-color:
+      rgba(251,191,36,0.25);
+
+      background:
+      rgba(251,191,36,0.08);
+    }
+
+    .budget-warning {
+
+      margin-top: 10px;
+
+      padding: 10px 12px;
+
+      border-radius: 8px;
+
+      background:
+      rgba(251,191,36,0.12);
+
+      border:
+        1px solid rgba(251,191,36,0.25);
+
+      color: #fbbf24;
+
+      font-size: 0.76rem;
+
+      font-weight: 700;
+    }
+
+    .budget-stats {
+
+      margin-top: 8px;
+
+      color: #94a3b8;
+
+      font-size: 0.75rem;
+    }
+
+    .routing-panel {
+
+      margin-top: 10px;
+
+      padding: 18px 20px;
+
+      border-radius: 12px;
+
+      background:
+        linear-gradient(
+          180deg,
+        rgba(139,92,246,0.10),
+        rgba(15,23,42,0.45)
+        );
+
+      border:
+        1px solid rgba(139,92,246,0.18);
+
+      box-shadow:
+        0 8px 24px rgba(0,0,0,0.18);
+
+      backdrop-filter: blur(8px);
+    }
+
+    .collapsible-section {
+
+      margin-top: 14px;
+    }
+
+    .collapsible-header {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      padding: 14px 16px;
+
+      border-radius: 12px;
+
+      background:
+      rgba(255,255,255,0.03);
+
+      border:
+        1px solid rgba(255,255,255,0.06);
+
+      cursor: pointer;
+
+      transition:
+        all 0.2s ease;
+
+      user-select: none;
+    }
+
+    .collapsible-header:hover {
+
+      background:
+      rgba(255,255,255,0.05);
+
+      border-color:
+      rgba(124,106,247,0.22);
+    }
+
+    .collapsible-title {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      font-size: 0.82rem;
+
+      font-weight: 700;
+
+      color: #dbe4ff;
+
+      letter-spacing: 0.02em;
+    }
+
+    .header-count{
+
+    margin-left:8px;
+
+    font-size:.68rem;
+
+    opacity: .6;
+
+    color:var(--muted);
+
+    font-weight:500;
+
+    letter-spacing:.02em;
+
+  }
+
+    .collapsible-arrow {
+
+      transition:
+        transform 0.25s ease;
+
+      color: #8b5cf6;
+
+      font-size: 0.85rem;
+    }
+
+    .collapsible-section.open
+    .collapsible-arrow {
+
+      transform: rotate(90deg);
+    }
+
+    .collapsible-content {
+
+      max-height: 0;
+
+      overflow: hidden;
+
+      opacity: 0;
+
+      transition:
+        max-height 0.35s ease,
+        opacity 0.25s ease;
+    }
+
+    .collapsible-section.open
+    .collapsible-content {
+
+      max-height: 1200px;
+
+      opacity: 1;
+    }
+
+    .routing-title {
+
+      font-size: 0.88rem;
+
+      font-weight: 800;
+
+      color: #d8c7ff;
+
+      margin-bottom: 14px;
+
+      letter-spacing: 0.04em;
+
+      text-transform: uppercase;
+    }
+
+    .routing-list {
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 8px;
+    }
+
+    .routing-item {
+
+      display: flex;
+
+      align-items: flex-start;
+
+      gap: 10px;
+
+      font-size: 0.80rem;
+
+      color: #dbe4ff;
+
+      line-height: 1.6;
+
+      padding: 4px 0;
+
+      border-bottom:
+        1px solid rgba(255,255,255,0.04);
+    }
+
+    .routing-item:last-child {
+
+      border-bottom: none;
+    }
+
+    .routing-grid {
+
+      display: grid;
+
+      grid-template-columns: 340px 1fr;
+
+      gap: 18px;
+
+      align-items: start;
+
+      margin-top: 16px;
+    }
+
+    .routing-grid-left {
+
+      min-width: 0;
+    }
+
+    .routing-grid-right {
+
+      min-width: 0;
+    }
+
+    @media (max-width: 1100px) {
+
+      .routing-grid {
+
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .timeline-panel {
+
+        margin-top: 16px;
+
+        padding: 18px 20px;
+
+        border-radius: 12px;
+
+        background:
+          linear-gradient(
+            180deg,
+          rgba(79,217,179,0.06),
+          rgba(15,23,42,0.35)
+          );
+
+        border:
+          1px solid rgba(79,217,179,0.14);
+
+        box-shadow:
+          0 8px 24px rgba(0,0,0,0.18);
+    }
+
+    .timeline-title {
+
+      font-size: 0.82rem;
+
+      font-weight: 800;
+
+      color: #7dd3fc;
+
+      margin-bottom: 14px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.04em;
+   }
+
+    .timeline-list {
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 14px;
+
+      position: relative;
+
+      padding-left: 8px;
+    }
+
+    .timeline-item {
+
+      min-width: 0;
+
+      position: relative;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 14px;
+
+      padding: 0 0 16px 0;
+
+      font-family: var(--mono);
+
+      font-size: 0.76rem;
+
+      opacity: 0;
+
+      transform: translateY(8px);
+
+      animation: timelineReveal 0.45s ease forwards;
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+
+      backdrop-filter: blur(10px);
+
+      background:
+      rgba(255,255,255,0.015);
+
+      border:
+        1px solid rgba(255,255,255,0.04);
+
+      padding: 12px 14px;
+    }
+
+    .timeline-item::before {
+
+      content: "";
+
+      position: absolute;
+
+      left: 8px;
+
+      top: 22px;
+
+      width: 2px;
+
+      height: calc(100% + 12px);
+
+      background:
+        linear-gradient(
+          180deg,
+        rgba(124,106,247,0.95),
+        rgba(79,217,179,0.35)
+        );
+
+      box-shadow:
+        0 0 14px rgba(124,106,247,0.25);
+
+      animation:
+        timelineFlow 2.8s linear infinite;
+    }
+
+    .timeline-item::after {
+
+      content: "";
+
+      position: absolute;
+
+      left: 2px;
+
+      top: 8px;
+
+      width: 14px;
+
+      height: 14px;
+
+      border-radius: 999px;
+
+      background:
+      rgba(124,106,247,0.18);
+
+      filter: blur(10px);
+
+      opacity: 0.8;
+
+      animation:
+        timelineGlow 2.5s infinite;
+    }
+
+    .timeline-item:last-child {
+
+      padding-bottom: 0;
+    }
+
+    .timeline-item:last-child::before {
+
+      display: none;
+    }
+
+    .timeline-left {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      color: #dbeafe;
+    }
+
+    .timeline-item:hover {
+
+      background:
+      rgba(255,255,255,0.025);
+
+      border-radius: 10px;
+
+      transform: translateX(4px);
+
+      border-color:
+      rgba(139,92,246,0.20);
+    }
+
+    .timeline-icon {
+
+      width: 18px;
+
+      height: 18px;
+
+      border-radius: 999px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      font-size: 0.68rem;
+
+      background:
+      rgba(124,106,247,0.15);
+
+      border:
+        1px solid rgba(124,106,247,0.35);
+
+      box-shadow:
+        0 0 12px rgba(124,106,247,0.15);
+
+      flex-shrink: 0;
+
+      position: relative;
+
+      z-index: 2;
+
+      animation:
+        timelinePulse 2s infinite;
+    }
+
+    .timeline-success {
+
+      background:
+      rgba(74,222,128,0.12);
+
+      border:
+        1px solid rgba(74,222,128,0.35);
+
+      box-shadow:
+        0 0 14px rgba(74,222,128,0.22);
+
+      color: #4ade80;
+
+      position: relative;
+    }
+
+    .timeline-success::after {
+
+      content: "";
+
+      position: absolute;
+
+      inset: -4px;
+
+      border-radius: 999px;
+
+      border:
+        1px solid rgba(74,222,128,0.35);
+
+      animation:
+        liveRing 2s infinite;
+    }
+
+    .timeline-cache {
+
+      background:
+      rgba(96,165,250,0.12);
+
+      border:
+        1px solid rgba(96,165,250,0.35);
+
+      box-shadow:
+        0 0 14px rgba(96,165,250,0.22);
+
+      color: #60a5fa;
+    }
+
+    .timeline-fallback {
+
+      background:
+      rgba(251,191,36,0.12);
+
+      border:
+        1px solid rgba(251,191,36,0.35);
+
+      box-shadow:
+        0 0 14px rgba(251,191,36,0.22);
+
+      color: #fbbf24;
+    }
+
+    .timeline-time {
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: flex-end;
+
+      gap: 2px;
+
+      min-width: 78px;
+    }
+
+    .timeline-clock {
+
+      color: #cbd5e1;
+
+      font-size: 0.68rem;
+
+      font-weight: 700;
+
+      letter-spacing: 0.03em;
+    }
+
+    .timeline-ms {
+
+      color: #64748b;
+
+      font-size: 0.66rem;
+
+      font-weight: 600;
+    }
+
+    .routing-bullet {
+
+      color: #8b5cf6;
+
+      font-weight: bold;
+
+      margin-top: 1px;
+    }
+
+    /* ── EMPTY / LOADING ── */
+    .empty {
+      padding: 40px 20px;
+      text-align: center;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      min-height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .loading-dots::after {
+      content: '...';
+      animation: dots 1.2s steps(4, end) infinite;
+    }
+
+    .loading-wave {
+      height: 3px;
+      width: 100%;
+      border-radius: 999px;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+        #8b5cf6,
+          transparent
+        );
+
+      background-size: 200% 100%;
+
+      animation: wave 1.2s linear infinite;
+
+      margin-top: 14px;
+    }
+
+    @keyframes wave {
+      from { background-position: 200% 0; }
+      to   { background-position: -200% 0; }
+    }
+
+    .streaming-cursor {
+
+      display: inline-block;
+
+      margin-left: 4px;
+
+      color: #8b5cf6;
+
+      font-weight: bold;
+  
+      animation: blink 0.8s infinite;
+    }
+
+    @keyframes blink {
+
+      0% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.2;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes timelineFlow {
+
+      0% {
+
+        opacity: 0.5;
+      }
+
+      50% {
+
+        opacity: 1;
+      }
+
+      100% {
+
+        opacity: 0.5;
+      }
+    }
+
+    @keyframes timelineGlow {
+
+      0% {
+
+        opacity: 0.3;
+
+        transform: scale(0.8);
+      }
+
+      50% {
+
+        opacity: 1;
+
+        transform: scale(1.2);
+      }
+
+      100% {
+
+        opacity: 0.3;
+
+        transform: scale(0.8);
+      }
+    }
+
+    @keyframes timelinePulse {
+
+      0% {
+        box-shadow:
+          0 0 0 rgba(124,106,247,0.0);
+      }
+
+      50% {
+        box-shadow:
+          0 0 18px rgba(124,106,247,0.35);
+      }
+
+      100% {
+        box-shadow:
+          0 0 0 rgba(124,106,247,0.0);
+      }
+    }
+
+    @keyframes liveRing {
+
+      0% {
+
+        transform: scale(0.8);
+
+        opacity: 1;
+      }
+
+      100% {
+
+        transform: scale(1.8);
+
+        opacity: 0;
+      }
+    }
+
+    @keyframes timelineReveal {
+
+      to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.2; }
+      50% { opacity: 1; }
+      100% { opacity: 0.2; }
+    }
+
+    .markdown-body {
+      color: #d6e2ff;
+      line-height: 1.7;
+      font-size: 0.82rem;
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    .markdown-body p {
+      margin-bottom: 12px;
+    }
+
+    .markdown-body ul,
+    .markdown-body ol {
+      padding-left: 22px;
+      margin: 10px 0;
+    }
+
+    .markdown-body li {
+      margin-bottom: 6px;
+    }
+
+    .markdown-body pre::before {
+      content: "CODE";
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      font-size: 0.65rem;
+      color: #8b5cf6;
+      letter-spacing: 1px;
+      font-weight: 700;
+    
+    }
+
+    .markdown-body pre {
+      background: linear-gradient(180deg, #0f172a, #020617);
+      border: 1px solid rgba(139, 92, 246, 0.25);
+      border-radius: 14px;
+      padding: 18px;
+      overflow-x: auto;
+      margin: 18px 0;
+      position: relative;
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.02),
+        0 10px 30px rgba(0,0,0,0.35);
+    }
+
+    .markdown-body pre code {
+      color: #e2e8f0;
+      font-size: 0.82rem;
+      line-height: 1.6;
+      font-family: var(--mono);
+    }
+
+    .markdown-body code {
+      font-family: var(--mono);
+      font-size: 0.76rem;
+    }
+
+    .markdown-body h1,
+    .markdown-body h2,
+    .markdown-body h3 {
+      margin-top: 18px;
+      margin-bottom: 10px;
+      color: white;
+    }
+
+    .provider-health {
+
+      display: flex;
+
+      gap: 12px;
+
+      align-items: center;
+
+      flex-wrap: wrap;
+    }
+
+    .health-pill {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      padding: 6px 12px;
+
+      border-radius: 999px;
+
+      font-family: var(--mono);
+
+      font-size: 0.64rem;
+
+      border:
+        1px solid rgba(255,255,255,0.08);
+
+      background:
+      rgba(255,255,255,0.03);
+
+      backdrop-filter: blur(12px);
+
+      transition:
+        all 0.25s ease;
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+    .health-pill:hover {
+
+      transform: translateY(-2px);
+
+      border-color:
+      rgba(124,106,247,0.28);
+
+      box-shadow:
+        0 0 20px rgba(124,106,247,0.12);
+    }
+
+    .health-dot {
+
+      width: 8px;
+
+      height: 8px;
+
+      border-radius: 999px;
+
+      animation:
+        providerPulse 2s infinite;
+    }
+
+    .health-good {
+
+      background: #4ade80;
+
+      box-shadow:
+        0 0 10px #4ade80;
+    }
+
+    .health-warning {
+
+      background: #fbbf24;
+
+      box-shadow:
+        0 0 10px #fbbf24;
+    }
+
+    .health-bad {
+
+      background: #f87171;
+
+      box-shadow:
+        0 0 10px #f87171;
+    }
+
+    .provider-metrics {
+
+      display: flex;
+
+      gap: 8px;
+
+      color: #94a3b8;
+
+      font-size: 0.64rem;
+    }
+
+    @keyframes providerPulse {
+
+      0% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.4;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes dots {
+      0%, 20%  { content: '.';   }
+      40%      { content: '..';  }
+      60%, 100%{ content: '...'; }
+    }
+
+    @media (max-width: 700px) {
+
+      header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 16px;
+      }
+
+      .header-right {
+
+        width: 100%;
+
+        flex-wrap: wrap;
+
+        gap: 10px;
+      }
+
+      .provider-health {
+
+        width: 100%;
+
+        flex-wrap: wrap;
+      }
+    }
+
+
+  </style>
+</head>
+<body>
+
+<div class="shell">
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <div class="logo-icon">⚡</div>
+      <div class="logo-text">Route<span>AI</span></div>
+    </div>
+    <div class="header-right">
+
+      <a
+        href="/analytics.html"
+        class="analytics-link"
+      >
+        Analytics →
+      </a>
+
+      <div class="provider-health" id="provider-health">
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Stats -->
+  <div class="stats-grid" id="stats-grid">
+
+  <div class="stat-card">
+    <div class="stat-label">Total Requests</div>
+    <div class="stat-value purple" id="s-requests">—</div>
+  </div>
+
+  <div class="stat-card primary">
+    <div class="stat-label">Savings</div>
+    <div class="stat-value green" id="s-saved">—</div>
+    <div class="stat-sub" id="s-savepct"></div>
+  </div>
+
+  <div class="stat-card">
+    <div class="stat-label">Avg Latency</div>
+    <div class="stat-value orange" id="s-latency">—</div>
+  </div>
+
+  <div class="stat-card">
+    <div class="stat-label">Cache Hit Rate</div>
+    <div class="stat-value green" id="s-cache">—</div>
+  </div>
+
+</div>
+
+  <!-- Test Panel -->
+  <div class="test-panel">
+    <div class="test-title">⚡ Route a Request</div>
+    <div class="prompt-row">
+
+      <input
+        type="text"
+        class="test-input"
+        id="test-prompt"
+        placeholder="Ask RouteAI anything..."
+      />
+
+      <button
+        class="test-btn"
+        id="test-btn"
+        onclick="runTest()"
+      >
+        Send
+      </button>
+
+    </div>
+
+    <div class="controls-row">
+
+      <select
+        class="test-input small-control"
+        id="test-mode"
+      >
+        <option value="balanced">Balanced</option>
+        <option value="cost">Cost</option>
+        <option value="speed">Speed</option>
+        <option value="quality">Quality</option>
+      </select>
+
+      <input
+        type="text"
+        class="test-input small-control"
+        id="test-customer"
+        placeholder="customerId (optional)"
+      />
+
+      <input
+        type="text"
+        class="test-input small-control"
+        id="test-apikey"
+        placeholder="x-api-key"
+        value="dev-key-123"
+      />
+
+    </div>
+    <div class="test-result empty-state" id="test-result">
+      Response will appear here...
+    </div>
+    <div class="test-meta" id="test-meta"></div>
+    <div id="routing-timeline"></div>
+  </div>
+
+  <div class="two-col">
+
+    <!-- LEFT -->
+
+    <div class="panel">
+
+        <div
+        class="collapsible-section open"
+        id="logs-section">
+
+            <div
+            class="collapsible-header"
+            onclick="toggleCollapse('logs-section')">
+
+                <div class="collapsible-title">
+
+                  Request Logs
+
+                  <span
+                  id="logs-count"
+                  class="header-count">
+
+                    • 0 entries
+
+                  </span>
+
+                </div>
+
+                <div class="collapsible-arrow">
+
+                    ▶
+
+                </div>
+
+            </div>
+
+            <div class="collapsible-content">
+
+                <div class="logs-scroll">
+
+                    <div class="log-row header">
+
+                        <span>Status</span>
+
+                        <span>Model</span>
+
+                        <span>Complexity</span>
+
+                        <span>Tokens</span>
+
+                        <span>Cost</span>
+
+                        <span>Latency</span>
+
+                        <span>Prompt</span>
+
+                    </div>
+
+                    <div id="logs-container"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+  <div class="panel">
+
+    <div
+    class="collapsible-section open"
+    id="models-section">
+
+        <div
+        class="collapsible-header"
+        onclick="toggleCollapse('models-section')">
+
+            <div class="collapsible-title">
+
+              Model Usage
+
+              <span
+              id="provider-count"
+              class="header-count">
+
+                • 0 providers
+
+              </span>
+
+            </div>
+
+            <div class="collapsible-arrow">
+
+                ▶
+
+            </div>
+
+        </div>
+
+        <div class="collapsible-content">
+
+            <div
+            class="model-list"
+            id="model-list">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+<!-- Detail Modal -->
+<div class="modal-overlay" id="modal" onclick="closeModal(event)">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title">Request Detail</div>
+      <button class="modal-close" onclick="document.getElementById('modal').classList.remove('open')">✕</button>
+    </div>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+
+<script>
+
+  const MODEL_NAMES = {
+
+    "gpt-4o":"GPT-4o",
+
+    "gpt-4o-mini":"GPT-4o Mini",
+
+    "claude-haiku":"Claude Haiku",
+
+    "claude-sonnet":"Claude Sonnet",
+
+    "gemini-flash":"Gemini Flash"
+
+  };
+
+  const MODEL_COLORS = {
+    "gpt-4o-mini":    "#7c6af7",
+    "gpt-4o":         "#a78bfa",
+    "claude-haiku":   "#4fd9b3",
+    "claude-sonnet":  "#34d399",
+    "gemini-flash":   "#f7a26a",
+  };
+
+  let allLogs = [];
+
+  async function loadAll() {
+    await Promise.all([loadStats(), loadLogs()]);
+  }
+
+  async function loadStats() {
+    try {
+      const [statsRes, savingsRes, custRes] = await Promise.all([
+        fetch("/api/stats", { headers: getAuthHeaders() }),
+        fetch("/api/savings", { headers: getAuthHeaders() }),
+        fetch("/api/customers", { headers: getAuthHeaders() }),
+      ]);
+      const s = await statsRes.json();
+      const sv = await savingsRes.json();
+      const custs = await custRes.json();
+
+      document.getElementById("s-requests").textContent = s.totalRequests ?? "0";
+      document.getElementById("s-saved").textContent = "$" + (sv.totalSaved || 0).toFixed(4);
+      document.getElementById("s-savepct").textContent = (sv.savingsPercent || "0") + "% saved vs GPT-4o";
+      document.getElementById("s-latency").textContent = (s.avgLatency ?? 0) + "ms";
+      document.getElementById("s-cache").textContent = (s.cacheHitRate ?? "0") + "%";
+
+      renderModelBreakdown(s.modelBreakdown || {}, s.totalRequests || 0);
+    } catch(e) {
+    }
+  }
+
+  function getAuthHeaders() {
+    const key = document.getElementById("test-apikey")?.value || "dev-key-123";
+    return { "Content-Type": "application/json", "x-api-key": key };
+  }
+
+  function renderModelBreakdown(breakdown, total) {
+    const el = document.getElementById("model-list");
+    const entries = Object.entries(breakdown).sort((a,b) => b[1].count - a[1].count);
+    if (!entries.length) { el.innerHTML = '<div class="empty">Run a request to see routing distribution.</div>'; return; }
+
+    el.innerHTML = entries.map(([model, data]) => {
+      const pct = total ? ((data.count / total) * 100).toFixed(0) : 0;
+      const color = MODEL_COLORS[model] || "#888";
+      return `
+        <div class="model-row">
+          <div class="model-meta">
+            <span class="model-name">${MODEL_NAMES[model] || model}</span>
+            <span class="model-count">${data.count} req · $${data.cost.toFixed(5)}</span>
+          </div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width:${pct}%; background:${color}"></div>
+          </div>
+        </div>`;
+    }).join("");
+
+    const providerCount =
+    document.getElementById("provider-count");
+
+    if(providerCount){
+
+    providerCount.textContent =
+    `• ${Object.keys(breakdown).length} providers`;
+
+    }
+  }
+
+  async function loadLogs() {
+    try {
+      const res = await fetch("/api/logs?limit=100", {
+      headers: getAuthHeaders()
+      });
+      allLogs = await res.json();
+      renderLogs(allLogs);
+    } catch(e) {
+      document.getElementById("logs-container").innerHTML = '<div class="empty">Failed to load logs</div>';
+    }
+  }
+
+  function renderLogs(logs) {
+    const container = document.getElementById("logs-container");
+    if (!logs.length){
+
+      document.getElementById("logs-count").textContent =
+      "• 0 entries";
+
+      container.innerHTML =
+      '<div class="empty">No requests yet. Send one above ↑</div>';
+
+      return;
+    }
+
+    const logsCount =
+    document.getElementById("logs-count");
+
+    if(logsCount){
+
+    logsCount.textContent =
+    `• ${logs.length} ${logs.length===1?"entry":"entries"}`;
+
+    }
+
+    container.innerHTML = logs.map((log, i) => {
+      const statusBadge = !log.success
+        ? `<span class="badge badge-error">Error</span>`
+        : log.cached
+          ? `<span class="badge badge-cached">Cached</span>`
+          : log.fallbackUsed
+            ? `<span class="badge badge-fallback">↺ Auto Recovery</span>`
+            : `<span class="badge badge-live">Live</span>`;
+
+      const complexClass = `complexity-${log.complexity || "medium"}`;
+
+      return `
+        <div class="log-row ${!log.success ? 'error' : ''}" onclick="showDetail(${i})">
+          <span>${statusBadge}</span>
+          <span style="color:${MODEL_COLORS[log.modelKey] || '#888'}">${MODEL_NAMES[log.modelKey] || log.modelKey}</span>
+          <span class="${complexClass}">${log.complexity || '—'}</span>
+          <span>${log.tokens || 0}</span>
+          <span>$${(log.cost || 0).toFixed(5)}</span>
+          <span>${log.latency || 0}ms</span>
+          <span class="prompt-preview">${escHtml(log.prompt || '—')}</span>
+        </div>`;
+    }).join("");
+  }
+
+  function showDetail(i) {
+    const log = allLogs[i];
+    if (!log) return;
+
+    const body = document.getElementById("modal-body");
+    body.innerHTML = `
+      <div class="detail-row"><div class="detail-label">Timestamp</div><div class="detail-value">${log.timestamp || '—'}</div></div>
+      <div class="detail-row"><div class="detail-label">Model Used</div><div class="detail-value">${MODEL_NAMES[log.modelKey] || log.modelKey}</div></div>
+      <div class="detail-row"><div class="detail-label">Routing Mode</div><div class="detail-value">${log.routingMode || '—'} → complexity: ${log.complexity || '—'} → primary: ${log.primaryProvider || '—'}</div></div>
+      <div class="detail-row"><div class="detail-label">Prompt</div><div class="detail-value">${escHtml(log.prompt || '—')}</div></div>
+      <div class="detail-row"><div class="detail-label">Response</div><div class="detail-value">${escHtml(log.response || log.error || '—')}</div></div>
+      <div class="detail-row"><div class="detail-label">Tokens</div><div class="detail-value">Total: ${log.tokens || 0}  |  Input: ${log.inputTokens || 0}  |  Output: ${log.outputTokens || 0}</div></div>
+      <div class="detail-row"><div class="detail-label">Cost</div><div class="detail-value">$${(log.cost || 0).toFixed(6)}</div></div>
+      <div class="detail-row"><div class="detail-label">Latency</div><div class="detail-value">${log.latency || 0}ms${log.cached ? '  (from cache)' : ''}</div></div>
+      ${log.compression ? `<div class="detail-row"><div class="detail-label">Compression</div><div class="detail-value">Saved ${log.compression.savedChars} chars (${log.compression.originalLength} → ${log.compression.compressedLength})</div></div>` : ''}
+      ${log.fallbackUsed ? `<div class="detail-row"><div class="detail-label">Fallback</div><div class="detail-value">Primary failed, routed to: ${log.attemptedProvider}</div></div>` : ''}
+    `;
+
+    document.getElementById("modal").classList.add("open");
+  }
+
+  function closeModal(e) {
+    if (e.target.id === "modal") document.getElementById("modal").classList.remove("open");
+  }
+
+  function renderRoutingDetails(details) {
+
+  if (!details) return "";
+
+  const rows = [];
+
+  // CACHE
+  if (details.cached) {
+
+    rows.push(`
+      <div class="routing-item">
+        <span class="routing-bullet">⚡</span>
+        <span>Served instantly from semantic cache</span>
+      </div>
+    `);
+
+  }
+
+  // TASK
+  if (details.taskType) {
+
+    rows.push(`
+      <div class="routing-item">
+        <span class="routing-bullet">✓</span>
+        <span>${details.taskType} task detected</span>
+      </div>
+    `);
+
+  }
+
+  // COMPLEXITY
+  if (details.complexity) {
+
+    rows.push(`
+      <div class="routing-item">
+        <span class="routing-bullet">✓</span>
+        <span>${details.complexity} complexity classified</span>
+      </div>
+    `);
+
+  }
+
+  // MODE
+  if (details.mode) {
+
+    rows.push(`
+      <div class="routing-item">
+        <span class="routing-bullet">✓</span>
+        <span>${details.mode} routing mode active</span>
+      </div>
+    `);
+
+  }
+
+  // CONTEXTS
+  if (details.contexts?.length) {
+
+    rows.push(`
+      <div class="routing-item">
+        <span class="routing-bullet">✓</span>
+        <span>Context detected: ${details.contexts.join(", ")}</span>
+      </div>
+    `);
+
+  }
+
+  // PROVIDER
+  if (details.provider) {
+
+    rows.push(`
+      <div class="routing-item">
+        <span class="routing-bullet">✓</span>
+        <span>${details.provider} selected for optimal response quality</span>
+      </div>
+    `);
+
+  }
+
+  // CONFIDENCE
+
+  if (details.confidence) {
+
+  rows.push(`
+
+  <div class="routing-item">
+
+  <span class="routing-bullet">🎯</span>
+
+  <span>
+
+  Routing confidence:
+
+  <strong>
+
+  ${details.confidence.score}% (${details.confidence.level})
+
+  </strong>
+
+  </span>
+
+  </div>
+
+  `);
+
+  }
+
+  // STICKY SESSION
+  if (details.stickySession) {
+
+    rows.push(`
+      <div class="routing-item">
+        <span class="routing-bullet">✓</span>
+        <span>Sticky session reused previous provider</span>
+      </div>
+    `);
+
+  }
+
+  // BUDGET
+  if (details.budgetTriggered) {
+
+    rows.push(`
+      <div class="routing-item">
+        <span class="routing-bullet">⚠</span>
+        <span>Budget guardrail activated</span>
+      </div>
+    `);
+
+  }
+
+  // FALLBACK
+  if (details.fallbackUsed) {
+
+    rows.push(`
+      <div class="routing-item">
+        <span class="routing-bullet">↺</span>
+        <span>Automatic fallback recovery triggered</span>
+      </div>
+    `);
+
+  } else {
+
+    rows.push(`
+      <div class="routing-item">
+        <span class="routing-bullet">✓</span>
+        <span>No fallback required</span>
+      </div>
+    `);
+
+  }
+
+  return `
+
+  <div
+    class="collapsible-section"
+    id="decision-engine-section"
+  >
+
+    <div
+      class="collapsible-header"
+      onclick="toggleCollapse('decision-engine-section')"
+    >
+
+      <div class="collapsible-title">
+
+        ⚡ RouteAI Decision Engine
+
+      </div>
+
+      <div class="collapsible-arrow">
+        ▶
+      </div>
+
+    </div>
+
+    <div class="collapsible-content">
+
+      <div class="routing-panel">
+
+        <div class="routing-list">
+          ${rows.join("")}
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  `;
+}
+
+  async function runTest() {
+    const btn = document.getElementById("test-btn");
+    const promptEl = document.getElementById("test-prompt");
+    const resultEl = document.getElementById("test-result");
+    const metaEl = document.getElementById("test-meta");
+    const mode = document.getElementById("test-mode").value;
+    const prompt = promptEl.value.trim();
+
+    if (!prompt) return;
+
+    btn.disabled = true;
+    btn.textContent = "Routing...";
+    resultEl.classList.remove("empty-state");
+    resultEl.textContent = "Routing request";
+    resultEl.innerHTML = `
+      Routing request<span class="loading-dots"></span>
+      <div class="loading-wave"></div>
+    `;
+    metaEl.innerHTML = "";
+
+    try {
+      const start = Date.now();
+      const apiKey = document.getElementById("test-apikey").value || "dev-key-123";
+      const customerId = document.getElementById("test-customer").value.trim() || null;
+      const res = await fetch("/api/ai", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "x-api-key": apiKey },
+        body: JSON.stringify({
+          prompt,
+          mode,
+          customerId
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!data.success) {
+        throw new Error(data.error || "Request failed");
+      }
+
+      const payload = data.data || data;
+
+      let fullText =
+        payload.response || "No response";
+
+      // AUTO CODE BLOCK FIX
+
+      if (
+        fullText.includes("def ") &&
+        !fullText.includes("```")
+      ) {
+
+        fullText =
+          "```python\n" +
+          fullText +
+          "\n```";
+      }
+
+      // ─────────────────────────────
+      // SAFE STREAMING
+      // ─────────────────────────────
+
+      resultEl.innerHTML = `
+        <div class="markdown-body">
+          <div id="stream-output"></div>
+          <span class="streaming-cursor">▋</span>
+        </div>
+      `;
+
+      const streamOutput =
+        document.getElementById("stream-output");
+
+      const words =
+        fullText.split(" ")
+
+      let current = "";
+
+      for (let i = 0; i < words.length; i++) {
+
+        current += words[i] + " ";
+
+        streamOutput.innerHTML =
+          marked.parse(current);
+
+        document
+          .querySelectorAll('pre code')
+          .forEach((el) => {
+            hljs.highlightElement(el);
+          });
+
+        resultEl.scrollTop =
+          resultEl.scrollHeight;
+
+        const delay =
+          words[i].includes("\n")
+            ? 35
+            : words[i].length > 8
+              ? 18
+              : 10;
+
+        await new Promise(r =>
+          setTimeout(r, delay)
+        );
+      }
+
+      // ─────────────────────────────
+      // FINAL CLEAN MARKDOWN RENDER
+      // ─────────────────────────────
+
+      resultEl.innerHTML = `
+        <div class="markdown-body">
+          ${marked.parse(fullText)}
+        </div>
+      `;
+
+      resultEl.classList.remove("empty-state");
+
+      document.querySelectorAll('pre code').forEach((el) => {
+        hljs.highlightElement(el);
+      });
+
+      metaEl.innerHTML = `
+
+        <div class="meta-strip">
+
+          <div class="provider-chip">
+
+            <span class="provider-dot"></span>
+
+            ${MODEL_NAMES[payload.model] || payload.model}
+
+          </div>
+
+          ${payload.confidence ? `
+
+          <div class="confidence-chip ${payload.confidence.color}">
+
+          <div>
+
+          <div class="conf-score">
+
+          ${payload.confidence.score}%
+
+          </div>
+
+          <div class="conf-level">
+
+          ${payload.confidence.level}
+
+          </div>
+
+          </div>
+
+          </div>
+
+          ` : ""}
+
+          <div class="latency-chip">
+
+            ⏱ ${payload.latency}ms
+
+          </div>
+
+          <div class="health-chip ${payload.fallbackUsed ? 'fallback' : 'stable'}">
+
+            ${payload.fallbackUsed ? "↺ Fallback" : "✓ Stable"}
+
+          </div>
+
+          <div class="meta-strip">
+
+          <div class="meta-chip">
+
+          💰 Cost
+          $${payload.cost.toFixed(5)}
+
+          </div>
+
+          <div class="meta-chip">
+
+          👥 Customer
+
+          ${payload.customerId || "Anonymous"}
+
+          </div>
+
+          ${payload.fallbackUsed ?
+
+          `<div class="meta-chip">
+
+          ↺ Fallback
+
+          </div>`
+
+          :""}
+
+          </div>
+
+          ${payload.cached
+            ? `
+              <div class="meta-chip">
+                ⚡ Cache Hit
+              </div>
+            `
+            : ""}
+
+          ${payload.stickySession
+            ? `
+              <div class="meta-chip">
+                🔒 Sticky Session
+              </div>
+            `
+            : ""}
+
+        </div>
+      
+        `;
+
+      if (data.budgetTriggered) {
+
+        metaEl.innerHTML += `
+
+          <div class="budget-warning">
+
+            ⚠ Budget Guardrail Active
+            → downgraded to Gemini Flash
+
+          </div>
+
+        `;
+
+      }
+
+      if (payload.budgetInfo) {
+
+        metaEl.innerHTML += `
+
+          <div class="budget-stats">
+
+            💰 Spend:
+            $${payload.budgetInfo.monthlySpend.toFixed(4)}
+
+            /
+
+            $${payload.budgetInfo.budgetLimit}
+
+          </div>
+
+        `;
+
+      }
+
+      metaEl.innerHTML += `
+
+        <div class="routing-grid">
+
+          <div class="routing-grid-left">
+
+            ${renderRoutingDetails(
+              payload.routingDetails
+            )}
+
+          </div>
+
+          <div class="routing-grid-right">
+
+            ${renderRoutingTimelineHTML(
+              payload.routingTimeline || []
+            )}
+
+          </div>
+
+        </div>
+
+      `;
+
+      await loadAll();
+    } catch(e) {
+      resultEl.textContent = "Request failed: " + e.message;
+    }
+
+    btn.disabled = false;
+    btn.textContent = "Send";
+  }
+
+  document
+    .getElementById("test-prompt")
+    .addEventListener("keydown", e => {
+
+      if (
+        e.key === "Enter" &&
+        !e.shiftKey
+      ) {
+
+        e.preventDefault();
+
+        runTest();
+      }
+    });
+
+  function escHtml(str) {
+    return String(str)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  function renderRoutingTimelineHTML(timeline = []) {
+
+  return `
+
+  <div
+    class="collapsible-section"
+    id="timeline-section"
+  >
+
+    <div
+      class="collapsible-header"
+      onclick="toggleCollapse('timeline-section')"
+    >
+
+      <div class="collapsible-title">
+
+        ⚡ Live Routing Timeline
+
+      </div>
+
+      <div class="collapsible-arrow">
+        ▶
+      </div>
+
+    </div>
+
+    <div class="collapsible-content">
+
+      <div class="timeline-panel">
+
+        <div class="timeline-list">
+
+          ${timeline.map((item, index) => `
+
+            <div
+              class="timeline-item"
+              style="animation-delay: ${index * 120}ms"
+            >
+
+              <div class="timeline-left">
+
+                <div
+                  class="timeline-icon
+                  ${item.status === "fallback"
+                    ? "timeline-fallback"
+                    : item.status === "cached"
+                      ? "timeline-cache"
+                      : "timeline-success"}"
+                >
+
+                  ${
+                    item.status === "cached"
+                      ? "⚡"
+                      : item.status === "fallback"
+                        ? "↺"
+                        : "✓"
+                  }
+
+                </div>
+
+                <div>
+                  ${item.step}
+                </div>
+
+              </div>
+
+              <div class="timeline-time">
+
+                <div class="timeline-clock">
+                  ${item.timestamp || ""}
+                </div>
+
+                <div class="timeline-ms">
+                  ${item.time || ""}
+                </div>
+
+              </div>
+
+            </div>
+
+          `).join("")}
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  `;
+}
+
+  async function loadProviderHealth() {
+
+  try {
+
+    const res =
+      await fetch("/api/health");
+
+    const data =
+      await res.json();
+
+    const container =
+      document.getElementById(
+        "provider-health"
+      );
+
+    const providers =
+      data.providers || {};
+
+    const providerEntries =
+      Object.entries(providers);
+
+    container.innerHTML =
+      providerEntries.map(([name, info]) => {
+
+        const healthy =
+          info.status === "healthy";
+
+        const dotClass =
+          healthy
+            ? "health-good"
+            : "health-bad";
+
+        return `
+
+          <div class="health-pill">
+
+            <div
+              class="health-dot ${dotClass}"
+            ></div>
+
+            <div>
+              ${name}
+            </div>
+
+            <div class="provider-metrics">
+
+              <span>
+                ${info.status || "unknown"}
+              </span>
+
+              <span>
+                ${
+                info.latency>999
+                ?
+
+                (info.latency/1000).toFixed(1)+"s"
+
+                :
+
+                info.latency+"ms"
+
+                }
+              </span>
+
+            </div>
+
+          </div>
+
+        `;
+
+      }).join("");
+
+  } catch (err) {
+
+    console.error(
+      "Provider health failed",
+      err
+    );
+
+  }
+}
+
+function toggleCollapse(id) {
+
+  const section =
+    document.getElementById(id);
+
+  if (!section) return;
+
+  section.classList.toggle("open");
+}
+
+  // Auto-refresh every 10s
+  
+  loadProviderHealth();
+
+  loadAll();
+
+  setInterval(() => {
+
+    loadProviderHealth();
+
+  }, 8000);
+
+  window.history.scrollRestoration = "manual";
+
+  window.onload = () => {
+
+    window.scrollTo(0, 0);
+
+  };
+</script>
+</body>
+</html>

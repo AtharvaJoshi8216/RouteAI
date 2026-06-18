@@ -1,0 +1,38 @@
+# Node
+node_modules/
+
+# Environment
+.env
+.env.local
+.env.production
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Demo / backup files
+logs_backup.json
+logs_old.json
+logs_test.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Railway
+.railway/
+
+# Temporary
+temp/
+tmp/
+
+# Cache
+.cache/
+
+# Secrets
+*.pem
+*.key

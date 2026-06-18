@@ -1,0 +1,2382 @@
+[
+  {
+    "id": "e4ab55aa-e6cd-4cc4-9c4d-0a4e53ed4968",
+    "success": true,
+    "cached": false,
+    "customerId": null,
+    "prompt": "What is an API?",
+    "taskType": "coding",
+    "confidence": {
+      "score": 83,
+      "level": "Medium",
+      "color": "yellow"
+    },
+    "response": "An API, or Application Programming Interface, is a set of rules and protocols that allows different software applications to communicate with each other. It defines the methods and data formats that applications can use to request and exchange information. APIs facilitate integration between different systems, enabling developers to build applications that can interact with external services, libraries, or platforms without needing to understand their internal workings.\n\nAPIs can take various forms, including:\n\n1. **Web APIs**: These are accessed over the internet using HTTP/HTTPS protocols and are commonly used to interact with web services. They usually return data in formats like JSON or XML.\n\n2. **Library APIs**: These are interfaces provided by software libraries that allow developers to use functions and methods defined in those libraries.\n\n3. **Operating System APIs**: These provide functions for interacting with the underlying operating system, such as file handling, network communication, and hardware access.\n\nAPIs are essential for modern software development as they enable the creation of complex applications by leveraging existing services, promoting modularity, and enhancing productivity.",
+    "modelKey": "gpt-4o-mini",
+    "complexity": "simple",
+    "routingMode": "cost",
+    "primaryProvider": "gpt-4o-mini",
+    "routingReason": "Complexity: simple • Mode: cost • Task: coding • Selected: gpt-4o-mini",
+    "routingTimeline": [
+      {
+        "step": "Prompt received",
+        "status": "success",
+        "time": "0ms"
+      },
+      {
+        "step": "Complexity classified: simple",
+        "status": "success",
+        "time": "12ms"
+      },
+      {
+        "step": "Task detected: coding",
+        "status": "success",
+        "time": "18ms"
+      },
+      {
+        "step": "Routing mode: cost",
+        "status": "success",
+        "time": "26ms"
+      },
+      {
+        "step": "Provider scoring completed",
+        "status": "success",
+        "time": "34ms"
+      },
+      {
+        "step": "gpt-4o-mini selected",
+        "status": "success",
+        "time": "52ms"
+      },
+      {
+        "step": "Primary provider healthy",
+        "status": "done",
+        "time": "74ms"
+      },
+      {
+        "step": "Generating response",
+        "status": "success",
+        "time": "3458ms"
+      }
+    ],
+    "routingDetails": {
+      "complexity": "simple",
+      "mode": "cost",
+      "taskType": "coding",
+      "confidence": {
+        "score": 83,
+        "level": "Medium",
+        "color": "yellow"
+      },
+      "provider": "gpt-4o-mini",
+      "fallbackUsed": false,
+      "cached": false,
+      "stickySession": null,
+      "budgetTriggered": false,
+      "contexts": []
+    },
+    "fallbackUsed": false,
+    "attemptedProvider": "gpt-4o-mini",
+    "tokens": 221,
+    "inputTokens": 12,
+    "outputTokens": 209,
+    "cost": 0.00012719999999999997,
+    "baselineCost": 0.003195,
+    "savedVsBaseline": 0.0030678,
+    "latency": 3458,
+    "compression": {
+      "compressed": "What is an API?",
+      "originalLength": 15,
+      "compressedLength": 15,
+      "savedChars": 0
+    },
+    "timestamp": "2026-06-17T10:38:44.413Z"
+  },
+  {
+    "id": "4080cc00-10c0-43c6-a6e2-c15c3c4760c3",
+    "success": true,
+    "cached": false,
+    "customerId": null,
+    "prompt": "What is Docker?",
+    "taskType": "coding",
+    "confidence": {
+      "score": 85,
+      "level": "Medium",
+      "color": "yellow"
+    },
+    "response": "Docker is an open-source platform that automates the deployment, scaling, and management of applications within lightweight, portable containers. Containers are standardized units of software that package up code and all its dependencies, allowing applications to run quickly and reliably in different computing environments.\n\n### Key Features of Docker:\n\n1. **Containerization**: Docker allows developers to package applications and their dependencies into containers, ensuring that they run consistently across different environments (development, testing, production).\n\n2. **Isolation**: Each container runs in its own isolated environment, which prevents conflicts between applications and allows multiple applications to run on the same host without interference.\n\n3. **Portability**: Containers can run on any system that has Docker installed, whether it's a developer's laptop, a test server, or a cloud environment, making it easier to move applications across different environments.\n\n4. **Version Control**: Docker images (the blueprints for containers) can be versioned, allowing developers to roll back to previous versions of their applications easily.\n\n5. **Scalability**: Docker makes it easy to scale applications up or down quickly by adding or removing containers as needed.\n\n6. **Ecosystem**: Docker has a rich ecosystem that includes Docker Hub (a repository for sharing container images), Docker Compose (for defining and running multi-container applications), and Docker Swarm and Kubernetes (for orchestrating containerized applications).\n\n### Use Cases:\n\n- **Microservices Architecture**: Docker is widely used to implement microservices, where different components of an application are developed, deployed, and scaled independently.\n\n- **Continuous Integration/Continuous Deployment (CI/CD)**: Docker enables developers to create consistent environments for testing and deployment, supporting automated workflows.\n\n- **Development Environments**: Developers can use Docker to create reproducible environments, minimizing the \"it works on my machine\" problem.\n\nIn summary, Docker simplifies and accelerates the development, deployment, and management of applications, making it a popular choice among developers and organizations looking to improve their software delivery processes.",
+    "modelKey": "gpt-4o-mini",
+    "complexity": "medium",
+    "routingMode": "cost",
+    "primaryProvider": "gpt-4o-mini",
+    "routingReason": "Complexity: medium • Mode: cost • Task: coding • Selected: gpt-4o-mini",
+    "routingTimeline": [
+      {
+        "step": "Prompt received",
+        "status": "success",
+        "time": "0ms"
+      },
+      {
+        "step": "Complexity classified: medium",
+        "status": "success",
+        "time": "12ms"
+      },
+      {
+        "step": "Task detected: coding",
+        "status": "success",
+        "time": "18ms"
+      },
+      {
+        "step": "Routing mode: cost",
+        "status": "success",
+        "time": "26ms"
+      },
+      {
+        "step": "Provider scoring completed",
+        "status": "success",
+        "time": "34ms"
+      },
+      {
+        "step": "gpt-4o-mini selected",
+        "status": "success",
+        "time": "52ms"
+      },
+      {
+        "step": "Primary provider healthy",
+        "status": "done",
+        "time": "74ms"
+      },
+      {
+        "step": "Generating response",
+        "status": "success",
+        "time": "5261ms"
+      }
+    ],
+    "routingDetails": {
+      "complexity": "medium",
+      "mode": "cost",
+      "taskType": "coding",
+      "confidence": {
+        "score": 85,
+        "level": "Medium",
+        "color": "yellow"
+      },
+      "provider": "gpt-4o-mini",
+      "fallbackUsed": false,
+      "cached": false,
+      "stickySession": null,
+      "budgetTriggered": false,
+      "contexts": []
+    },
+    "fallbackUsed": false,
+    "attemptedProvider": "gpt-4o-mini",
+    "tokens": 416,
+    "inputTokens": 11,
+    "outputTokens": 405,
+    "cost": 0.00024465,
+    "baselineCost": 0.006130000000000001,
+    "savedVsBaseline": 0.005885350000000001,
+    "latency": 5261,
+    "compression": {
+      "compressed": "What is Docker?",
+      "originalLength": 15,
+      "compressedLength": 15,
+      "savedChars": 0
+    },
+    "timestamp": "2026-06-17T10:39:12.169Z"
+  },
+  {
+    "id": "a8c14846-2782-458d-be01-c30a10ff3df9",
+    "success": true,
+    "cached": false,
+    "customerId": null,
+    "prompt": "Translate 'Hello, how are you?' to Hindi.",
+    "taskType": "multilingual",
+    "confidence": {
+      "score": 83,
+      "level": "Medium",
+      "color": "yellow"
+    },
+    "response": "The most common and polite translation is:\n\n**नमस्ते, आप कैसे हैं?**\n(Namaste, aap kaise hain?)\n\nHere's a breakdown and some variations:\n\n*   **नमस्ते (Namaste):** Hello / Greetings (can also mean goodbye)\n*   **आप (aap):** You (formal/polite)\n*   **कैसे (kaise):** How (used for masculine or when gender is unknown/general)\n*   **हैं (hain):** Are (polite form)\n\n**Gender-specific variations for \"How are you?\":**\n\n*   **To a male:** आप कैसे हैं? (Aap kaise hain?)\n*   **To a female:** आप कैसी हैं? (Aap kaisi hain?)\n    *   *Note: \"kaisi\" is the feminine form of \"kaise\"*\n\n**Informal variation (like \"What's up?\" or \"How are things?\"):**\n\n*   **नमस्ते, क्या हाल है?** (Namaste, kya haal hai?)\n    *   *क्या हाल है? (kya haal hai?):* What's the news? / How are things?",
+    "modelKey": "gemini-flash",
+    "complexity": "simple",
+    "routingMode": "cost",
+    "primaryProvider": "gemini-flash",
+    "routingReason": "Complexity: simple • Mode: cost • Task: multilingual • Selected: gemini-flash",
+    "routingTimeline": [
+      {
+        "step": "Prompt received",
+        "status": "success",
+        "time": "0ms"
+      },
+      {
+        "step": "Complexity classified: simple",
+        "status": "success",
+        "time": "12ms"
+      },
+      {
+        "step": "Task detected: multilingual",
+        "status": "success",
+        "time": "18ms"
+      },
+      {
+        "step": "Routing mode: cost",
+        "status": "success",
+        "time": "26ms"
+      },
+      {
+        "step": "Provider scoring completed",
+        "status": "success",
+        "time": "34ms"
+      },
+      {
+        "step": "gemini-flash selected",
+        "status": "success",
+        "time": "52ms"
+      },
+      {
+        "step": "Primary provider healthy",
+        "status": "done",
+        "time": "74ms"
+      },
+      {
+        "step": "Generating response",
+        "status": "success",
+        "time": "3392ms"
+      }
+    ],
+    "routingDetails": {
+      "complexity": "simple",
+      "mode": "cost",
+      "taskType": "multilingual",
+      "confidence": {
+        "score": 83,
+        "level": "Medium",
+        "color": "yellow"
+      },
+      "provider": "gemini-flash",
+      "fallbackUsed": false,
+      "cached": false,
+      "stickySession": null,
+      "budgetTriggered": false,
+      "contexts": []
+    },
+    "fallbackUsed": false,
+    "attemptedProvider": "gemini-flash",
+    "tokens": 260,
+    "inputTokens": 11,
+    "outputTokens": 249,
+    "cost": 0.000075525,
+    "baselineCost": 0.00379,
+    "savedVsBaseline": 0.003714475,
+    "latency": 3392,
+    "compression": {
+      "compressed": "Translate 'Hello, how are you?' to Hindi.",
+      "originalLength": 41,
+      "compressedLength": 41,
+      "savedChars": 0
+    },
+    "timestamp": "2026-06-17T10:39:48.156Z"
+  },
+  {
+    "id": "ee36a46b-ff90-4504-958a-74a3508d6a4c",
+    "success": true,
+    "cached": false,
+    "customerId": null,
+    "prompt": "Summarise this customer support email.",
+    "taskType": "summarization",
+    "confidence": {
+      "score": 87,
+      "level": "Medium",
+      "color": "yellow"
+    },
+    "response": "Of course! Please provide the content of the customer support email you'd like me to summarize.",
+    "modelKey": "gpt-4o-mini",
+    "complexity": "simple",
+    "routingMode": "cost",
+    "primaryProvider": "gpt-4o-mini",
+    "routingReason": "Complexity: simple • Mode: cost • Task: summarization • Context: business • Selected: gpt-4o-mini",
+    "routingTimeline": [
+      {
+        "step": "Prompt received",
+        "status": "success",
+        "time": "0ms"
+      },
+      {
+        "step": "Complexity classified: simple",
+        "status": "success",
+        "time": "12ms"
+      },
+      {
+        "step": "Task detected: summarization",
+        "status": "success",
+        "time": "18ms"
+      },
+      {
+        "step": "Routing mode: cost",
+        "status": "success",
+        "time": "26ms"
+      },
+      {
+        "step": "Provider scoring completed",
+        "status": "success",
+        "time": "34ms"
+      },
+      {
+        "step": "gpt-4o-mini selected",
+        "status": "success",
+        "time": "52ms"
+      },
+      {
+        "step": "Primary provider healthy",
+        "status": "done",
+        "time": "74ms"
+      },
+      {
+        "step": "Generating response",
+        "status": "success",
+        "time": "1176ms"
+      }
+    ],
+    "routingDetails": {
+      "complexity": "simple",
+      "mode": "cost",
+      "taskType": "summarization",
+      "confidence": {
+        "score": 87,
+        "level": "Medium",
+        "color": "yellow"
+      },
+      "provider": "gpt-4o-mini",
+      "fallbackUsed": false,
+      "cached": false,
+      "stickySession": null,
+      "budgetTriggered": false,
+      "contexts": [
+        "business"
+      ]
+    },
+    "fallbackUsed": false,
+    "attemptedProvider": "gpt-4o-mini",
+    "tokens": 33,
+    "inputTokens": 15,
+    "outputTokens": 18,
+    "cost": 0.000013049999999999999,
+    "baselineCost": 0.00034499999999999993,
+    "savedVsBaseline": 0.0003319499999999999,
+    "latency": 1176,
+    "compression": {
+      "compressed": "Summarise this customer support email.",
+      "originalLength": 38,
+      "compressedLength": 38,
+      "savedChars": 0
+    },
+    "timestamp": "2026-06-17T10:40:10.163Z"
+  },
+  {
+    "id": "2622dede-2ca9-4c3a-bc6d-ef77b0a7567b",
+    "success": true,
+    "cached": false,
+    "customerId": null,
+    "prompt": "Generate five tech product taglines.",
+    "taskType": "general",
+    "confidence": {
+      "score": 75,
+      "level": "Low",
+      "color": "red"
+    },
+    "response": "Here are five tech product taglines, aiming for a mix of focus and tone:\n\n1.  **\"Effortless control. Intelligent living.\"** (For smart home devices, IoT platforms)\n2.  **\"Unleash what's next. Today.\"** (For high-performance hardware, innovative software, AI)\n3.  **\"From complex data to clear insights.\"** (For analytics platforms, AI-driven business tools)\n4.  **\"Your digital world, protected and private.\"** (For cybersecurity, privacy software, VPNs)\n5.  **\"Beyond imagination. Built by you.\"** (For creative software, VR/AR tools, development platforms)",
+    "modelKey": "gemini-flash",
+    "complexity": "simple",
+    "routingMode": "cost",
+    "primaryProvider": "gemini-flash",
+    "routingReason": "Complexity: simple • Mode: cost • Task: general • Selected: gemini-flash",
+    "routingTimeline": [
+      {
+        "step": "Prompt received",
+        "status": "success",
+        "time": "0ms"
+      },
+      {
+        "step": "Complexity classified: simple",
+        "status": "success",
+        "time": "12ms"
+      },
+      {
+        "step": "Task detected: general",
+        "status": "success",
+        "time": "18ms"
+      },
+      {
+        "step": "Routing mode: cost",
+        "status": "success",
+        "time": "26ms"
+      },
+      {
+        "step": "Provider scoring completed",
+        "status": "success",
+        "time": "34ms"
+      },
+      {
+        "step": "gemini-flash selected",
+        "status": "success",
+        "time": "52ms"
+      },
+      {
+        "step": "Primary provider healthy",
+        "status": "done",
+        "time": "74ms"
+      },
+      {
+        "step": "Generating response",
+        "status": "success",
+        "time": "7574ms"
+      }
+    ],
+    "routingDetails": {
+      "complexity": "simple",
+      "mode": "cost",
+      "taskType": "general",
+      "confidence": {
+        "score": 75,
+        "level": "Low",
+        "color": "red"
+      },
+      "provider": "gemini-flash",
+      "fallbackUsed": false,
+      "cached": false,
+      "stickySession": null,
+      "budgetTriggered": false,
+      "contexts": []
+    },
+    "fallbackUsed": false,
+    "attemptedProvider": "gemini-flash",
+    "tokens": 154,
+    "inputTokens": 7,
+    "outputTokens": 147,
+    "cost": 0.000044624999999999994,
+    "baselineCost": 0.00224,
+    "savedVsBaseline": 0.002195375,
+    "latency": 7574,
+    "compression": {
+      "compressed": "Generate five tech product taglines.",
+      "originalLength": 36,
+      "compressedLength": 36,
+      "savedChars": 0
+    },
+    "timestamp": "2026-06-17T10:40:35.173Z"
+  },
+  {
+    "id": "4b9c1950-3dc3-4db0-a1a6-533e0b4a7c8a",
+    "success": true,
+    "cached": false,
+    "customerId": null,
+    "prompt": "What is rate limiting?",
+    "taskType": "search",
+    "confidence": {
+      "score": 83,
+      "level": "Medium",
+      "color": "yellow"
+    },
+    "response": "**Rate limiting** is a technique used to control the rate at which a user, client, or system can perform an action or make requests to a server or resource within a given time window.\n\nThink of it like a bouncer at a popular club: they let people in at a steady pace to prevent overcrowding and ensure everyone inside has a good experience, rather than letting everyone rush in at once.\n\n---\n\n### Why is Rate Limiting Necessary?\n\nRate limiting is crucial for several reasons:\n\n1.  **Preventing Abuse and Attacks:**\n    *   **DDoS (Distributed Denial of Service) Attacks:** Prevents attackers from overwhelming a server with a flood of requests, making it unavailable to legitimate users.\n    *   **Brute-Force Attacks:** Limits the number of login attempts, making it harder for attackers to guess passwords.\n    *   **Web Scraping:** Deters automated bots from rapidly collecting large amounts of data.\n\n2.  **Ensuring System Stability and Performance:**\n    *   **Resource Management:** Prevents any single user or application from monopolizing server resources (CPU, memory, network bandwidth).\n    *   **Fair Usage:** Ensures that all legitimate users have a reasonable chance to access the service without one user hogging resources.\n    *   **Predictable Load:** Helps maintain a stable and predictable load on the infrastructure, preventing crashes or slowdowns.\n\n3.  **Cost Control:**\n    *   Many cloud services and APIs charge based on usage (e.g., number of requests). Rate limiting helps control these costs by preventing excessive or unintended usage.\n\n---\n\n### How Does Rate Limiting Work?\n\nThe core concept involves:\n\n1.  **Defining a Limit:** A specific number of requests (or actions) allowed.\n2.  **Defining a Time Window:** The period over which the requests are counted (e.g., 100 requests per minute, 5 requests per second).\n3.  **Identifying the Client:** Requests are typically tracked per IP address, API key, user ID, or session.\n4.  **Counting Requests:** The system keeps a running tally of requests from each identified client within their respective time windows.\n5.  **Enforcing the Limit:**\n    *   If a client's request count exceeds the defined limit within the time window, subsequent requests from that client are blocked, delayed, or rejected.\n    *   Often, an HTTP status code `429 Too Many Requests` is returned, sometimes with a `Retry-After` header indicating when the client can try again.\n\nThere are various algorithms to implement rate limiting, such as:\n\n*   **Fixed Window Counter:** Simple but can lead to bursts at the window edges.\n*   **Sliding Window Log:** More accurate but resource-intensive.\n*   **Sliding Window Counter:** A good balance of accuracy and efficiency.\n*   **Token Bucket:** Allows for some burstiness while maintaining an average rate.\n*   **Leaky Bucket:** Smoothes out bursty traffic.\n\n---\n\n### Common Use Cases:\n\n*   **APIs (Application Programming Interfaces):** Most public APIs (e.g., Twitter API, Google Maps API) have strict rate limits to manage usage and prevent abuse.\n*   **Web Servers:** Protecting login endpoints, search functions, or other resource-intensive operations.\n*   **Email Servers:** Limiting the number of emails a user can send per hour/day to prevent spam.\n*   **Cloud Providers:** Limiting resource creation or API calls to their management plane.\n*   **Network Devices:** Firewalls and routers can rate limit traffic to protect against network-level attacks.\n\nIn essence, rate limiting is a fundamental security and performance mechanism that helps maintain the health, stability, and fairness of online services.",
+    "modelKey": "gemini-flash",
+    "complexity": "simple",
+    "routingMode": "cost",
+    "primaryProvider": "gemini-flash",
+    "routingReason": "Complexity: simple • Mode: cost • Task: search • Selected: gemini-flash",
+    "routingTimeline": [
+      {
+        "step": "Prompt received",
+        "status": "success",
+        "time": "0ms"
+      },
+      {
+        "step": "Complexity classified: simple",
+        "status": "success",
+        "time": "12ms"
+      },
+      {
+        "step": "Task detected: search",
+        "status": "success",
+        "time": "18ms"
+      },
+      {
+        "step": "Routing mode: cost",
+        "status": "success",
+        "time": "26ms"
+      },
+      {
+        "step": "Provider scoring completed",
+        "status": "success",
+        "time": "34ms"
+      },
+      {
+        "step": "gemini-flash selected",
+        "status": "success",
+        "time": "52ms"
+      },
+      {
+        "step": "Primary provider healthy",
+        "status": "done",
+        "time": "74ms"
+      },
+      {
+        "step": "Generating response",
+        "status": "success",
+        "time": "11000ms"
+      }
+    ],
+    "routingDetails": {
+      "complexity": "simple",
+      "mode": "cost",
+      "taskType": "search",
+      "confidence": {
+        "score": 83,
+        "level": "Medium",
+        "color": "yellow"
+      },
+      "provider": "gemini-flash",
+      "fallbackUsed": false,
+      "cached": false,
+      "stickySession": null,
+      "budgetTriggered": false,
+      "contexts": []
+    },
+    "fallbackUsed": false,
+    "attemptedProvider": "gemini-flash",
+    "tokens": 803,
+    "inputTokens": 5,
+    "outputTokens": 798,
+    "cost": 0.000239775,
+    "baselineCost": 0.011995,
+    "savedVsBaseline": 0.011755225000000001,
+    "latency": 11000,
+    "compression": {
+      "compressed": "What is rate limiting?",
+      "originalLength": 22,
+      "compressedLength": 22,
+      "savedChars": 0
+    },
+    "timestamp": "2026-06-17T10:41:08.269Z"
+  },
+  {
+    "id": "4c0c6a2d-11f6-4f34-9d31-7e4c1fa30132",
+    "success": true,
+    "cached": false,
+    "customerId": null,
+    "prompt": "What is GraphQL?",
+    "taskType": "search",
+    "confidence": {
+      "score": 83,
+      "level": "Medium",
+      "color": "yellow"
+    },
+    "response": "**GraphQL is an open-source query language for APIs, and a runtime for fulfilling those queries with your existing data.** It was developed internally by Facebook in 2012 before being publicly released in 2015.\n\nThink of it as a more efficient, powerful, and flexible alternative to traditional REST APIs, especially when dealing with complex data requirements.\n\nHere's a breakdown of what that means:\n\n### 1. A Query Language for APIs\n\n*   **Client-Driven Data Fetching:** Unlike REST where the server defines the data structure returned by an endpoint, GraphQL empowers the client (e.g., your frontend application) to specify *exactly* what data it needs. You ask for what you want, and you get exactly that.\n*   **No Over- or Under-fetching:**\n    *   **Over-fetching:** With REST, you often get more data than you need (e.g., an entire user object when you only need their name). GraphQL prevents this by letting you pick specific fields.\n    *   **Under-fetching:** With REST, you might need to make multiple requests to different endpoints to get all the related data you need (e.g., one request for a user, another for their posts, another for their comments). GraphQL allows you to fetch all this related data in a single request.\n\n### 2. A Runtime for Fulfilling Queries\n\n*   GraphQL isn't a database technology; it's an API layer that sits *on top of* your existing data sources.\n*   It can connect to various backends: traditional databases (SQL, NoSQL), microservices, third-party APIs, or even other GraphQL servers.\n*   The GraphQL server acts as a translator, taking the client's query and fetching the necessary data from the underlying sources, then structuring it exactly as requested.\n\n### Key Concepts & Features\n\n1.  **Schema and Types:**\n    *   At the heart of every GraphQL API is a **schema**, which is a strongly typed contract between the client and the server.\n    *   The schema defines all the possible data types (e.g., `User`, `Product`, `Post`), their fields, and the relationships between them.\n    *   It also defines the operations clients can perform: `Query` (read data), `Mutation` (write/modify data), and `Subscription` (real-time data updates).\n    *   This strong typing provides excellent validation, introspection (clients can discover what's available), and tooling support (autocompletion, error checking).\n\n2.  **Queries:**\n    *   Used for fetching data. Clients specify the data structure they want.\n    *   **Example:**\n        ```graphql\n        query GetUserAndPosts {\n          user(id: \"123\") {\n            name\n            email\n            posts {\n              id\n              title\n              content\n            }\n          }\n        }\n        ```\n        This single query fetches a user's name and email, *and* all their associated posts (with ID, title, and content) – all in one go.\n\n3.  **Mutations:**\n    *   Used for creating, updating, or deleting data.\n    *   They are structured similarly to queries but explicitly signal that they will cause a side effect on the server.\n    *   **Example:**\n        ```graphql\n        mutation CreateNewPost {\n          createPost(title: \"My New Article\", content: \"...\" authorId: \"123\") {\n            id\n            title\n          }\n        }\n        ```\n        The client can also specify what data it wants back after the mutation is performed (e.g., the ID and title of the newly created post).\n\n4.  **Subscriptions:**\n    *   Used for real-time data updates. Clients can subscribe to events, and the server will push data to them when those events occur (e.g., a new message in a chat app).\n\n5.  **Resolvers:**\n    *",
+    "modelKey": "gemini-flash",
+    "complexity": "simple",
+    "routingMode": "balanced",
+    "primaryProvider": "gemini-flash",
+    "routingReason": "Complexity: simple • Mode: balanced • Task: search • Selected: gemini-flash",
+    "routingTimeline": [
+      {
+        "step": "Prompt received",
+        "status": "success",
+        "time": "0ms"
+      },
+      {
+        "step": "Complexity classified: simple",
+        "status": "success",
+        "time": "12ms"
+      },
+      {
+        "step": "Task detected: search",
+        "status": "success",
+        "time": "18ms"
+      },
+      {
+        "step": "Routing mode: balanced",
+        "status": "success",
+        "time": "26ms"
+      },
+      {
+        "step": "Provider scoring completed",
+        "status": "success",
+        "time": "34ms"
+      },
+      {
+        "step": "gemini-flash selected",
+        "status": "success",
+        "time": "52ms"
+      },
+      {
+        "step": "Primary provider healthy",
+        "status": "done",
+        "time": "74ms"
+      },
+      {
+        "step": "Generating response",
+        "status": "success",
+        "time": "12118ms"
+      }
+    ],
+    "routingDetails": {
+      "complexity": "simple",
+      "mode": "balanced",
+      "taskType": "search",
+      "confidence": {
+        "score": 83,
+        "level": "Medium",
+        "color": "yellow"
+      },
+      "provider": "gemini-flash",
+      "fallbackUsed": false,
+      "cached": false,
+      "stickySession": null,
+      "budgetTriggered": false,
+      "contexts": []
+    },
+    "fallbackUsed": false,
+    "attemptedProvider": "gemini-flash",
+    "tokens": 861,
+    "inputTokens": 4,
+    "outputTokens": 857,
+    "cost": 0.00025739999999999997,
+    "baselineCost": 0.012875,
+    "savedVsBaseline": 0.0126176,
+    "latency": 12118,
+    "compression": {
+      "compressed": "What is GraphQL?",
+      "originalLength": 16,
+      "compressedLength": 16,
+      "savedChars": 0
+    },
+    "timestamp": "2026-06-17T10:41:56.870Z"
+  },
+  {
+    "id": "6b8c5a0c-45a4-415c-8800-545a491ed00a",
+    "success": true,
+    "cached": false,
+    "customerId": null,
+    "prompt": "Explain SQL joins in easy language.",
+    "taskType": "coding",
+    "confidence": {
+      "score": 83,
+      "level": "Medium",
+      "color": "yellow"
+    },
+    "response": "Sure! SQL joins are a way to combine data from two or more tables in a database based on a related column. Think of tables as different lists or spreadsheets where each table holds specific information. Joins help us see how this data is connected. Here’s a simple breakdown of the main types of joins:\n\n1. **INNER JOIN**:\n   - This join retrieves only the rows that have matching values in both tables.\n   - Imagine you have two lists: one with students and their IDs, and another with students and their grades. An INNER JOIN will give you only the students who have both an ID and a grade.\n\n   Example:\n   ```\n   SELECT Students.name, Grades.grade\n   FROM Students\n   INNER JOIN Grades ON Students.id = Grades.student_id;\n   ```\n\n2. **LEFT JOIN (or LEFT OUTER JOIN)**:\n   - This join returns all the rows from the left table and the matched rows from the right table. If there's no match, it will show NULL for the right table's columns.\n   - Using the same example, a LEFT JOIN will show all students and their grades, but if a student doesn’t have a grade, it will still show the student’s name with a NULL for the grade.\n\n   Example:\n   ```\n   SELECT Students.name, Grades.grade\n   FROM Students\n   LEFT JOIN Grades ON Students.id = Grades.student_id;\n   ```\n\n3. **RIGHT JOIN (or RIGHT OUTER JOIN)**:\n   - This is the opposite of a LEFT JOIN. It returns all the rows from the right table and the matched rows from the left table. If there’s no match, it will show NULL for the left table's columns.\n   - If you want to see all grades and the students who received them (even if some grades don’t have an associated student), you would use a RIGHT JOIN.\n\n   Example:\n   ```\n   SELECT Students.name, Grades.grade\n   FROM Students\n   RIGHT JOIN Grades ON Students.id = Grades.student_id;\n   ```\n\n4. **FULL JOIN (or FULL OUTER JOIN)**:\n   - This join combines the effects of both LEFT and RIGHT joins. It returns all rows from both tables, and where there are no matches, NULLs will fill in the gaps.\n   - So, you’d see all students and all grades, matching them where possible and showing NULLs where there’s no match.\n\n   Example:\n   ```\n   SELECT Students.name, Grades.grade\n   FROM Students\n   FULL JOIN Grades ON Students.id = Grades.student_id;\n   ```\n\n5. **CROSS JOIN**:\n   - This join returns the Cartesian product of the two tables, meaning it combines every row from the first table with every row from the second table. This is less common but can be useful in specific scenarios.\n\n   Example:\n   ```\n   SELECT Students.name, Courses.course_name\n   FROM Students\n   CROSS JOIN Courses;\n   ```\n\nIn summary, SQL joins are like connecting the dots between tables based on related data, allowing you to see a more complete picture of the information you have!",
+    "modelKey": "gpt-4o-mini",
+    "complexity": "simple",
+    "routingMode": "balanced",
+    "primaryProvider": "gpt-4o-mini",
+    "routingReason": "Complexity: simple • Mode: balanced • Task: coding • Selected: gpt-4o-mini",
+    "routingTimeline": [
+      {
+        "step": "Prompt received",
+        "status": "success",
+        "time": "0ms"
+      },
+      {
+        "step": "Complexity classified: simple",
+        "status": "success",
+        "time": "12ms"
+      },
+      {
+        "step": "Task detected: coding",
+        "status": "success",
+        "time": "18ms"
+      },
+      {
+        "step": "Routing mode: balanced",
+        "status": "success",
+        "time": "26ms"
+      },
+      {
+        "step": "Provider scoring completed",
+        "status": "success",
+        "time": "34ms"
+      },
+      {
+        "step": "gpt-4o-mini selected",
+        "status": "success",
+        "time": "52ms"
+      },
+      {
+        "step": "Primary provider healthy",
+        "status": "done",
+        "time": "74ms"
+      },
+      {
+        "step": "Generating response",
+        "status": "success",
+        "time": "8974ms"
+      }
+    ],
+    "routingDetails": {
+      "complexity": "simple",
+      "mode": "balanced",
+      "taskType": "coding",
+      "confidence": {
+        "score": 83,
+        "level": "Medium",
+        "color": "yellow"
+      },
+      "provider": "gpt-4o-mini",
+      "fallbackUsed": false,
+      "cached": false,
+      "stickySession": null,
+      "budgetTriggered": false,
+      "contexts": []
+    },
+    "fallbackUsed": false,
+    "attemptedProvider": "gpt-4o-mini",
+    "tokens": 638,
+    "inputTokens": 14,
+    "outputTokens": 624,
+    "cost": 0.0003765,
+    "baselineCost": 0.009430000000000001,
+    "savedVsBaseline": 0.0090535,
+    "latency": 8974,
+    "compression": {
+      "compressed": "Explain SQL joins in easy language.",
+      "originalLength": 35,
+      "compressedLength": 35,
+      "savedChars": 0
+    },
+    "timestamp": "2026-06-17T10:42:56.073Z"
+  },
+  {
+    "id": "d694ad35-9117-4801-b571-2ff80da79c48",
+    "success": true,
+    "cached": true,
+    "customerId": null,
+    "prompt": "What is Docker?",
+    "response": "Docker is an open-source platform that automates the deployment, scaling, and management of applications within lightweight, portable containers. Containers are standardized units of software that package up code and all its dependencies, allowing applications to run quickly and reliably in different computing environments.\n\n### Key Features of Docker:\n\n1. **Containerization**: Docker allows developers to package applications and their dependencies into containers, ensuring that they run consistently across different environments (development, testing, production).\n\n2. **Isolation**: Each container runs in its own isolated environment, which prevents conflicts between applications and allows multiple applications to run on the same host without interference.\n\n3. **Portability**: Containers can run on any system that has Docker installed, whether it's a developer's laptop, a test server, or a cloud environment, making it easier to move applications across different environments.\n\n4. **Version Control**: Docker images (the blueprints for containers) can be versioned, allowing developers to roll back to previous versions of their applications easily.\n\n5. **Scalability**: Docker makes it easy to scale applications up or down quickly by adding or removing containers as needed.\n\n6. **Ecosystem**: Docker has a rich ecosystem that includes Docker Hub (a repository for sharing container images), Docker Compose (for defining and running multi-container applications), and Docker Swarm and Kubernetes (for orchestrating containerized applications).\n\n### Use Cases:\n\n- **Microservices Architecture**: Docker is widely used to implement microservices, where different components of an application are developed, deployed, and scaled independently.\n\n- **Continuous Integration/Continuous Deployment (CI/CD)**: Docker enables developers to create consistent environments for testing and deployment, supporting automated workflows.\n\n- **Development Environments**: Developers can use Docker to create reproducible environments, minimizing the \"it works on my machine\" problem.\n\nIn summary, Docker simplifies and accelerates the development, deployment, and management of applications, making it a popular choice among developers and organizations looking to improve their software delivery processes.",
+    "model": "gpt-4o-mini",
+    "modelKey": "gpt-4o-mini",
+    "cost": 0,
+    "baselineCost": 0,
+    "savedVsBaseline": 0,
+    "tokens": 0,
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "latency": 0,
+    "timestamp": "2026-06-17T10:43:28.752Z"
+  },
+  {
+    "id": "6eed2e01-09d0-4936-bdb4-57e92d212977",
+    "success": true,
+    "cached": true,
+    "customerId": null,
+    "prompt": "Translate 'Hello, how are you?' to Hindi.",
+    "response": "The most common and polite translation is:\n\n**नमस्ते, आप कैसे हैं?**\n(Namaste, aap kaise hain?)\n\nHere's a breakdown and some variations:\n\n*   **नमस्ते (Namaste):** Hello / Greetings (can also mean goodbye)\n*   **आप (aap):** You (formal/polite)\n*   **कैसे (kaise):** How (used for masculine or when gender is unknown/general)\n*   **हैं (hain):** Are (polite form)\n\n**Gender-specific variations for \"How are you?\":**\n\n*   **To a male:** आप कैसे हैं? (Aap kaise hain?)\n*   **To a female:** आप कैसी हैं? (Aap kaisi hain?)\n    *   *Note: \"kaisi\" is the feminine form of \"kaise\"*\n\n**Informal variation (like \"What's up?\" or \"How are things?\"):**\n\n*   **नमस्ते, क्या हाल है?** (Namaste, kya haal hai?)\n    *   *क्या हाल है? (kya haal hai?):* What's the news? / How are things?",
+    "model": "gemini-flash",
+    "modelKey": "gemini-flash",
+    "cost": 0,
+    "baselineCost": 0,
+    "savedVsBaseline": 0,
+    "tokens": 0,
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "latency": 0,
+    "timestamp": "2026-06-17T10:43:52.210Z"
+  },
+  {
+    "id": "22108aca-2dfe-4ace-85ac-561b0ed02fae",
+    "success": true,
+    "cached": false,
+    "customerId": null,
+    "prompt": "Explain caching in simple terms.",
+    "taskType": "reasoning",
+    "confidence": {
+      "score": 83,
+      "level": "Medium",
+      "color": "yellow"
+    },
+    "response": "Caching is like keeping a shortcut to something you use often, so you don't have to look for it every time. \n\nImagine you have a favorite recipe that you use a lot. Instead of searching for it in a cookbook every time, you write it down on a sticky note and put it on your fridge. Now, whenever you want to make that dish, you can just glance at the sticky note instead of flipping through the book. \n\nIn the digital world, caching works the same way. When you visit a website or use an app, your computer or device saves certain information (like images, web pages, or data) in a temporary storage area called a cache. The next time you want to access that same information, your device can quickly retrieve it from the cache instead of downloading it all over again from the internet. This makes things faster and helps reduce the load on servers.",
+    "modelKey": "gpt-4o-mini",
+    "complexity": "simple",
+    "routingMode": "balanced",
+    "primaryProvider": "gpt-4o-mini",
+    "routingReason": "Complexity: simple • Mode: balanced • Task: reasoning • Selected: gpt-4o-mini",
+    "routingTimeline": [
+      {
+        "step": "Prompt received",
+        "status": "success",
+        "time": "0ms"
+      },
+      {
+        "step": "Complexity classified: simple",
+        "status": "success",
+        "time": "12ms"
+      },
+      {
+        "step": "Task detected: reasoning",
+        "status": "success",
+        "time": "18ms"
+      },
+      {
+        "step": "Routing mode: balanced",
+        "status": "success",
+        "time": "26ms"
+      },
+      {
+        "step": "Provider scoring completed",
+        "status": "success",
+        "time": "34ms"
+      },
+      {
+        "step": "gpt-4o-mini selected",
+        "status": "success",
+        "time": "52ms"
+      },
+      {
+        "step": "Primary provider healthy",
+        "status": "done",
+        "time": "74ms"
+      },
+      {
+        "step": "Generating response",
+        "status": "success",
+        "time": "3678ms"
+      }
+    ],
+    "routingDetails": {
+      "complexity": "simple",
+      "mode": "balanced",
+      "taskType": "reasoning",
+      "confidence": {
+        "score": 83,
+        "level": "Medium",
+        "color": "yellow"
+      },
+      "provider": "gpt-4o-mini",
+      "fallbackUsed": false,
+      "cached": false,
+      "stickySession": null,
+      "budgetTriggered": false,
+      "contexts": []
+    },
+    "fallbackUsed": false,
+    "attemptedProvider": "gpt-4o-mini",
+    "tokens": 191,
+    "inputTokens": 13,
+    "outputTokens": 178,
+    "cost": 0.00010874999999999997,
+    "baselineCost": 0.0027349999999999996,
+    "savedVsBaseline": 0.0026262499999999997,
+    "latency": 3678,
+    "compression": {
+      "compressed": "Explain caching in simple terms.",
+      "originalLength": 32,
+      "compressedLength": 32,
+      "savedChars": 0
+    },
+    "timestamp": "2026-06-17T10:44:23.647Z"
+  },
+  {
+    "id": "c26dd62d-b0eb-46ab-b857-056fb3c75677",
+    "success": true,
+    "cached": false,
+    "customerId": null,
+    "prompt": "Suggest five AI startup names.",
+    "taskType": "business",
+    "confidence": {
+      "score": 89,
+      "level": "Medium",
+      "color": "yellow"
+    },
+    "response": "Sure! Here are five AI startup name suggestions:\n\n1. **CognifyAI**\n2. **NeuraNexus**\n3. **IntelliForge**\n4. **DataDreamer**\n5. **AetherAnalytics**\n\nFeel free to mix and match or modify them to better suit your vision!",
+    "modelKey": "gpt-4o-mini",
+    "complexity": "medium",
+    "routingMode": "balanced",
+    "primaryProvider": "gpt-4o-mini",
+    "routingReason": "Complexity: medium • Mode: balanced • Task: business • Context: business • Selected: gpt-4o-mini",
+    "routingTimeline": [
+      {
+        "step": "Prompt received",
+        "status": "success",
+        "time": "0ms"
+      },
+      {
+        "step": "Complexity classified: medium",
+        "status": "success",
+        "time": "12ms"
+      },
+      {
+        "step": "Task detected: business",
+        "status": "success",
+        "time": "18ms"
+      },
+      {
+        "step": "Routing mode: balanced",
+        "status": "success",
+        "time": "26ms"
+      },
+      {
+        "step": "Provider scoring completed",
+        "status": "success",
+        "time": "34ms"
+      },
+      {
+        "step": "gpt-4o-mini selected",
+        "status": "success",
+        "time": "52ms"
+      },
+      {
+        "step": "Primary provider healthy",
+        "status": "done",
+        "time": "74ms"
+      },
+      {
+        "step": "Generating response",
+        "status": "success",
+        "time": "1744ms"
+      }
+    ],
+    "routingDetails": {
+      "complexity": "medium",
+      "mode": "balanced",
+      "taskType": "business",
+      "confidence": {
+        "score": 89,
+        "level": "Medium",
+        "color": "yellow"
+      },
+      "provider": "gpt-4o-mini",
+      "fallbackUsed": false,
+      "cached": false,
+      "stickySession": null,
+      "budgetTriggered": false,
+      "contexts": [
+        "business"
+      ]
+    },
+    "fallbackUsed": false,
+    "attemptedProvider": "gpt-4o-mini",
+    "tokens": 75,
+    "inputTokens": 13,
+    "outputTokens": 62,
+    "cost": 0.000039149999999999996,
+    "baselineCost": 0.000995,
+    "savedVsBaseline": 0.0009558500000000001,
+    "latency": 1744,
+    "compression": {
+      "compressed": "Suggest five AI startup names.",
+      "originalLength": 30,
+      "compressedLength": 30,
+      "savedChars": 0
+    },
+    "timestamp": "2026-06-17T10:44:49.814Z"
+  },
+  {
+    "id": "6f948d93-7f4b-4f19-8ca3-8cf6006d997e",
+    "success": true,
+    "cached": false,
+    "customerId": null,
+    "prompt": "Write a SQL query to find active users.",
+    "taskType": "coding",
+    "confidence": {
+      "score": 89,
+      "level": "Medium",
+      "color": "yellow"
+    },
+    "response": "To write a SQL query to find active users, you'll typically need to define what \"active\" means in your context. For instance, an active user could be defined as a user who has logged in within the last 30 days, has made a purchase, or has engaged with the application in some way.\n\nAssuming you have a table called `users` and a `last_login` column (which records the last time a user logged in), here's an example SQL query that retrieves users who have logged in within the last 30 days:\n\n```sql\nSELECT *\nFROM users\nWHERE last_login >= NOW() - INTERVAL '30 days';\n```\n\nIn this query:\n- `NOW()` returns the current date and time.\n- `INTERVAL '30 days'` is used to specify a time period of the last 30 days.\n\nIf your `users` table does not contain a `last_login` column, or if you define active users based on different criteria (like recent purchases or activity logs), you would need to adjust the query accordingly.\n\nFor example, if you have a `purchases` table and want to find users who have made a purchase in the last 30 days, you could use a query like this:\n\n```sql\nSELECT DISTINCT u.*\nFROM users u\nJOIN purchases p ON u.user_id = p.user_id\nWHERE p.purchase_date >= NOW() - INTERVAL '30 days';\n```\n\nIn this query:\n- We join the `users` table with the `purchases` table on the `user_id`.\n- We filter the results to include only those purchases made in the last 30 days.\n- `DISTINCT` is used to ensure that each user is only listed once, even if they made multiple purchases.\n\nMake sure to adjust the table and column names based on your actual database schema.",
+    "modelKey": "gpt-4o-mini",
+    "complexity": "medium",
+    "routingMode": "balanced",
+    "primaryProvider": "gpt-4o-mini",
+    "routingReason": "Complexity: medium • Mode: balanced • Task: coding • Context: code • Selected: gpt-4o-mini",
+    "routingTimeline": [
+      {
+        "step": "Prompt received",
+        "status": "success",
+        "time": "0ms"
+      },
+      {
+        "step": "Complexity classified: medium",
+        "status": "success",
+        "time": "12ms"
+      },
+      {
+        "step": "Task detected: coding",
+        "status": "success",
+        "time": "18ms"
+      },
+      {
+        "step": "Routing mode: balanced",
+        "status": "success",
+        "time": "26ms"
+      },
+      {
+        "step": "Provider scoring completed",
+        "status": "success",
+        "time": "34ms"
+      },
+      {
+        "step": "gpt-4o-mini selected",
+        "status": "success",
+        "time": "52ms"
+      },
+      {
+        "step": "Primary provider healthy",
+        "status": "done",
+        "time": "74ms"
+      },
+      {
+        "step": "Generating response",
+        "status": "success",
+        "time": "5514ms"
+      }
+    ],
+    "routingDetails": {
+      "complexity": "medium",
+      "mode": "balanced",
+      "taskType": "coding",
+      "confidence": {
+        "score": 89,
+        "level": "Medium",
+        "color": "yellow"
+      },
+      "provider": "gpt-4o-mini",
+      "fallbackUsed": false,
+      "cached": false,
+      "stickySession": null,
+      "budgetTriggered": false,
+      "contexts": [
+        "code"
+      ]
+    },
+    "fallbackUsed": false,
+    "attemptedProvider": "gpt-4o-mini",
+    "tokens": 388,
+    "inputTokens": 16,
+    "outputTokens": 372,
+    "cost": 0.00022559999999999998,
+    "baselineCost": 0.00566,
+    "savedVsBaseline": 0.0054344,
+    "latency": 5514,
+    "compression": {
+      "compressed": "Write a SQL query to find active users.",
+      "originalLength": 39,
+      "compressedLength": 39,
+      "savedChars": 0
+    },
+    "timestamp": "2026-06-17T10:45:15.099Z"
+  },
+  {
+    "id": "2a648824-ab30-42d0-b30a-1bf1d1fd391f",
+    "success": true,
+    "cached": false,
+    "customerId": null,
+    "prompt": "Write a Python function to reverse a string.",
+    "taskType": "coding",
+    "confidence": {
+      "score": 89,
+      "level": "Medium",
+      "color": "yellow"
+    },
+    "response": "Certainly! Below is a simple Python function that reverses a string:\n\n```python\ndef reverse_string(s):\n    return s[::-1]\n\n# Example usage:\ninput_string = \"Hello, World!\"\nreversed_string = reverse_string(input_string)\nprint(reversed_string)  # Output: !dlroW ,olleH\n```\n\n### Explanation:\n- The function `reverse_string` takes a string `s` as input.\n- It uses Python's slicing feature `s[::-1]` to reverse the string. The slice `[::-1]` means \"take the string from start to end, but step backwards.\"\n- Finally, you can test the function with an example input.",
+    "modelKey": "gpt-4o-mini",
+    "complexity": "medium",
+    "routingMode": "balanced",
+    "primaryProvider": "gpt-4o-mini",
+    "routingReason": "Complexity: medium • Mode: balanced • Task: coding • Context: code • Selected: gpt-4o-mini",
+    "routingTimeline": [
+      {
+        "step": "Prompt received",
+        "status": "success",
+        "time": "0ms"
+      },
+      {
+        "step": "Complexity classified: medium",
+        "status": "success",
+        "time": "12ms"
+      },
+      {
+        "step": "Task detected: coding",
+        "status": "success",
+        "time": "18ms"
+      },
+      {
+        "step": "Routing mode: balanced",
+        "status": "success",
+        "time": "26ms"
+      },
+      {
+        "step": "Provider scoring completed",
+        "status": "success",
+        "time": "34ms"
+      },
+      {
+        "step": "gpt-4o-mini selected",
+        "status": "success",
+        "time": "52ms"
+      },
+      {
+        "step": "Primary provider healthy",
+        "status": "done",
+        "time": "74ms"
+      },
+      {
+        "step": "Generating response",
+        "status": "success",
+        "time": "2367ms"
+      }
+    ],
+    "routingDetails": {
+      "complexity": "medium",
+      "mode": "balanced",
+      "taskType": "coding",
+      "confidence": {
+        "score": 89,
+        "level": "Medium",
+        "color": "yellow"
+      },
+      "provider": "gpt-4o-mini",
+      "fallbackUsed": false,
+      "cached": false,
+      "stickySession": null,
+      "budgetTriggered": false,
+      "contexts": [
+        "code"
+      ]
+    },
+    "fallbackUsed": false,
+    "attemptedProvider": "gpt-4o-mini",
+    "tokens": 155,
+    "inputTokens": 16,
+    "outputTokens": 139,
+    "cost": 0.0000858,
+    "baselineCost": 0.0021650000000000003,
+    "savedVsBaseline": 0.0020792000000000002,
+    "latency": 2367,
+    "compression": {
+      "compressed": "Write a Python function to reverse a string.",
+      "originalLength": 44,
+      "compressedLength": 44,
+      "savedChars": 0
+    },
+    "timestamp": "2026-06-17T10:45:37.464Z"
+  },
+  {
+    "id": "def36421-ab4d-4518-8b75-9f71b32d3e5c",
+    "success": true,
+    "cached": false,
+    "customerId": null,
+    "prompt": "Explain asynchronous programming.",
+    "taskType": "reasoning",
+    "confidence": {
+      "score": 83,
+      "level": "Medium",
+      "color": "yellow"
+    },
+    "response": "Asynchronous programming is a programming paradigm that allows for non-blocking execution of tasks. This means that a program can initiate a task and then move on to other tasks without waiting for the first task to complete. This is particularly useful in scenarios where tasks involve waiting for external resources, such as network requests, file I/O, or user interactions, which can introduce delays.\n\n### Key Concepts of Asynchronous Programming:\n\n1. **Concurrency vs. Parallelism**:\n   - **Concurrency** refers to the ability of a system to manage multiple tasks at the same time, but not necessarily executing them simultaneously. This is often achieved through techniques like asynchronous programming.\n   - **Parallelism** involves executing multiple tasks at the same time, often using multiple processors or cores.\n\n2. **Callbacks**:\n   - A common approach in asynchronous programming is to use callbacks, which are functions passed as arguments to be executed once a task completes. For example, in JavaScript, you might pass a function to be executed after an API call returns.\n\n3. **Promises**:\n   - Promises are objects that represent the eventual completion (or failure) of an asynchronous operation and its resulting value. They allow for cleaner handling of asynchronous results compared to callbacks, enabling chaining of operations and error handling.\n\n4. **Async/Await**:\n   - This is a syntactic sugar built on top of promises that allows for writing asynchronous code in a more synchronous style. By using the `async` keyword before a function, you can use `await` to pause execution until a promise is resolved, making the code easier to read and maintain.\n\n5. **Event Loop**:\n   - In languages like JavaScript, the event loop is a core component of the runtime that allows for asynchronous operations. It continuously checks the call stack and the message queue, executing tasks when the stack is empty.\n\n### Benefits of Asynchronous Programming:\n\n- **Improved Performance**: By not blocking the main thread while waiting for tasks to complete, applications can remain responsive and efficient, particularly in I/O-bound applications.\n- **Scalability**: Asynchronous programming allows servers to handle multiple requests concurrently, improving scalability, especially for web applications.\n- **Resource Efficiency**: It reduces idle time for resources, as the application can continue executing other tasks while waiting for longer operations to complete.\n\n### Drawbacks:\n\n- **Complexity**: Asynchronous code can be harder to understand and debug, especially with nested callbacks (often referred to as \"callback hell\").\n- **Error Handling**: Managing errors in asynchronous code can be more complex, requiring careful design to ensure errors are caught and handled appropriately.\n\n### Use Cases:\n\n- Web applications making network requests (e.g., fetching data from APIs).\n- Applications that require user interaction and cannot afford to freeze the UI.\n- Background processing, such as handling file uploads or processing data.\n\nIn summary, asynchronous programming is a powerful approach that enhances the efficiency and responsiveness of applications, especially in environments that involve waiting for external resources. It requires a different way of thinking about flow control but provides significant advantages in many scenarios.",
+    "modelKey": "gpt-4o-mini",
+    "complexity": "simple",
+    "routingMode": "speed",
+    "primaryProvider": "gpt-4o-mini",
+    "routingReason": "Complexity: simple • Mode: speed • Task: reasoning • Selected: gpt-4o-mini",
+    "routingTimeline": [
+      {
+        "step": "Prompt received",
+        "status": "success",
+        "time": "0ms"
+      },
+      {
+        "step": "Complexity classified: simple",
+        "status": "success",
+        "time": "12ms"
+      },
+      {
+        "step": "Task detected: reasoning",
+        "status": "success",
+        "time": "18ms"
+      },
+      {
+        "step": "Routing mode: speed",
+        "status": "success",
+        "time": "26ms"
+      },
+      {
+        "step": "Provider scoring completed",
+        "status": "success",
+        "time": "34ms"
+      },
+      {
+        "step": "gpt-4o-mini selected",
+        "status": "success",
+        "time": "52ms"
+      },
+      {
+        "step": "Primary provider healthy",
+        "status": "done",
+        "time": "74ms"
+      },
+      {
+        "step": "Generating response",
+        "status": "success",
+        "time": "8240ms"
+      }
+    ],
+    "routingDetails": {
+      "complexity": "simple",
+      "mode": "speed",
+      "taskType": "reasoning",
+      "confidence": {
+        "score": 83,
+        "level": "Medium",
+        "color": "yellow"
+      },
+      "provider": "gpt-4o-mini",
+      "fallbackUsed": false,
+      "cached": false,
+      "stickySession": null,
+      "budgetTriggered": false,
+      "contexts": []
+    },
+    "fallbackUsed": false,
+    "attemptedProvider": "gpt-4o-mini",
+    "tokens": 635,
+    "inputTokens": 11,
+    "outputTokens": 624,
+    "cost": 0.00037605,
+    "baselineCost": 0.009415,
+    "savedVsBaseline": 0.00903895,
+    "latency": 8240,
+    "compression": {
+      "compressed": "Explain asynchronous programming.",
+      "originalLength": 33,
+      "compressedLength": 33,
+      "savedChars": 0
+    },
+    "timestamp": "2026-06-17T10:46:06.326Z"
+  },
+  {
+    "id": "285b2556-7d99-4ec3-bf69-209173c7b7d6",
+    "success": true,
+    "cached": false,
+    "customerId": null,
+    "prompt": "Compare PostgreSQL and MongoDB.",
+    "taskType": "coding",
+    "confidence": {
+      "score": 89,
+      "level": "Medium",
+      "color": "yellow"
+    },
+    "response": "PostgreSQL and MongoDB are two popular database management systems, but they cater to different types of applications and use cases. Below is a comparison of the two, focusing on various aspects such as data model, performance, scalability, consistency, and use cases.\n\n### 1. Data Model\n\n- **PostgreSQL**:\n  - A relational database management system (RDBMS).\n  - Uses structured data and enforces a schema, meaning that data is organized into tables with defined columns and data types.\n  - Supports complex queries, joins, and transactions.\n  - Allows for advanced data types like JSONB, arrays, hstore, etc.\n\n- **MongoDB**:\n  - A NoSQL database that uses a document-oriented data model.\n  - Stores data in flexible, JSON-like documents (BSON) which allows for varied data structures.\n  - Schema-less design provides greater flexibility in data storage, making it easier to handle unstructured or semi-structured data.\n\n### 2. Query Language\n\n- **PostgreSQL**:\n  - Uses SQL (Structured Query Language) for querying and managing data.\n  - Supports complex queries with JOINs, subqueries, and other SQL constructs.\n\n- **MongoDB**:\n  - Uses a query language that is JSON-like, allowing for powerful and flexible queries.\n  - Supports aggregation frameworks and various operators for filtering and transforming data.\n\n### 3. Performance\n\n- **PostgreSQL**:\n  - Generally performs well for complex queries, especially with large datasets.\n  - Supports indexing to improve performance and has advanced optimization techniques.\n  - Can struggle with very high write loads compared to NoSQL databases.\n\n- **MongoDB**:\n  - Excels in scenarios requiring high write loads and quick reads.\n  - Its document model allows for faster data retrieval in certain use cases.\n  - Performance can degrade with highly complex queries that require joins.\n\n### 4. Scalability\n\n- **PostgreSQL**:\n  - Primarily vertically scalable (scale-up) but can also be configured for horizontal scaling using partitioning and sharding, though it's more complex.\n  - Supports replication for read scalability.\n\n- **MongoDB**:\n  - Designed for horizontal scalability (scale-out) from the start, allowing easy distribution of data across multiple servers.\n  - Supports sharding natively, making it easier to manage large volumes of data.\n\n### 5. Consistency and Transactions\n\n- **PostgreSQL**:\n  - Offers strong ACID (Atomicity, Consistency, Isolation, Durability) compliance, making it suitable for applications requiring strict data integrity.\n  - Supports multi-row transactions and complex transaction management.\n\n- **MongoDB**:\n  - Provides eventual consistency but also supports multi-document transactions in recent versions, offering ACID properties for those transactions.\n  - Generally more relaxed in terms of consistency, which can be advantageous for performance but may require careful design.\n\n### 6. Use Cases\n\n- **PostgreSQL**:\n  - Well-suited for applications requiring complex data relationships, such as enterprise applications, financial systems, and any application requiring strict data integrity.\n  - Ideal for systems where complex queries and reporting are a priority.\n\n- **MongoDB**:\n  - Ideal for applications dealing with large volumes of unstructured data, such as content management systems, real-time analytics, and IoT applications.\n  - Often chosen for projects requiring rapid development and iterative changes.\n\n### 7. Community and Ecosystem\n\n- **PostgreSQL**:\n  - Has a strong, established community and a rich ecosystem of tools and extensions (e.g., PostGIS for geospatial data).\n  - Long-standing presence in the database market with many resources available for support.\n\n- **MongoDB**:\n  - Has a growing community and a variety of tools tailored for NoSQL development.\n  - Offers a cloud service (MongoDB Atlas) with various features for easier management and scaling.\n\n### Conclusion\n\nThe choice between PostgreSQL and MongoDB should be based on the specific needs of your application. If you require complex queries, strong ACID compliance, and a structured data approach, PostgreSQL is a suitable choice. On the other hand, if your application demands high scalability, flexibility in data structure, and rapid development cycles, MongoDB may be the better option.",
+    "modelKey": "gpt-4o-mini",
+    "complexity": "medium",
+    "routingMode": "cost",
+    "primaryProvider": "gpt-4o-mini",
+    "routingReason": "Complexity: medium • Mode: cost • Task: coding • Context: research • Selected: gpt-4o-mini",
+    "routingTimeline": [
+      {
+        "step": "Prompt received",
+        "status": "success",
+        "time": "0ms"
+      },
+      {
+        "step": "Complexity classified: medium",
+        "status": "success",
+        "time": "12ms"
+      },
+      {
+        "step": "Task detected: coding",
+        "status": "success",
+        "time": "18ms"
+      },
+      {
+        "step": "Routing mode: cost",
+        "status": "success",
+        "time": "26ms"
+      },
+      {
+        "step": "Provider scoring completed",
+        "status": "success",
+        "time": "34ms"
+      },
+      {
+        "step": "gpt-4o-mini selected",
+        "status": "success",
+        "time": "52ms"
+      },
+      {
+        "step": "Primary provider healthy",
+        "status": "done",
+        "time": "74ms"
+      },
+      {
+        "step": "Generating response",
+        "status": "success",
+        "time": "9516ms"
+      }
+    ],
+    "routingDetails": {
+      "complexity": "medium",
+      "mode": "cost",
+      "taskType": "coding",
+      "confidence": {
+        "score": 89,
+        "level": "Medium",
+        "color": "yellow"
+      },
+      "provider": "gpt-4o-mini",
+      "fallbackUsed": false,
+      "cached": false,
+      "stickySession": null,
+      "budgetTriggered": false,
+      "contexts": [
+        "research"
+      ]
+    },
+    "fallbackUsed": false,
+    "attemptedProvider": "gpt-4o-mini",
+    "tokens": 888,
+    "inputTokens": 14,
+    "outputTokens": 874,
+    "cost": 0.0005265,
+    "baselineCost": 0.01318,
+    "savedVsBaseline": 0.012653500000000002,
+    "latency": 9516,
+    "compression": {
+      "compressed": "Compare PostgreSQL and MongoDB.",
+      "originalLength": 31,
+      "compressedLength": 31,
+      "savedChars": 0
+    },
+    "timestamp": "2026-06-17T10:46:43.354Z"
+  },
+  {
+    "id": "f1c439fe-429f-4215-a6b9-c6e73437ca2e",
+    "success": true,
+    "cached": false,
+    "customerId": null,
+    "prompt": "Rewrite this email in a professional tone.",
+    "taskType": "writing",
+    "confidence": {
+      "score": 83,
+      "level": "Medium",
+      "color": "yellow"
+    },
+    "response": "Absolutely! I can definitely help you rewrite your email in a professional tone.\n\nHowever, I need to see the original email first. Please paste the email you'd like me to rewrite, and I'll transform it for you.\n\nIn the meantime, here are some general tips for making an email professional:\n\n1.  **Clear and Concise Subject Line:** Summarize the email's purpose.\n2.  **Professional Greeting:** Use \"Dear [Name],\" \"Hello [Name],\" or \"Hi [Name],\" (depending on your relationship and company culture).\n3.  **Clear Purpose:** State the reason for your email early on.\n4.  **Concise Body:** Get straight to the point. Use short paragraphs and bullet points if appropriate.\n5.  **Polite and Respectful Tone:** Avoid slang, emojis, or overly casual language.\n6.  **Correct Grammar and Spelling:** Proofread carefully.\n7.  **Professional Closing:** Use \"Sincerely,\" \"Regards,\" \"Best regards,\" or \"Thank you,\".\n8.  **Complete Signature:** Include your full name, title, and company.\n9.  **Call to Action (if needed):** Clearly state what you expect the recipient to do next.\n\nOnce you provide the original email, I'll be happy to give you a tailored rewrite!",
+    "modelKey": "gemini-flash",
+    "complexity": "simple",
+    "routingMode": "balanced",
+    "primaryProvider": "gemini-flash",
+    "routingReason": "Complexity: simple • Mode: balanced • Task: writing • Selected: gemini-flash",
+    "routingTimeline": [
+      {
+        "step": "Prompt received",
+        "status": "success",
+        "time": "0ms"
+      },
+      {
+        "step": "Complexity classified: simple",
+        "status": "success",
+        "time": "12ms"
+      },
+      {
+        "step": "Task detected: writing",
+        "status": "success",
+        "time": "18ms"
+      },
+      {
+        "step": "Routing mode: balanced",
+        "status": "success",
+        "time": "26ms"
+      },
+      {
+        "step": "Provider scoring completed",
+        "status": "success",
+        "time": "34ms"
+      },
+      {
+        "step": "gemini-flash selected",
+        "status": "success",
+        "time": "52ms"
+      },
+      {
+        "step": "Primary provider healthy",
+        "status": "done",
+        "time": "74ms"
+      },
+      {
+        "step": "Generating response",
+        "status": "success",
+        "time": "6433ms"
+      }
+    ],
+    "routingDetails": {
+      "complexity": "simple",
+      "mode": "balanced",
+      "taskType": "writing",
+      "confidence": {
+        "score": 83,
+        "level": "Medium",
+        "color": "yellow"
+      },
+      "provider": "gemini-flash",
+      "fallbackUsed": false,
+      "cached": false,
+      "stickySession": null,
+      "budgetTriggered": false,
+      "contexts": []
+    },
+    "fallbackUsed": false,
+    "attemptedProvider": "gemini-flash",
+    "tokens": 289,
+    "inputTokens": 8,
+    "outputTokens": 281,
+    "cost": 0.0000849,
+    "baselineCost": 0.004255,
+    "savedVsBaseline": 0.0041701,
+    "latency": 6433,
+    "compression": {
+      "compressed": "Rewrite this email in a professional tone.",
+      "originalLength": 42,
+      "compressedLength": 42,
+      "savedChars": 0
+    },
+    "timestamp": "2026-06-17T10:47:25.198Z"
+  },
+  {
+    "id": "e94081fe-fd88-481f-9659-717068057068",
+    "success": true,
+    "cached": false,
+    "customerId": null,
+    "prompt": "Design a scalable authentication service using OAuth and JWT.",
+    "taskType": "coding",
+    "confidence": {
+      "score": 89,
+      "level": "Medium",
+      "color": "yellow"
+    },
+    "response": "Designing a scalable authentication service using OAuth 2.0 and JSON Web Tokens (JWT) involves several components and considerations. Below is a high-level architecture and step-by-step guide on how to implement such a service.\n\n### High-Level Architecture\n\n1. **Client Application**: This can be a web app, mobile app, or any service that wants to authenticate users.\n  \n2. **Authorization Server**: Responsible for authenticating users and issuing access tokens (JWTs). It implements the OAuth 2.0 framework.\n\n3. **Resource Server**: This server hosts the protected resources (APIs) that the client applications want to access using the tokens issued by the Authorization Server.\n\n4. **Database**: To store user credentials, client information, and token information.\n\n5. **Caching Layer**: Optional, for storing JWTs or session details temporarily to speed up validation and reduce database load.\n\n### Components\n\n#### 1. Authorization Server\n\n- **Endpoints**:\n  - `/oauth/authorize`: For user authorization.\n  - `/oauth/token`: For obtaining access tokens.\n  - `/oauth/revoke`: For revoking access tokens.\n\n- **User Authentication**: Use secure methods (like password hashing with bcrypt) to verify user credentials.\n\n- **Token Generation**:\n  - Generate a JWT upon successful authentication.\n  - Use a library like `jsonwebtoken` in Node.js, or similar in other languages, to create the JWT.\n  - The JWT should include claims such as `sub` (subject/user ID), `exp` (expiration time), and any custom claims you need.\n\n- **Scopes and Permissions**: Define scopes to limit access to resources. Include scopes in the JWT claims to enforce authorization later.\n\n#### 2. Resource Server\n\n- **JWT Validation**: Implement middleware to validate incoming JWTs on secured endpoints.\n- **Authorization Logic**: Check JWT claims against resource access permissions based on scopes.\n- **Error Handling**: Handle scenarios where the token is expired, invalid, or lacks required scopes.\n\n#### 3. Client Application\n\n- **Authorization Code Flow**: For web applications, implement the Authorization Code Flow to obtain tokens securely.\n- **Implicit Flow**: For single-page applications, consider using the Implicit Flow (though not recommended for public clients anymore; use Authorization Code Flow with PKCE).\n- **Token Management**: Store and manage access tokens and refresh tokens securely (e.g., use secure cookies or local storage, but be cautious with XSS vulnerabilities).\n\n### Workflow\n\n1. **User Initiates Authentication**:\n   - The client application redirects the user to the Authorization Server's `/oauth/authorize` endpoint.\n   - The user logs in, and the Authorization Server redirects back to the client with an authorization code.\n\n2. **Token Exchange**:\n   - The client application exchanges the authorization code at the `/oauth/token` endpoint to obtain an access token (JWT) and optionally a refresh token.\n\n3. **Accessing Resources**:\n   - The client application includes the access token in the Authorization header (e.g., `Authorization: Bearer <token>`) when making requests to the Resource Server.\n\n4. **Token Validation**:\n   - The Resource Server verifies the JWT, checks its validity, and decodes it to read the claims.\n   - Based on the claims, it decides whether to grant or deny access to the requested resource.\n\n5. **Refreshing Tokens**:\n   - If using refresh tokens, when the access token expires, the client can request a new access token using the refresh token.\n\n6. **Logging Out**:\n   - Implement a logout endpoint that can revoke the refresh token and invalidate the session as needed.\n\n### Scalability Considerations\n\n- **Horizontal Scaling**: Both the Authorization Server and Resource Server should be stateless as much as possible, allowing you to scale out by adding more instances behind a load balancer.\n\n- **Caching**: Use caching mechanisms (like Redis) for storing user sessions or commonly accessed data to reduce database load.\n\n- **Database Optimization**: Use indexing and efficient queries to speed up user authentication processes.\n\n- **Token Expiration and Revocation**: Implement short-lived access tokens and use refresh tokens for long-lived sessions. Consider a revocation list for refresh tokens.\n\n- **Monitoring and Logging**: Implement logging and monitoring to track authentication attempts, failures, and overall service health.\n\n### Security Considerations\n\n- Always use HTTPS to protect sensitive data in transit.\n- Implement rate limiting on the token generation and access endpoints to mitigate brute-force attacks.\n- Store sensitive information securely and follow best practices for password storage (e.g., using bcrypt).\n- Regularly audit and update dependencies and libraries used in your application.\n\n### Conclusion\n\nThis scalable authentication service design using OAuth 2.0 and JWT provides a robust starting point for securing applications. Depending on your specific requirements, you may need to adjust certain components, but the overall architecture and principles remain applicable across various contexts.",
+    "modelKey": "gpt-4o-mini",
+    "complexity": "medium",
+    "routingMode": "quality",
+    "primaryProvider": "gpt-4o-mini",
+    "routingReason": "Complexity: medium • Mode: quality • Task: coding • Context: code • Selected: gpt-4o-mini",
+    "routingTimeline": [
+      {
+        "step": "Prompt received",
+        "status": "success",
+        "time": "0ms"
+      },
+      {
+        "step": "Complexity classified: medium",
+        "status": "success",
+        "time": "12ms"
+      },
+      {
+        "step": "Task detected: coding",
+        "status": "success",
+        "time": "18ms"
+      },
+      {
+        "step": "Routing mode: quality",
+        "status": "success",
+        "time": "26ms"
+      },
+      {
+        "step": "Provider scoring completed",
+        "status": "success",
+        "time": "34ms"
+      },
+      {
+        "step": "gpt-4o-mini selected",
+        "status": "success",
+        "time": "52ms"
+      },
+      {
+        "step": "Primary provider healthy",
+        "status": "done",
+        "time": "74ms"
+      },
+      {
+        "step": "Generating response",
+        "status": "success",
+        "time": "11999ms"
+      }
+    ],
+    "routingDetails": {
+      "complexity": "medium",
+      "mode": "quality",
+      "taskType": "coding",
+      "confidence": {
+        "score": 89,
+        "level": "Medium",
+        "color": "yellow"
+      },
+      "provider": "gpt-4o-mini",
+      "fallbackUsed": false,
+      "cached": false,
+      "stickySession": null,
+      "budgetTriggered": false,
+      "contexts": [
+        "code"
+      ]
+    },
+    "fallbackUsed": false,
+    "attemptedProvider": "gpt-4o-mini",
+    "tokens": 1024,
+    "inputTokens": 17,
+    "outputTokens": 1007,
+    "cost": 0.0006067499999999999,
+    "baselineCost": 0.015189999999999999,
+    "savedVsBaseline": 0.014583249999999999,
+    "latency": 11999,
+    "compression": {
+      "compressed": "Design a scalable authentication service using OAuth and JWT.",
+      "originalLength": 61,
+      "compressedLength": 61,
+      "savedChars": 0
+    },
+    "timestamp": "2026-06-17T10:48:09.338Z"
+  },
+  {
+    "id": "7c499e4d-f637-4829-8b67-fa3897061823",
+    "success": true,
+    "cached": false,
+    "customerId": null,
+    "prompt": "What metrics should a SaaS startup track in its first year?",
+    "taskType": "business",
+    "confidence": {
+      "score": 89,
+      "level": "Medium",
+      "color": "yellow"
+    },
+    "response": "In the first year of a SaaS startup, tracking key metrics is crucial for understanding business performance, guiding decision-making, and attracting investors. Here are some essential metrics to consider:\n\n### 1. **Customer Metrics**\n- **Monthly Recurring Revenue (MRR):** Measure the predictable revenue generated each month from subscriptions.\n- **Annual Recurring Revenue (ARR):** Similar to MRR but measured annually, providing a long-term view of revenue.\n- **Customer Acquisition Cost (CAC):** The total cost of acquiring a new customer, including marketing and sales expenses.\n- **Customer Lifetime Value (CLV or LTV):** The total revenue expected from a customer over their entire relationship with your business.\n- **Churn Rate:** The percentage of customers who cancel their subscriptions in a given period. This is critical for understanding customer retention.\n- **Net Revenue Retention (NRR):** Measures revenue growth or loss from existing customers, factoring in upgrades, downgrades, and churn.\n\n### 2. **Growth Metrics**\n- **User Growth Rate:** The rate at which new users are signing up for your service.\n- **Conversion Rate:** The percentage of visitors who become paying customers. This is particularly important for measuring the effectiveness of your sales funnel.\n- **Activation Rate:** The percentage of users who achieve a key milestone that indicates they are deriving value from the product (e.g., completing onboarding).\n\n### 3. **Financial Metrics**\n- **Burn Rate:** The rate at which your startup is spending its capital before reaching profitability.\n- **Runway:** The amount of time your startup can operate before needing additional funding, calculated by dividing cash reserves by burn rate.\n- **Gross Margin:** Revenue minus the cost of goods sold (COGS), expressed as a percentage of revenue.\n\n### 4. **Engagement Metrics**\n- **Daily Active Users (DAU) / Monthly Active Users (MAU):** Measures user engagement and activity on your platform.\n- **Session Duration:** The average time users spend on your platform per session, indicating user engagement.\n- **Feature Adoption Rate:** The percentage of users utilizing specific features of your product, helping to identify which features provide value.\n\n### 5. **Marketing Metrics**\n- **Traffic Sources:** Understand where your website traffic is coming from (organic, paid, referrals, social media, etc.).\n- **Cost per Lead (CPL):** The cost associated with acquiring a new lead through marketing efforts.\n- **Lead-to-Customer Conversion Rate:** The percentage of leads that convert into paying customers.\n\n### 6. **Customer Support Metrics**\n- **Support Ticket Volume:** The number of customer support requests, which can indicate product issues or user confusion.\n- **First Response Time:** The average time taken to respond to customer inquiries, reflecting the efficiency of customer support.\n\n### 7. **Product Metrics**\n- **Bug Rate:** The number of bugs reported over time, indicating product stability.\n- **User Feedback and NPS (Net Promoter Score):** Collecting user feedback and measuring customer satisfaction can guide product development and improvements.\n\n### Conclusion\nWhile these metrics provide a comprehensive overview of your SaaS startup's performance, it's important to focus on a few key metrics that align with your specific business model and growth objectives. Regularly reviewing and analyzing these metrics will enable you to make informed decisions, optimize your product, and drive growth in the critical first year.",
+    "modelKey": "gpt-4o-mini",
+    "complexity": "medium",
+    "routingMode": "balanced",
+    "primaryProvider": "gpt-4o-mini",
+    "routingReason": "Complexity: medium • Mode: balanced • Task: business • Context: business • Selected: gpt-4o-mini",
+    "routingTimeline": [
+      {
+        "step": "Prompt received",
+        "status": "success",
+        "time": "0ms"
+      },
+      {
+        "step": "Complexity classified: medium",
+        "status": "success",
+        "time": "12ms"
+      },
+      {
+        "step": "Task detected: business",
+        "status": "success",
+        "time": "18ms"
+      },
+      {
+        "step": "Routing mode: balanced",
+        "status": "success",
+        "time": "26ms"
+      },
+      {
+        "step": "Provider scoring completed",
+        "status": "success",
+        "time": "34ms"
+      },
+      {
+        "step": "gpt-4o-mini selected",
+        "status": "success",
+        "time": "52ms"
+      },
+      {
+        "step": "Primary provider healthy",
+        "status": "done",
+        "time": "74ms"
+      },
+      {
+        "step": "Generating response",
+        "status": "success",
+        "time": "7176ms"
+      }
+    ],
+    "routingDetails": {
+      "complexity": "medium",
+      "mode": "balanced",
+      "taskType": "business",
+      "confidence": {
+        "score": 89,
+        "level": "Medium",
+        "color": "yellow"
+      },
+      "provider": "gpt-4o-mini",
+      "fallbackUsed": false,
+      "cached": false,
+      "stickySession": null,
+      "budgetTriggered": false,
+      "contexts": [
+        "business"
+      ]
+    },
+    "fallbackUsed": false,
+    "attemptedProvider": "gpt-4o-mini",
+    "tokens": 711,
+    "inputTokens": 20,
+    "outputTokens": 691,
+    "cost": 0.00041759999999999996,
+    "baselineCost": 0.010464999999999999,
+    "savedVsBaseline": 0.010047399999999998,
+    "latency": 7176,
+    "compression": {
+      "compressed": "What metrics should a SaaS startup track in its first year?",
+      "originalLength": 59,
+      "compressedLength": 59,
+      "savedChars": 0
+    },
+    "timestamp": "2026-06-17T10:49:06.145Z"
+  },
+  {
+    "id": "cf8df8bc-9e5d-43a4-80c8-2a75091544e2",
+    "success": true,
+    "cached": false,
+    "customerId": null,
+    "prompt": "Write a SQL query to find duplicate emails in a users table",
+    "taskType": "coding",
+    "confidence": {
+      "score": 89,
+      "level": "Medium",
+      "color": "yellow"
+    },
+    "response": "To find duplicate emails in a users table, you can use a SQL query that groups the records by the email column and filters those groups to find emails that occur more than once. Here's an example of such a query:\n\n```sql\nSELECT email, COUNT(*) AS email_count\nFROM users\nGROUP BY email\nHAVING COUNT(*) > 1;\n```\n\n### Explanation:\n- `SELECT email, COUNT(*) AS email_count`: Selects the email and counts how many times each email appears in the table.\n- `FROM users`: Specifies the table to query from.\n- `GROUP BY email`: Groups the results by the email field.\n- `HAVING COUNT(*) > 1`: Filters the groups to only include those with more than one occurrence, indicating duplicates.\n\nThis query will return a list of duplicate emails along with the count of how many times each duplicate email appears.",
+    "modelKey": "gpt-4o-mini",
+    "complexity": "medium",
+    "routingMode": "cost",
+    "primaryProvider": "gpt-4o-mini",
+    "routingReason": "Complexity: medium • Mode: cost • Task: coding • Context: code • Selected: gpt-4o-mini",
+    "routingTimeline": [
+      {
+        "step": "Prompt received",
+        "status": "success",
+        "time": "0ms"
+      },
+      {
+        "step": "Complexity classified: medium",
+        "status": "success",
+        "time": "12ms"
+      },
+      {
+        "step": "Task detected: coding",
+        "status": "success",
+        "time": "18ms"
+      },
+      {
+        "step": "Routing mode: cost",
+        "status": "success",
+        "time": "26ms"
+      },
+      {
+        "step": "Provider scoring completed",
+        "status": "success",
+        "time": "34ms"
+      },
+      {
+        "step": "gpt-4o-mini selected",
+        "status": "success",
+        "time": "52ms"
+      },
+      {
+        "step": "Primary provider healthy",
+        "status": "done",
+        "time": "74ms"
+      },
+      {
+        "step": "Generating response",
+        "status": "success",
+        "time": "2295ms"
+      }
+    ],
+    "routingDetails": {
+      "complexity": "medium",
+      "mode": "cost",
+      "taskType": "coding",
+      "confidence": {
+        "score": 89,
+        "level": "Medium",
+        "color": "yellow"
+      },
+      "provider": "gpt-4o-mini",
+      "fallbackUsed": false,
+      "cached": false,
+      "stickySession": null,
+      "budgetTriggered": false,
+      "contexts": [
+        "code"
+      ]
+    },
+    "fallbackUsed": false,
+    "attemptedProvider": "gpt-4o-mini",
+    "tokens": 196,
+    "inputTokens": 19,
+    "outputTokens": 177,
+    "cost": 0.00010904999999999998,
+    "baselineCost": 0.00275,
+    "savedVsBaseline": 0.00264095,
+    "latency": 2295,
+    "compression": {
+      "compressed": "Write a SQL query to find duplicate emails in a users table",
+      "originalLength": 59,
+      "compressedLength": 59,
+      "savedChars": 0
+    },
+    "timestamp": "2026-06-17T10:49:40.055Z"
+  },
+  {
+    "id": "85587a06-be2b-49e9-995d-040e4dd0be52",
+    "success": true,
+    "cached": false,
+    "customerId": null,
+    "prompt": "How does semantic caching work in AI applications?",
+    "taskType": "general",
+    "confidence": {
+      "score": 75,
+      "level": "Low",
+      "color": "red"
+    },
+    "response": "Semantic caching is an advanced caching technique used in AI applications, particularly with Large Language Models (LLMs) and other generative AI, to improve performance, reduce latency, and lower costs. Unlike traditional caching which relies on exact key-value matches, semantic caching understands the *meaning* or *intent* behind a query.\n\n**Why is Semantic Caching Needed in AI Applications?**\n\nTraditional caching struggles with AI queries for several reasons:\n\n1.  **Variability of Natural Language:** Users can ask the same question in countless ways (\"How do I reset my password?\", \"Password reset instructions?\", \"Steps to change my passkey?\"). An exact-match cache would treat these as distinct queries.\n2.  **Computational Cost:** Generating AI responses (especially from LLMs) is computationally intensive and often incurs API costs.\n3.  **Latency:** AI model inference can take significant time, leading to slow response times.\n4.  **Redundancy:** Many queries, though phrased differently, seek the same underlying information or trigger the same AI process.\n\n**How Semantic Caching Works:**\n\nThe core idea is to store the *answer* to a query along with a *semantic representation* of that query. When a new query arrives, the system checks if it's semantically similar to any cached queries.\n\nHere's a step-by-step breakdown:\n\n1.  **Query Embedding (Vectorization):**\n    *   When a user submits a query (e.g., \"What are the capital cities of Europe?\"), it's first passed through an **embedding model**.\n    *   This model (often a specialized neural network like Sentence Transformers, or an embedding API from OpenAI/Cohere) converts the natural language query into a high-dimensional numerical vector called an **embedding**.\n    *   Crucially, queries with similar meanings will have embeddings that are numerically \"close\" to each other in this vector space.\n\n2.  **Cache Lookup (Similarity Search):**\n    *   The newly generated query embedding is then used to search the semantic cache.\n    *   The cache stores previously seen query embeddings along with their corresponding AI-generated answers.\n    *   A **vector database** or an efficient **similarity search index** (like FAISS, HNSW, Pinecone, Weaviate, Milvus, Chroma) is used to find cached embeddings that are \"closest\" to the new query's embedding.\n    *   A **similarity metric** (e.g., cosine similarity) is calculated between the new query's embedding and all cached embeddings.\n\n3.  **Thresholding and Cache Hit/Miss:**\n    *   If the highest similarity score found exceeds a predefined **similarity threshold**, it's considered a **cache hit**.\n    *   The system retrieves the associated cached answer and returns it to the user immediately.\n    *   If no cached embedding meets the similarity threshold, it's a **cache miss**.\n\n4.  **AI Model Inference (Cache Miss):**\n    *   In case of a cache miss, the original query is forwarded to the main AI model (e.g., an LLM, a recommendation engine, a generative AI service) for processing.\n    *   The AI model generates an answer.\n\n5.  **Cache Population (Cache Miss):**\n    *   Once the AI model",
+    "modelKey": "gemini-flash",
+    "complexity": "simple",
+    "routingMode": "balanced",
+    "primaryProvider": "gemini-flash",
+    "routingReason": "Complexity: simple • Mode: balanced • Task: general • Selected: gemini-flash",
+    "routingTimeline": [
+      {
+        "step": "Prompt received",
+        "status": "success",
+        "time": "0ms"
+      },
+      {
+        "step": "Complexity classified: simple",
+        "status": "success",
+        "time": "12ms"
+      },
+      {
+        "step": "Task detected: general",
+        "status": "success",
+        "time": "18ms"
+      },
+      {
+        "step": "Routing mode: balanced",
+        "status": "success",
+        "time": "26ms"
+      },
+      {
+        "step": "Provider scoring completed",
+        "status": "success",
+        "time": "34ms"
+      },
+      {
+        "step": "gemini-flash selected",
+        "status": "success",
+        "time": "52ms"
+      },
+      {
+        "step": "Primary provider healthy",
+        "status": "done",
+        "time": "74ms"
+      },
+      {
+        "step": "Generating response",
+        "status": "success",
+        "time": "11879ms"
+      }
+    ],
+    "routingDetails": {
+      "complexity": "simple",
+      "mode": "balanced",
+      "taskType": "general",
+      "confidence": {
+        "score": 75,
+        "level": "Low",
+        "color": "red"
+      },
+      "provider": "gemini-flash",
+      "fallbackUsed": false,
+      "cached": false,
+      "stickySession": null,
+      "budgetTriggered": false,
+      "contexts": []
+    },
+    "fallbackUsed": false,
+    "attemptedProvider": "gemini-flash",
+    "tokens": 714,
+    "inputTokens": 9,
+    "outputTokens": 705,
+    "cost": 0.00021217499999999997,
+    "baselineCost": 0.01062,
+    "savedVsBaseline": 0.010407824999999999,
+    "latency": 11879,
+    "compression": {
+      "compressed": "How does semantic caching work in AI applications?",
+      "originalLength": 50,
+      "compressedLength": 50,
+      "savedChars": 0
+    },
+    "timestamp": "2026-06-17T10:50:17.427Z"
+  },
+  {
+    "id": "1ec4d9a2-afcf-43b6-a2fe-79ae602e8f34",
+    "success": true,
+    "cached": false,
+    "customerId": null,
+    "prompt": "What is the difference between SQL and NoSQL?",
+    "taskType": "coding",
+    "confidence": {
+      "score": 83,
+      "level": "Medium",
+      "color": "yellow"
+    },
+    "response": "SQL (Structured Query Language) and NoSQL (Not Only SQL) are two broad categories of database technologies, each with its own characteristics, advantages, and use cases. Here are the key differences between them:\n\n### 1. **Data Model**\n- **SQL:**\n  - Uses a structured, predefined schema.\n  - Data is organized in tables (rows and columns) with relationships between them (often enforced through foreign keys).\n  - Example databases: MySQL, PostgreSQL, Oracle, Microsoft SQL Server.\n\n- **NoSQL:**\n  - Supports a variety of data models, including key-value, document, column-family, and graph.\n  - Schema can be flexible or schema-less, allowing for more diverse data types and structures.\n  - Example databases: MongoDB (document), Cassandra (column-family), Redis (key-value), Neo4j (graph).\n\n### 2. **Query Language**\n- **SQL:**\n  - Uses SQL as a standard language for querying and managing data.\n  - Queries are typically complex and can involve multiple tables through JOIN operations.\n\n- **NoSQL:**\n  - Each NoSQL database may have its own query language or API, which can be less complex than SQL.\n  - Often focuses on simple key-based access or document querying.\n\n### 3. **Scalability**\n- **SQL:**\n  - Traditionally scales vertically (adding more power to a single server).\n  - Horizontal scaling (adding more servers) can be challenging due to the rigid schema and ACID properties.\n\n- **NoSQL:**\n  - Designed for horizontal scalability, making it easier to distribute data across multiple servers.\n  - Can handle large volumes of traffic and data by adding more nodes.\n\n### 4. **ACID vs. BASE**\n- **SQL:**\n  - Generally adheres to ACID (Atomicity, Consistency, Isolation, Durability) properties, ensuring reliable transactions and data integrity.\n\n- **NoSQL:**\n  - Often follows BASE (Basically Available, Soft state, Eventually consistent) principles, which prioritize availability and partition tolerance over immediate consistency.\n\n### 5. **Use Cases**\n- **SQL:**\n  - Best suited for applications requiring complex queries, transactions, and data integrity, such as financial systems, CRM systems, and enterprise applications.\n\n- **NoSQL:**\n  - Ideal for applications that require high scalability, flexibility, or handle unstructured data, such as social media platforms, big data applications, and real-time analytics.\n\n### 6. **Examples of Use Cases**\n- **SQL:**\n  - Banking systems, e-commerce platforms, and enterprise resource planning (ERP) systems.\n\n- **NoSQL:**\n  - Content management systems, Internet of Things (IoT) applications, and real-time web applications.\n\n### Conclusion\nThe choice between SQL and NoSQL databases largely depends on the specific needs of the application, including the nature of the data, scalability requirements, and the complexity of queries. Each type of database has its strengths and is suited for different scenarios.",
+    "modelKey": "gpt-4o-mini",
+    "complexity": "simple",
+    "routingMode": "balanced",
+    "primaryProvider": "gpt-4o-mini",
+    "routingReason": "Complexity: simple • Mode: balanced • Task: coding • Selected: gpt-4o-mini",
+    "routingTimeline": [
+      {
+        "step": "Prompt received",
+        "status": "success",
+        "time": "0ms"
+      },
+      {
+        "step": "Complexity classified: simple",
+        "status": "success",
+        "time": "12ms"
+      },
+      {
+        "step": "Task detected: coding",
+        "status": "success",
+        "time": "18ms"
+      },
+      {
+        "step": "Routing mode: balanced",
+        "status": "success",
+        "time": "26ms"
+      },
+      {
+        "step": "Provider scoring completed",
+        "status": "success",
+        "time": "34ms"
+      },
+      {
+        "step": "gpt-4o-mini selected",
+        "status": "success",
+        "time": "52ms"
+      },
+      {
+        "step": "Primary provider healthy",
+        "status": "done",
+        "time": "74ms"
+      },
+      {
+        "step": "Generating response",
+        "status": "success",
+        "time": "13012ms"
+      }
+    ],
+    "routingDetails": {
+      "complexity": "simple",
+      "mode": "balanced",
+      "taskType": "coding",
+      "confidence": {
+        "score": 83,
+        "level": "Medium",
+        "color": "yellow"
+      },
+      "provider": "gpt-4o-mini",
+      "fallbackUsed": false,
+      "cached": false,
+      "stickySession": null,
+      "budgetTriggered": false,
+      "contexts": []
+    },
+    "fallbackUsed": false,
+    "attemptedProvider": "gpt-4o-mini",
+    "tokens": 634,
+    "inputTokens": 17,
+    "outputTokens": 617,
+    "cost": 0.0003727499999999999,
+    "baselineCost": 0.00934,
+    "savedVsBaseline": 0.00896725,
+    "latency": 13012,
+    "compression": {
+      "compressed": "What is the difference between SQL and NoSQL?",
+      "originalLength": 45,
+      "compressedLength": 45,
+      "savedChars": 0
+    },
+    "timestamp": "2026-06-17T10:51:02.213Z"
+  },
+  {
+    "id": "25a5ae6e-57b7-4009-a0ab-540d397cdf98",
+    "success": true,
+    "cached": false,
+    "customerId": null,
+    "prompt": "What is machine learning?",
+    "taskType": "search",
+    "confidence": {
+      "score": 83,
+      "level": "Medium",
+      "color": "yellow"
+    },
+    "response": "Machine Learning (ML) is a subfield of Artificial Intelligence (AI) that focuses on enabling computers to **learn from data without being explicitly programmed**.\n\nInstead of a human programmer writing specific rules for every possible scenario, a machine learning algorithm is fed a large amount of data. It then \"learns\" to identify patterns, make predictions, or take decisions based on that data.\n\n**Here's a breakdown of what that means:**\n\n1.  **Learning from Data:**\n    *   Imagine you want a computer to identify cats in pictures. In traditional programming, you'd write rules like \"if it has pointy ears AND whiskers AND fur...\" This becomes incredibly complex and error-prone.\n    *   With machine learning, you feed the algorithm thousands of pictures, some labeled \"cat\" and some labeled \"not a cat.\" The algorithm then figures out on its own what features are common to cats and learns to distinguish them.\n\n2.  **Without Explicit Programming:**\n    *   This is the core differentiator. You don't tell the computer *how* to solve the problem step-by-step. Instead, you provide the data and the learning algorithm, and the computer develops its own \"rules\" or \"model\" based on the patterns it finds in the data.\n\n3.  **The Goal:**\n    *   To build systems that can automatically improve their performance over time through experience (data).\n    *   Once a machine learning model has been \"trained\" on data, it can then be used to make predictions or decisions on *new, unseen data*.\n\n**Key Components of Machine Learning:**\n\n*   **Data:** The fuel for ML. It can be images, text, numbers, audio, etc. The quality and quantity of data are crucial.\n*   **Algorithms:** The \"recipes\" or mathematical procedures that the computer uses to learn from the data. Examples include linear regression, decision trees, neural networks, support vector machines, etc.\n*   **Model:** The output of the learning process. It's the learned representation that can be used to make predictions or decisions. Think of it as the \"brain\" that has learned from the data.\n*   **Training:** The process of feeding data to the algorithm so it can build a model.\n*   **Prediction/Inference:** Using the trained model to make a guess or decision on new data.\n\n**Main Types of Machine Learning:**\n\n1.  **Supervised Learning:**\n    *   **Concept:** Learning from labeled data (input-output pairs). Like learning with a teacher who provides the correct answers.\n    *   **Tasks:**\n        *   **Classification:** Predicting a categorical output (e.g., spam/not spam, disease/no disease).\n        *   **Regression:** Predicting a continuous output (e.g., house prices, temperature).\n    *   **Examples:** Email spam detection, image recognition, predicting stock prices.\n\n2.  **Unsupervised Learning:**\n    *   **Concept:** Learning from unlabeled data, finding hidden patterns or structures without prior knowledge of the output. Like learning without a teacher.\n    *   **Tasks:**\n        *   **Clustering:** Grouping similar data points together (e.g., customer segmentation).\n        *   **Dimensionality Reduction:** Reducing the number of features while retaining important information.\n    *   **Examples:** Customer segmentation, anomaly detection, topic modeling in text.\n\n3.  **Reinforcement Learning:**\n    *   **Concept:** An agent learns to make decisions by performing actions in an environment and receiving rewards or penalties. It learns through trial and error.\n    *   **Tasks:** Game playing, robotics, autonomous navigation.\n    *   **Examples:** AlphaGo playing Go, self-driving cars, optimizing industrial processes.\n\n**Why is Machine Learning so powerful and popular now?**\n\n*   **Big Data:** The availability of vast amounts of data to train models.\n*   **Computational Power:** Advances in hardware (like GPUs) make it possible to process large datasets quickly.\n*   **Improved Algorithms:** Significant breakthroughs in neural networks and deep learning.\n*   **Open-Source Tools:** Easy access to powerful ML libraries and frameworks.\n\n**Common Applications of Machine Learning:**\n\n*   **Recommendation Systems:** Netflix, Amazon, Spotify suggestions.\n*   **Spam Detection:** Filtering unwanted emails.\n*   **Facial Recognition:** Unlocking phones, security systems.\n*   **Voice Assistants:** Siri, Alexa, Google Assistant.\n*   **Medical Diagnosis:** Identifying diseases from images or patient data.\n*   **Fraud Detection:** Identifying suspicious financial transactions.",
+    "modelKey": "gemini-flash",
+    "complexity": "simple",
+    "routingMode": "cost",
+    "primaryProvider": "gemini-flash",
+    "routingReason": "Complexity: simple • Mode: cost • Task: search • Selected: gemini-flash",
+    "routingTimeline": [
+      {
+        "step": "Prompt received",
+        "status": "success",
+        "time": "0ms"
+      },
+      {
+        "step": "Complexity classified: simple",
+        "status": "success",
+        "time": "12ms"
+      },
+      {
+        "step": "Task detected: search",
+        "status": "success",
+        "time": "18ms"
+      },
+      {
+        "step": "Routing mode: cost",
+        "status": "success",
+        "time": "26ms"
+      },
+      {
+        "step": "Provider scoring completed",
+        "status": "success",
+        "time": "34ms"
+      },
+      {
+        "step": "gemini-flash selected",
+        "status": "success",
+        "time": "52ms"
+      },
+      {
+        "step": "Primary provider healthy",
+        "status": "done",
+        "time": "74ms"
+      },
+      {
+        "step": "Generating response",
+        "status": "success",
+        "time": "11628ms"
+      }
+    ],
+    "routingDetails": {
+      "complexity": "simple",
+      "mode": "cost",
+      "taskType": "search",
+      "confidence": {
+        "score": 83,
+        "level": "Medium",
+        "color": "yellow"
+      },
+      "provider": "gemini-flash",
+      "fallbackUsed": false,
+      "cached": false,
+      "stickySession": null,
+      "budgetTriggered": false,
+      "contexts": []
+    },
+    "fallbackUsed": false,
+    "attemptedProvider": "gemini-flash",
+    "tokens": 978,
+    "inputTokens": 5,
+    "outputTokens": 973,
+    "cost": 0.000292275,
+    "baselineCost": 0.01462,
+    "savedVsBaseline": 0.014327725,
+    "latency": 11628,
+    "compression": {
+      "compressed": "What is machine learning?",
+      "originalLength": 25,
+      "compressedLength": 25,
+      "savedChars": 0
+    },
+    "timestamp": "2026-06-17T10:51:36.451Z"
+  },
+  {
+    "id": "db329a6d-a8ff-4aa0-b207-c9f8ac97ac89",
+    "success": true,
+    "cached": false,
+    "customerId": null,
+    "prompt": "What is node.js?",
+    "taskType": "coding",
+    "confidence": {
+      "score": 83,
+      "level": "Medium",
+      "color": "yellow"
+    },
+    "response": "Node.js is an open-source, cross-platform JavaScript runtime environment that allows developers to execute JavaScript code on the server side. It is built on the V8 JavaScript engine developed by Google, which is also used in the Chrome web browser. Node.js is designed to be lightweight and efficient, making it suitable for building scalable network applications.\n\nKey features of Node.js include:\n\n1. **Asynchronous and Event-Driven**: Node.js uses non-blocking I/O operations and an event-driven architecture, which allows it to handle many connections simultaneously without being blocked by long-running tasks. This makes it particularly well-suited for I/O-heavy applications, such as web servers and real-time applications.\n\n2. **Single-Threaded**: While Node.js operates on a single-threaded model, it uses an event loop to manage concurrent operations. This allows it to handle multiple requests without creating a new thread for each connection, which can save resources.\n\n3. **NPM (Node Package Manager)**: Node.js comes with NPM, a robust package manager that allows developers to easily share and manage libraries and dependencies. NPM hosts a vast ecosystem of open-source packages that can be integrated into applications.\n\n4. **Cross-Platform**: Node.js applications can run on various operating systems, including Windows, macOS, and Linux, providing flexibility for developers.\n\n5. **Full-Stack Development**: With Node.js, developers can use JavaScript across both the client and server sides of an application, enabling full-stack development with a unified language.\n\nNode.js is widely used for building web applications, APIs, real-time applications (such as chat applications), microservices, and more. Its ability to handle a large number of simultaneous connections makes it a popular choice for modern web development.",
+    "modelKey": "gpt-4o-mini",
+    "complexity": "simple",
+    "routingMode": "balanced",
+    "primaryProvider": "gpt-4o-mini",
+    "routingReason": "Complexity: simple • Mode: balanced • Task: coding • Selected: gpt-4o-mini",
+    "routingTimeline": [
+      {
+        "step": "Prompt received",
+        "status": "success",
+        "time": "0ms"
+      },
+      {
+        "step": "Complexity classified: simple",
+        "status": "success",
+        "time": "12ms"
+      },
+      {
+        "step": "Task detected: coding",
+        "status": "success",
+        "time": "18ms"
+      },
+      {
+        "step": "Routing mode: balanced",
+        "status": "success",
+        "time": "26ms"
+      },
+      {
+        "step": "Provider scoring completed",
+        "status": "success",
+        "time": "34ms"
+      },
+      {
+        "step": "gpt-4o-mini selected",
+        "status": "success",
+        "time": "52ms"
+      },
+      {
+        "step": "Primary provider healthy",
+        "status": "done",
+        "time": "74ms"
+      },
+      {
+        "step": "Generating response",
+        "status": "success",
+        "time": "5934ms"
+      }
+    ],
+    "routingDetails": {
+      "complexity": "simple",
+      "mode": "balanced",
+      "taskType": "coding",
+      "confidence": {
+        "score": 83,
+        "level": "Medium",
+        "color": "yellow"
+      },
+      "provider": "gpt-4o-mini",
+      "fallbackUsed": false,
+      "cached": false,
+      "stickySession": null,
+      "budgetTriggered": false,
+      "contexts": []
+    },
+    "fallbackUsed": false,
+    "attemptedProvider": "gpt-4o-mini",
+    "tokens": 371,
+    "inputTokens": 12,
+    "outputTokens": 359,
+    "cost": 0.00021719999999999997,
+    "baselineCost": 0.005444999999999999,
+    "savedVsBaseline": 0.0052277999999999995,
+    "latency": 5934,
+    "compression": {
+      "compressed": "What is node.js?",
+      "originalLength": 16,
+      "compressedLength": 16,
+      "savedChars": 0
+    },
+    "timestamp": "2026-06-17T10:52:16.793Z"
+  },
+  {
+    "id": "570d386d-2992-4bd2-b38f-5b14a5aeddf9",
+    "success": true,
+    "cached": false,
+    "customerId": null,
+    "prompt": "Write a JavaScript debounce function.",
+    "taskType": "coding",
+    "confidence": {
+      "score": 91,
+      "level": "High",
+      "color": "green"
+    },
+    "response": "Certainly! A debounce function is used to limit the rate at which a function can fire. It ensures that a function is only executed after a certain amount of time has passed since it was last called. This is particularly useful in scenarios like handling window resize events, input field changes, or any other event that may trigger multiple times in quick succession.\n\nHere's a simple implementation of a debounce function in JavaScript:\n\n```javascript\nfunction debounce(func, delay) {\n    let timeoutId;\n\n    return function(...args) {\n        // Clear the previous timeout if it's still waiting\n        if (timeoutId) {\n            clearTimeout(timeoutId);\n        }\n\n        // Set a new timeout to call the function after the delay\n        timeoutId = setTimeout(() => {\n            func.apply(this, args);\n        }, delay);\n    };\n}\n```\n\n### How to Use the Debounce Function\n\nYou can use the `debounce` function like this:\n\n```javascript\n// Example function to debounce\nfunction handleResize() {\n    console.log('Window resized!');\n}\n\n// Create a debounced version of the handleResize function\nconst debouncedResize = debounce(handleResize, 200);\n\n// Attach the debounced function to the window resize event\nwindow.addEventListener('resize', debouncedResize);\n```\n\nIn this example, the `handleResize` function will only be called 200 milliseconds after the last resize event, effectively reducing the number of times the function is executed during rapid resize events.",
+    "modelKey": "gpt-4o-mini",
+    "complexity": "simple",
+    "routingMode": "balanced",
+    "primaryProvider": "gpt-4o-mini",
+    "routingReason": "Complexity: simple • Mode: balanced • Task: coding • Context: code • Context: writing • Selected: gpt-4o-mini",
+    "routingTimeline": [
+      {
+        "step": "Prompt received",
+        "status": "success",
+        "time": "0ms"
+      },
+      {
+        "step": "Complexity classified: simple",
+        "status": "success",
+        "time": "12ms"
+      },
+      {
+        "step": "Task detected: coding",
+        "status": "success",
+        "time": "18ms"
+      },
+      {
+        "step": "Routing mode: balanced",
+        "status": "success",
+        "time": "26ms"
+      },
+      {
+        "step": "Provider scoring completed",
+        "status": "success",
+        "time": "34ms"
+      },
+      {
+        "step": "gpt-4o-mini selected",
+        "status": "success",
+        "time": "52ms"
+      },
+      {
+        "step": "Primary provider healthy",
+        "status": "done",
+        "time": "74ms"
+      },
+      {
+        "step": "Generating response",
+        "status": "success",
+        "time": "4247ms"
+      }
+    ],
+    "routingDetails": {
+      "complexity": "simple",
+      "mode": "balanced",
+      "taskType": "coding",
+      "confidence": {
+        "score": 91,
+        "level": "High",
+        "color": "green"
+      },
+      "provider": "gpt-4o-mini",
+      "fallbackUsed": false,
+      "cached": false,
+      "stickySession": null,
+      "budgetTriggered": false,
+      "contexts": [
+        "code",
+        "writing"
+      ]
+    },
+    "fallbackUsed": false,
+    "attemptedProvider": "gpt-4o-mini",
+    "tokens": 310,
+    "inputTokens": 14,
+    "outputTokens": 296,
+    "cost": 0.00017969999999999998,
+    "baselineCost": 0.004509999999999999,
+    "savedVsBaseline": 0.0043303,
+    "latency": 4247,
+    "compression": {
+      "compressed": "Write a JavaScript debounce function.",
+      "originalLength": 37,
+      "compressedLength": 37,
+      "savedChars": 0
+    },
+    "timestamp": "2026-06-17T10:53:35.618Z"
+  },
+  {
+    "id": "9dc26a7e-a245-4e5e-9ad3-561412acd97a",
+    "success": true,
+    "cached": false,
+    "customerId": null,
+    "prompt": "Design a REST API for a food delivery application.",
+    "taskType": "coding",
+    "confidence": {
+      "score": 83,
+      "level": "Medium",
+      "color": "yellow"
+    },
+    "response": "# Food Delivery REST API Design\n\n## 1. Authentication & Authorization\n\n```\nPOST /api/v1/auth/register\nPOST /api/v1/auth/login\nPOST /api/v1/auth/refresh-token\nPOST /api/v1/auth/logout\nGET  /api/v1/auth/me\n```\n\n## 2. User Management\n\n### Customers\n```\nGET    /api/v1/users/profile\nPUT    /api/v1/users/profile\nPOST   /api/v1/users/addresses\nGET    /api/v1/users/addresses\nPUT    /api/v1/users/addresses/{id}\nDELETE /api/v1/users/addresses/{id}\nGET    /api/v1/users/payment-methods\nPOST   /api/v1/users/payment-methods\nDELETE /api/v1/users/payment-methods/{id}\n```\n\n### Delivery Partners\n```\nGET    /api/v1/delivery-partners/profile\nPUT    /api/v1/delivery-partners/profile\nPOST   /api/v1/delivery-partners/documents\nGET    /api/v1/delivery-partners/earnings\nGET    /api/v1/delivery-partners/ratings\n```\n\n### Restaurants\n```\nGET    /api/v1/restaurants/profile\nPUT    /api/v1/restaurants/profile\nPOST   /api/v1/restaurants/menu-items\nGET    /api/v1/restaurants/menu-items\nPUT    /api/v1/restaurants/menu-items/{id}\nDELETE /api/v1/restaurants/menu-items/{id}\nGET    /api/v1/restaurants/analytics\n```\n\n## 3. Restaurant & Menu Discovery\n\n```\nGET    /api/v1/restaurants\nGET    /api/v1/restaurants/{id}\nGET    /api/v1/restaurants/{id}/reviews\nGET    /api/v1/restaurants/search?query=pizza&cuisine=Italian\nGET    /api/v1/restaurants/nearby?lat=40.7128&lon=-74.0060&radius=5\nGET    /api/v1/restaurants/{id}/menu\nGET    /api/v1/menu-items/{id}\nGET    /api/v1/categories\nGET    /api/v1/cuisines\n```\n\n## 4. Cart Management\n\n```\nPOST   /api/v1/cart/items\nGET    /api/v1/cart\nPUT    /api/v1/cart/items/{id}\nDELETE /api/v1/cart/items/{id}\nPOST   /api/v1/cart/apply-coupon\nDELETE /api/v1/cart/coupon\nGET    /api/v1/cart/estimated-delivery\n```\n\n## 5. Orders\n\n```\nPOST   /api/v1/orders\nGET    /api/v1/orders\nGET    /api/v1/orders/{id}\nPUT    /api/v1/orders/{id}/cancel\nPUT    /api/v1/orders/{id}/status\nPOST   /api/v1/orders/{id}/rate\nGET    /api/v1/orders/{id}/tracking\n```\n\n### Restaurant Order Management\n```\nGET    /api/v1/restaurants/orders\nPUT    /api/v1/restaurants/orders/{id}/status\nPOST   /api/v1/restaurants/orders/{id}/assign-delivery\n```\n\n### Delivery Partner Orders\n```\nGET    /api/v1/delivery-partners/available-orders\nPOST   /api/v1/delivery-partners/orders/{id}/accept\nPUT    /api/v1/delivery-partners/orders/{id}/status\nPOST   /api/v1/delivery-partners/orders/{id}/pickup\nPOST   /api/v1/delivery-partners/orders/{id}/deliver\n```\n\n## 6. Payments\n\n```\nPOST   /api/v1/payments/process\nPOST   /api/v1/payments/validate\nGET    /api/v1/payments/methods\nPOST   /api/v1/payments/wallet/recharge\nGET    /api/v1/payments/transactions\n```\n\n## 7. Reviews & Ratings\n\n```\nPOST   /api/v1/reviews\nGET    /api/v1/reviews/restaurants/{id}\nGET    /api/v1/reviews/delivery-partners/{id}\nPUT    /api/v1/reviews/{id}\nDELETE /api/v1/reviews/{id}\n```\n\n## 8. Promotions & Offers\n\n```\nGET    /api/v1/coupons\nPOST   /api/v1/coupons/validate\nGET    /api/v1/promotions\nGET    /api/v1/restaurants/{id}/deals\n```\n\n## 9. Support & Help\n\n```\nPOST   /api/v1/support/tickets\nGET    /api/v1/support/tickets\nGET    /api/v1/support/tickets/{id}\nPOST   /api/v1/support/tickets/{id}/messages\nGET    /api/v1/faq\n```\n\n---\n\n## API Request/Response Examples\n\n### Register User\n```json\nPOST /api/v1/auth/register\nContent-Type: application/json\n\n{\n  \"email\": \"user@example.com\",\n  \"password\": \"secure_password\",\n  \"phone\": \"+1234567890\",\n  \"first_name\": \"John\",\n  \"last_name\": \"Doe\",\n  \"user_type\": \"customer\"\n}\n\nResponse: 201 Created\n{\n  \"id\": \"usr_123456\",\n  \"email\": \"user@example.com\",\n  \"phone\": \"+1234567890\",\n  \"first_name\": \"John\",\n  \"last_name\": \"Doe\",\n  \"token\": \"eyJhbGciOiJIUzI1NiIs...\",\n  \"refresh_token\": \"eyJhbGciOiJIUzI1NiIs...\",\n  \"created_at\": \"2024-01-15T10:30:00Z\"\n}\n```\n\n### Search Restaurants\n```json\nGET /api/v1/restaurants/search?query=pizza&cuisine=Italian&min_rating=4&sort=distance\nContent-Type: application/json\n\nResponse: 200 OK\n{\n  \"data\": [\n    {\n      \"id\": \"rest_123\",\n      \"name\": \"Pizza Palace\",\n      \"cuisine\": [\"Italian\", \"Mediterranean\"],\n      \"rating\": 4.7,\n      \"review_count\": 256,\n      \"delivery_time\": \"25-35 mins\",\n      \"delivery_fee\": 2.99,\n      \"minimum_order\": 10.00,\n      \"image_url\": \"https://...\",\n      \"is_open\": true,\n      \"latitude\": 40.7128,\n      \"longitude\": -74.0060,\n      \"distance\": 1.2\n    }\n  ],\n  \"pagination\": {\n    \"page\": 1,\n    \"limit\": 20,\n    \"total\": 45\n  }\n}\n```\n\n### Create Order\n```json\nPOST /api/v1/orders\nContent-Type: application/json\nAuthorization: Bearer {token}\n\n{\n  \"restaurant_id\": \"rest_123\",\n  \"items\": [\n    {\n      \"menu_item_id\": \"item_456\",\n      \"quantity\": 2,\n      \"special_instructions\": \"Extra cheese\"\n    },\n    {\n      \"menu_item_id\": \"item_789\",\n      \"quantity\": 1\n    }\n  ],\n  \"delivery_address_id\": \"addr_123\",\n  \"payment_method_id\": \"pm_456\",\n  \"coupon_code\": \"SAVE10\",\n  \"schedule_for\": \"2024-01-15T19:00:00Z\"\n}\n\nResponse: 201 Created\n{\n  \"id\": \"ord_789\",\n  \"restaurant_id\": \"rest_123\",\n  \"customer_id\": \"usr_123\",\n  \"status\": \"confirmed\",\n  \"items\": [...],\n  \"subtotal\": 35.98,\n  \"delivery_fee\": 2.99,\n  \"tax\": 2.88,\n  \"discount\": 3.60,\n  \"total\": 38.25,\n  \"estimated_delivery_time\": \"2024-01-15T19:32:00Z\",\n  \"created_at\": \"2024-01-15T18:52:00Z\"\n}\n```\n\n### Update Order Status (Restaurant)\n```json",
+    "modelKey": "claude-haiku",
+    "complexity": "simple",
+    "routingMode": "quality",
+    "primaryProvider": "gpt-4o-mini",
+    "routingReason": "Complexity: simple • Mode: quality • Task: coding • Selected: gpt-4o-mini",
+    "routingTimeline": [
+      {
+        "step": "Prompt received",
+        "status": "success",
+        "time": "0ms"
+      },
+      {
+        "step": "Complexity classified: simple",
+        "status": "success",
+        "time": "12ms"
+      },
+      {
+        "step": "Task detected: coding",
+        "status": "success",
+        "time": "18ms"
+      },
+      {
+        "step": "Routing mode: quality",
+        "status": "success",
+        "time": "26ms"
+      },
+      {
+        "step": "Provider scoring completed",
+        "status": "success",
+        "time": "34ms"
+      },
+      {
+        "step": "claude-haiku selected",
+        "status": "success",
+        "time": "52ms"
+      },
+      {
+        "step": "Fallback triggered → claude-haiku",
+        "status": "fallback",
+        "time": "74ms"
+      },
+      {
+        "step": "Generating response",
+        "status": "success",
+        "time": "25602ms"
+      }
+    ],
+    "routingDetails": {
+      "complexity": "simple",
+      "mode": "quality",
+      "taskType": "coding",
+      "confidence": {
+        "score": 83,
+        "level": "Medium",
+        "color": "yellow"
+      },
+      "provider": "claude-haiku",
+      "fallbackUsed": true,
+      "cached": false,
+      "stickySession": null,
+      "budgetTriggered": false,
+      "contexts": []
+    },
+    "fallbackUsed": true,
+    "attemptedProvider": "claude-haiku",
+    "tokens": 2064,
+    "inputTokens": 17,
+    "outputTokens": 2047,
+    "cost": 0.002563,
+    "baselineCost": 0.030789999999999998,
+    "savedVsBaseline": 0.028227,
+    "latency": 25602,
+    "compression": {
+      "compressed": "Design a REST API for a food delivery application.",
+      "originalLength": 50,
+      "compressedLength": 50,
+      "savedChars": 0
+    },
+    "timestamp": "2026-06-17T10:54:36.995Z"
+  },
+  {
+    "id": "b26c93dd-fcbb-41f2-94d9-7aba99755beb",
+    "success": true,
+    "cached": false,
+    "customerId": null,
+    "prompt": "Write a welcome email for new users.",
+    "taskType": "writing",
+    "confidence": {
+      "score": 83,
+      "level": "Medium",
+      "color": "yellow"
+    },
+    "response": "Here's a template for a welcome email for new users, designed to be warm, informative, and guide them to their first steps. Remember to customize the bracketed information `[...]` to fit your specific product or service.\n\n---\n\n**Subject: Welcome to [Your Product Name]! Let's Get Started! 🎉**\n\nHi [User's First Name],\n\nWelcome aboard! We're absolutely thrilled to have you join the [Your Product Name] community. You've just taken the first step towards [briefly state the main benefit or problem your product solves, e.g., \"streamlining your workflow,\" \"unlocking your creative potential,\" \"managing your projects with ease\"].\n\nAt [Your Product Name], our mission is to [state your core mission or value proposition, e.g., \"make [specific task] simple and enjoyable,\" \"empower you to achieve [specific goal],\" \"connect you with [specific community/resources]\"]. We believe you're going to love how [Your Product Name] helps you [reiterate a key benefit].\n\n**Here's how to dive in and get the most out of [Your Product Name]:**\n\n1.  **[Primary Call to Action - CTA] Set Up Your Profile / Go to Your Dashboard:**\n    This is your command center! [Optional: Briefly explain what they'll find there, e.g., \"It's where you'll find all your projects, settings, and more.\"]\n\n    ➡️ **[Big, Clear Button] Start Exploring Your Account**\n    `(Link to your app/dashboard)`\n\n2.  **[Secondary CTA] Your First [Action/Item]:**\n    Ready to create your first [project/document/post/task]? This quick guide will walk you through it:\n\n    ➡️ **[Link] Watch a Quick Tutorial / Read Our Getting Started Guide**\n    `(Link to a specific onboarding guide, video, or tutorial)`\n\n3.  **Discover What You Can Do:**\n    With [Your Product Name], you can easily:\n    *   [Benefit 1 / Feature 1]\n    *   [Benefit 2 / Feature 2]\n    *   [Benefit 3 / Feature 3]\n    *(Keep this brief – just 2-3 key highlights)*\n\n**Need a Hand? We're Here to Help!**\n\nWe want your experience with [Your Product Name] to be smooth and successful. If you have any questions, run into any issues, or just want to say hello, don't hesitate to reach out:\n\n*",
+    "modelKey": "gemini-flash",
+    "complexity": "simple",
+    "routingMode": "balanced",
+    "primaryProvider": "gemini-flash",
+    "routingReason": "Complexity: simple • Mode: balanced • Task: writing • Selected: gemini-flash",
+    "routingTimeline": [
+      {
+        "step": "Prompt received",
+        "status": "success",
+        "time": "0ms"
+      },
+      {
+        "step": "Complexity classified: simple",
+        "status": "success",
+        "time": "12ms"
+      },
+      {
+        "step": "Task detected: writing",
+        "status": "success",
+        "time": "18ms"
+      },
+      {
+        "step": "Routing mode: balanced",
+        "status": "success",
+        "time": "26ms"
+      },
+      {
+        "step": "Provider scoring completed",
+        "status": "success",
+        "time": "34ms"
+      },
+      {
+        "step": "gemini-flash selected",
+        "status": "success",
+        "time": "52ms"
+      },
+      {
+        "step": "Primary provider healthy",
+        "status": "done",
+        "time": "74ms"
+      },
+      {
+        "step": "Generating response",
+        "status": "success",
+        "time": "12287ms"
+      }
+    ],
+    "routingDetails": {
+      "complexity": "simple",
+      "mode": "balanced",
+      "taskType": "writing",
+      "confidence": {
+        "score": 83,
+        "level": "Medium",
+        "color": "yellow"
+      },
+      "provider": "gemini-flash",
+      "fallbackUsed": false,
+      "cached": false,
+      "stickySession": null,
+      "budgetTriggered": false,
+      "contexts": []
+    },
+    "fallbackUsed": false,
+    "attemptedProvider": "gemini-flash",
+    "tokens": 552,
+    "inputTokens": 8,
+    "outputTokens": 544,
+    "cost": 0.0001638,
+    "baselineCost": 0.0082,
+    "savedVsBaseline": 0.0080362,
+    "latency": 12287,
+    "compression": {
+      "compressed": "Write a welcome email for new users.",
+      "originalLength": 36,
+      "compressedLength": 36,
+      "savedChars": 0
+    },
+    "timestamp": "2026-06-17T10:55:43.326Z"
+  }
+]

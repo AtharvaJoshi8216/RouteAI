@@ -1,0 +1,296 @@
+{
+  "123": {
+    "customerId": "123",
+    "firstSeen": "2026-05-20T16:26:26.137Z",
+    "requests": 14,
+    "totalCost": 0.009168375,
+    "totalTokens": 4605,
+    "totalSaved": 0.050886625,
+    "cacheHits": 0,
+    "fallbacks": 8,
+    "errors": 0,
+    "modelUsage": {
+      "claude-haiku": 7,
+      "gpt-4o-mini": 4,
+      "gemini-flash": 2,
+      "gpt-4o": 1
+    },
+    "complexityBreakdown": {
+      "simple": 9,
+      "medium": 3,
+      "complex": 2
+    },
+    "recentPrompts": [
+      {
+        "prompt": "what is javascript?",
+        "complexity": "simple",
+        "model": "claude-haiku",
+        "cost": 0.00037775,
+        "timestamp": "2026-05-20T16:26:26.134Z"
+      },
+      {
+        "prompt": "what is bootstrap",
+        "complexity": "simple",
+        "model": "gpt-4o-mini",
+        "cost": 0.00018329999999999998,
+        "timestamp": "2026-05-20T16:41:47.475Z"
+      },
+      {
+        "prompt": "Design scalable multi-tenant AI infrastructure",
+        "complexity": "simple",
+        "model": "gemini-flash",
+        "cost": 0.000012824999999999998,
+        "timestamp": "2026-05-21T05:32:24.036Z"
+      },
+      {
+        "prompt": "what is java?",
+        "complexity": "simple",
+        "model": "claude-haiku",
+        "cost": 0.00035025000000000003,
+        "timestamp": "2026-05-21T09:23:08.711Z"
+      },
+      {
+        "prompt": "write a python function to check palindrome",
+        "complexity": "simple",
+        "model": "gpt-4o-mini",
+        "cost": 0.0001893,
+        "timestamp": "2026-05-21T09:23:49.921Z"
+      },
+      {
+        "prompt": "write a python function to check number is even or odd",
+        "complexity": "medium",
+        "model": "gpt-4o-mini",
+        "cost": 0.0000957,
+        "timestamp": "2026-05-21T09:34:21.548Z"
+      },
+      {
+        "prompt": "what is c#?",
+        "complexity": "simple",
+        "model": "claude-haiku",
+        "cost": 0.00042050000000000003,
+        "timestamp": "2026-05-21T09:42:32.133Z"
+      },
+      {
+        "prompt": "what is c?",
+        "complexity": "simple",
+        "model": "claude-haiku",
+        "cost": 0.00017150000000000002,
+        "timestamp": "2026-05-21T09:45:39.640Z"
+      },
+      {
+        "prompt": "write python function to check if number is divisible by 5",
+        "complexity": "medium",
+        "model": "claude-haiku",
+        "cost": 0.000725,
+        "timestamp": "2026-05-21T09:47:00.521Z"
+      },
+      {
+        "prompt": "Design scalable AI inference infrastructure for 10 million users",
+        "complexity": "complex",
+        "model": "gpt-4o",
+        "cost": 0.00549,
+        "timestamp": "2026-05-21T09:49:40.916Z"
+      },
+      {
+        "prompt": "Build production-grade authentication system using Node.js and Redis",
+        "complexity": "complex",
+        "model": "gpt-4o-mini",
+        "cost": 0.00020415,
+        "timestamp": "2026-05-21T09:53:56.604Z"
+      },
+      {
+        "prompt": "write python palindrome function",
+        "complexity": "medium",
+        "model": "gemini-flash",
+        "cost": 0.0000126,
+        "timestamp": "2026-05-21T10:16:08.679Z"
+      },
+      {
+        "prompt": "what is mongodb?",
+        "complexity": "simple",
+        "model": "claude-haiku",
+        "cost": 0.00047525,
+        "timestamp": "2026-05-21T10:20:50.752Z"
+      },
+      {
+        "prompt": "what is mongodb?",
+        "complexity": "simple",
+        "model": "claude-haiku",
+        "cost": 0.00046025,
+        "timestamp": "2026-05-21T10:21:33.180Z"
+      }
+    ],
+    "lastSeen": "2026-05-21T10:21:33.181Z"
+  },
+  "what si sql": {
+    "customerId": "what si sql",
+    "firstSeen": "2026-05-28T11:48:51.253Z",
+    "requests": 1,
+    "totalCost": 0,
+    "totalTokens": 0,
+    "totalSaved": 0,
+    "cacheHits": 1,
+    "fallbacks": 0,
+    "errors": 0,
+    "modelUsage": {
+      "claude-haiku": 1
+    },
+    "complexityBreakdown": {
+      "simple": 0,
+      "medium": 0,
+      "complex": 0
+    },
+    "recentPrompts": [
+      {
+        "prompt": "what are the demanding ai skills in 2026",
+        "model": "claude-haiku",
+        "cost": 0,
+        "timestamp": "2026-05-28T11:48:51.252Z"
+      }
+    ],
+    "lastSeen": "2026-05-28T11:48:51.253Z"
+  },
+  "xyz": {
+    "customerId": "xyz",
+    "firstSeen": "2026-06-11T08:43:34.174Z",
+    "requests": 4,
+    "totalCost": 0.00061535,
+    "totalTokens": 530,
+    "totalSaved": 0.007124649999999999,
+    "cacheHits": 2,
+    "fallbacks": 1,
+    "errors": 0,
+    "modelUsage": {
+      "claude-haiku": 3,
+      "gpt-4o-mini": 1
+    },
+    "complexityBreakdown": {
+      "simple": 1,
+      "medium": 1,
+      "complex": 0
+    },
+    "recentPrompts": [
+      {
+        "prompt": "now help me to learn this one by one",
+        "model": "claude-haiku",
+        "cost": 0,
+        "timestamp": "2026-06-11T08:43:34.173Z"
+      },
+      {
+        "prompt": "now help me to learn this one by one",
+        "model": "claude-haiku",
+        "cost": 0,
+        "timestamp": "2026-06-11T08:43:44.846Z"
+      },
+      {
+        "prompt": "python",
+        "complexity": "medium",
+        "model": "gpt-4o-mini",
+        "cost": 0.000024599999999999998,
+        "timestamp": "2026-06-11T08:44:02.059Z"
+      },
+      {
+        "prompt": "for wrowth analyst level",
+        "complexity": "simple",
+        "model": "claude-haiku",
+        "cost": 0.00059075,
+        "timestamp": "2026-06-11T08:45:07.767Z"
+      }
+    ],
+    "lastSeen": "2026-06-11T08:45:07.767Z"
+  },
+  "acme_inc": {
+    "customerId": "acme_inc",
+    "firstSeen": "2026-06-17T06:49:24.741Z",
+    "requests": 1,
+    "totalCost": 0.000011249999999999999,
+    "totalTokens": 30,
+    "totalSaved": 0.00028875,
+    "cacheHits": 0,
+    "fallbacks": 0,
+    "errors": 0,
+    "modelUsage": {
+      "gpt-4o-mini": 1
+    },
+    "complexityBreakdown": {
+      "simple": 1,
+      "medium": 0,
+      "complex": 0
+    },
+    "recentPrompts": [
+      {
+        "prompt": "Summarise this customer support email.",
+        "complexity": "simple",
+        "model": "gpt-4o-mini",
+        "cost": 0.000011249999999999999,
+        "timestamp": "2026-06-17T06:49:24.740Z"
+      }
+    ],
+    "lastSeen": "2026-06-17T06:49:24.741Z"
+  },
+  "nova_labs": {
+    "customerId": "nova_labs",
+    "firstSeen": "2026-06-17T07:06:24.432Z",
+    "requests": 2,
+    "totalCost": 0.000177,
+    "totalTokens": 316,
+    "totalSaved": 0.004283,
+    "cacheHits": 0,
+    "fallbacks": 0,
+    "errors": 0,
+    "modelUsage": {
+      "gpt-4o-mini": 2
+    },
+    "complexityBreakdown": {
+      "simple": 1,
+      "medium": 1,
+      "complex": 0
+    },
+    "recentPrompts": [
+      {
+        "prompt": "Explain OAuth in simple terms.",
+        "complexity": "medium",
+        "model": "gpt-4o-mini",
+        "cost": 0.00016214999999999998,
+        "timestamp": "2026-06-17T07:06:24.431Z"
+      },
+      {
+        "prompt": "Translate this customer support email into Hindi.",
+        "complexity": "simple",
+        "model": "gpt-4o-mini",
+        "cost": 0.000014849999999999998,
+        "timestamp": "2026-06-17T07:08:00.096Z"
+      }
+    ],
+    "lastSeen": "2026-06-17T07:08:00.096Z"
+  },
+  "finflow": {
+    "customerId": "finflow",
+    "firstSeen": "2026-06-17T07:08:34.394Z",
+    "requests": 1,
+    "totalCost": 0.00050575,
+    "totalTokens": 419,
+    "totalSaved": 0.00559925,
+    "cacheHits": 0,
+    "fallbacks": 1,
+    "errors": 0,
+    "modelUsage": {
+      "claude-haiku": 1
+    },
+    "complexityBreakdown": {
+      "simple": 1,
+      "medium": 0,
+      "complex": 0
+    },
+    "recentPrompts": [
+      {
+        "prompt": "What's the difference between SQL and NoSQL databases?",
+        "complexity": "simple",
+        "model": "claude-haiku",
+        "cost": 0.00050575,
+        "timestamp": "2026-06-17T07:08:34.394Z"
+      }
+    ],
+    "lastSeen": "2026-06-17T07:08:34.394Z"
+  }
+}

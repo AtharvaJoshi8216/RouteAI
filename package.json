@@ -1,0 +1,36 @@
+{
+  "name": "route-ai",
+  "version": "1.0.0",
+  "description": "Intelligent LLM routing middleware \u2014 cut AI costs by up to 94%",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.14.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.1",
+    "express": "^5.2.1",
+    "helmet": "^8.1.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "llm",
+    "routing",
+    "ai",
+    "openai",
+    "anthropic",
+    "gemini",
+    "middleware",
+    "cost-optimization"
+  ],
+  "author": "Route AI",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/route-ai"
+  }
+}

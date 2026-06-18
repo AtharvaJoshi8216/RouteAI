@@ -1,0 +1,27 @@
+{
+  "123": {
+    "monthlySpend": 0.009168375,
+    "budgetLimit": 0.05,
+    "downgradeCount": 2
+  },
+  "xyz": {
+    "monthlySpend": 0.00061535,
+    "budgetLimit": 0.05,
+    "downgradeCount": 0
+  },
+  "acme_inc": {
+    "monthlySpend": 0.000011249999999999999,
+    "budgetLimit": 0.05,
+    "downgradeCount": 0
+  },
+  "nova_labs": {
+    "monthlySpend": 0.000177,
+    "budgetLimit": 0.05,
+    "downgradeCount": 0
+  },
+  "finflow": {
+    "monthlySpend": 0.00050575,
+    "budgetLimit": 0.05,
+    "downgradeCount": 0
+  }
+}

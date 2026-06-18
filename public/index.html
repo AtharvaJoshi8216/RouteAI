@@ -1,0 +1,1414 @@
+<!-- SAVE AS: public/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>RouteAI — Intelligent LLM Routing Infrastructure</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Inter',sans-serif;
+      background:#040816;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+
+      background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+
+      background-size:40px 40px;
+      z-index:-2;
+    }
+
+    .glow{
+      position:fixed;
+      width:600px;
+      height:600px;
+      border-radius:50%;
+      filter:blur(140px);
+      opacity:0.16;
+      z-index:-1;
+    }
+
+    .glow1{
+      background:#7c3aed;
+      top:-220px;
+      left:-220px;
+    }
+
+    .glow2{
+      background:#06b6d4;
+      bottom:-220px;
+      right:-220px;
+    }
+
+    .container{
+      width:min(1220px,92%);
+      margin:auto;
+    }
+
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:28px 0;
+      position:sticky;
+      top:0;
+      backdrop-filter:blur(12px);
+      z-index:100;
+    }
+
+    .logo{
+      font-size:32px;
+      font-weight:900;
+
+      background:linear-gradient(90deg,#8b5cf6,#22d3ee);
+
+      background-clip:text;
+      -webkit-background-clip:text;
+
+      -webkit-text-fill-color:transparent;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:26px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .nav-links a{
+      color:#cbd5e1;
+      text-decoration:none;
+      font-size:14px;
+      transition:0.25s;
+    }
+
+    .nav-links a:hover{
+      color:white;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:14px 24px;
+      border-radius:14px;
+      text-decoration:none;
+      font-weight:600;
+      transition:0.3s ease;
+      border:none;
+      cursor:pointer;
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+    }
+
+    .btn-primary{
+      background:linear-gradient(90deg,#7c3aed,#06b6d4);
+      color:white;
+      box-shadow:0 0 40px rgba(124,58,237,0.35);
+    }
+
+    .btn-secondary{
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.08);
+      color:white;
+    }
+
+    .hero{
+      padding:100px 0 80px;
+      text-align:center;
+    }
+
+    .hero-badge{
+      display:inline-flex;
+      gap:14px;
+      flex-wrap:wrap;
+
+      padding:12px 20px;
+
+      border-radius:999px;
+
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.08);
+
+      margin-bottom:34px;
+
+      color:#cbd5e1;
+      font-size:14px;
+    }
+
+    h1{
+      font-size:clamp(60px,9vw,110px);
+      line-height:0.95;
+      font-weight:900;
+      letter-spacing:-3px;
+      margin-bottom:28px;
+    }
+
+    .gradient-text{
+      background:linear-gradient(90deg,#8b5cf6,#22d3ee);
+
+      background-clip:text;
+      -webkit-background-clip:text;
+
+      -webkit-text-fill-color:transparent;
+    }
+
+    .hero p{
+      max-width:860px;
+      margin:auto;
+      font-size:22px;
+      line-height:1.7;
+      color:#cbd5e1;
+    }
+
+    .hero-buttons{
+      margin-top:40px;
+      display:flex;
+      justify-content:center;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+
+    .metrics-strip{
+      margin-top:70px;
+
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:22px;
+    }
+
+    .metric-card{
+      padding:30px;
+      border-radius:24px;
+
+      background:rgba(255,255,255,0.03);
+
+      border:1px solid rgba(255,255,255,0.08);
+
+      backdrop-filter:blur(12px);
+    }
+
+    .metric-card h3{
+      font-size:42px;
+      margin-bottom:10px;
+      color:#67e8f9;
+    }
+
+    section{
+      padding:100px 0;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:70px;
+    }
+
+    .section-title h2{
+      font-size:56px;
+      line-height:1.1;
+      margin-bottom:18px;
+    }
+
+    .section-title p{
+      max-width:760px;
+      margin:auto;
+      color:#94a3b8;
+      line-height:1.8;
+      font-size:18px;
+    }
+
+    .integration{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:28px;
+    }
+
+    .code-card{
+      background:rgba(255,255,255,0.03);
+
+      border:1px solid rgba(255,255,255,0.08);
+
+      border-radius:28px;
+
+      padding:30px;
+    }
+
+    .code-card h3{
+      margin-bottom:18px;
+      font-size:24px;
+    }
+
+    pre{
+      overflow:auto;
+      font-size:14px;
+      line-height:1.8;
+      color:#cbd5e1;
+      white-space:pre-wrap;
+    }
+
+    .logs{
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
+
+    .log-card{
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      flex-wrap:wrap;
+
+      padding:22px;
+
+      border-radius:20px;
+
+      background:rgba(255,255,255,0.03);
+
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .badge{
+      padding:8px 14px;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:600;
+    }
+
+    .live{
+      background:rgba(34,197,94,0.15);
+      color:#4ade80;
+    }
+
+    .fallback{
+      background:rgba(251,191,36,0.15);
+      color:#fbbf24;
+    }
+
+    .cached{
+      background:rgba(59,130,246,0.15);
+      color:#60a5fa;
+    }
+
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:24px;
+    }
+
+    .step{
+      padding:32px;
+
+      border-radius:24px;
+
+      background:rgba(255,255,255,0.03);
+
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .step-number{
+      width:44px;
+      height:44px;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      border-radius:12px;
+
+      background:linear-gradient(90deg,#7c3aed,#06b6d4);
+
+      font-weight:700;
+
+      margin-bottom:20px;
+    }
+
+    .step h3{
+      margin-bottom:14px;
+      font-size:24px;
+    }
+
+    .step p{
+      color:#94a3b8;
+      line-height:1.8;
+    }
+
+    .architecture{
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+      align-items:center;
+    }
+
+    .arch-node{
+      min-width:320px;
+
+      padding:18px 28px;
+
+      border-radius:18px;
+
+      background:linear-gradient(
+      90deg,
+      rgba(124,58,237,0.2),
+      rgba(6,182,212,0.2)
+      );
+
+      border:1px solid rgba(255,255,255,0.08);
+
+      text-align:center;
+      font-weight:600;
+    }
+
+    .providers{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+
+    .provider{
+      padding:18px 26px;
+
+      border-radius:16px;
+
+      background:rgba(255,255,255,0.03);
+
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .savings-section{
+
+        margin:120px 0;
+    }
+
+    .savings-comparison{
+
+        margin-top:50px;
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:center;
+
+        gap:40px;
+
+        flex-wrap:wrap;
+    }
+
+    .savings-card{
+
+        width:320px;
+
+        padding:40px;
+
+        border-radius:28px;
+
+        border:1px solid rgba(255,255,255,0.08);
+
+        background:
+            linear-gradient(
+            180deg,
+          rgba(15,23,42,0.96),
+          rgba(2,6,23,0.96)
+        );
+
+        text-align:center;
+    }
+
+    .savings-highlight{
+
+        border-color:rgba(34,211,238,0.35);
+
+        box-shadow:
+        0 0 60px rgba(34,211,238,0.12);
+    }
+
+    .savings-label{
+
+        font-size:14px;
+
+        color:#94a3b8;
+
+        display:block;
+
+        margin-bottom:14px;
+    }
+
+    .savings-card h3{
+
+        font-size:54px;
+
+        margin-bottom:10px;
+    }
+
+    .savings-card p{
+
+        color:#94a3b8;
+    }
+
+    .savings-arrow{
+
+        font-size:28px;
+
+        font-weight:700;
+
+        color:#22d3ee;
+    }
+
+    .features-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:24px;
+    }
+
+    .feature-card{
+      padding:34px;
+
+      border-radius:24px;
+
+      background:rgba(255,255,255,0.03);
+
+      border:1px solid rgba(255,255,255,0.08);
+
+      transition:0.3s;
+    }
+
+    .feature-card:hover{
+      transform:translateY(-6px);
+      border-color:rgba(103,232,249,0.3);
+    }
+
+    .feature-card h3{
+      margin-bottom:14px;
+      font-size:24px;
+    }
+
+    .feature-card p{
+      color:#94a3b8;
+      line-height:1.8;
+    }
+
+    .curl-box{
+      background:#020617;
+
+      border:1px solid rgba(255,255,255,0.08);
+
+      border-radius:28px;
+
+      padding:34px;
+    }
+
+    .cta{
+      text-align:center;
+
+      padding:90px 40px;
+
+      border-radius:34px;
+
+      background:linear-gradient(
+      135deg,
+      rgba(124,58,237,0.22),
+      rgba(6,182,212,0.1)
+      );
+
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .cta h2{
+      font-size:60px;
+      margin-bottom:20px;
+    }
+
+    .cta p{
+      max-width:760px;
+      margin:auto;
+
+      color:#cbd5e1;
+
+      line-height:1.8;
+      font-size:20px;
+    }
+
+    footer{
+      padding:50px 0;
+      margin-top:40px;
+
+      border-top:1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-links{
+      display:flex;
+      justify-content:center;
+      gap:28px;
+      flex-wrap:wrap;
+    }
+
+    .footer-links a{
+      text-decoration:none;
+      color:#94a3b8;
+    }
+
+    @media(max-width:900px){
+
+      .integration{
+        grid-template-columns:1fr;
+      }
+
+    }
+
+    .pipeline{
+
+        display:grid;
+
+        grid-template-columns:repeat(4,1fr);
+
+        gap:24px;
+
+        align-items:stretch;
+
+    }
+
+    .pipeline-card{
+
+        min-height:360px;
+
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
+
+        padding:28px;
+
+        border-radius:26px;
+
+        background:
+            linear-gradient(
+            180deg,
+          rgba(15,23,42,0.96),
+          rgba(2,6,23,0.96)
+        );
+
+        box-shadow:
+        0 0 18px rgba(124,58,237,0.04);
+
+        border:1px solid rgba(255,255,255,0.08);
+
+        position:relative;
+
+        overflow:hidden;
+
+        transition:0.3s;
+
+        backdrop-filter:blur(10px);
+    }
+
+    .pipeline-card:hover{
+        transform:translateY(-6px);
+        border-color:rgba(103,232,249,0.35);
+    }
+
+    .pipeline-top{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        margin-bottom:20px;
+    }
+
+    .pipeline-tag{
+        font-size:12px;
+        color:#94a3b8;
+        letter-spacing:1px;
+    }
+
+    .pipeline-status{
+
+        padding:6px 10px;
+
+        border-radius:999px;
+
+        font-size:11px;
+        font-weight:700;
+
+        background:rgba(255,255,255,0.06);
+
+        color:#cbd5e1;
+    }
+
+    .live-status{
+        background:rgba(34,197,94,0.15);
+        color:#4ade80;
+    }
+
+    .recovery{
+        background:rgba(251,191,36,0.15);
+        color:#fbbf24;
+    }
+
+    .metrics{
+        background:rgba(59,130,246,0.15);
+        color:#60a5fa;
+    }
+
+    .pipeline-card h3{
+        font-size:24px;
+        margin-bottom:14px;
+    }
+
+    .pipeline-card p{
+        color:#94a3b8;
+        line-height:1.8;
+        font-size:15px;
+    }
+
+    .pipeline-arrow{
+        font-size:38px;
+        color:#64748b;
+    }
+
+    .pipeline-meta{
+        margin-top:18px;
+
+        font-size:13px;
+
+        color:#67e8f9;
+    }
+
+    .providers-mini{
+        display:flex;
+        flex-wrap:wrap;
+        gap:8px;
+        margin-top:18px;
+    }
+
+    .providers-mini span{
+
+        padding:8px 12px;
+
+        border-radius:999px;
+
+        background:rgba(255,255,255,0.05);
+
+        font-size:12px;
+
+        color:#cbd5e1;
+    }
+
+    .pulse{
+
+        position:absolute;
+
+        top:18px;
+        right:18px;
+
+        width:10px;
+        height:10px;
+
+        border-radius:50%;
+
+        background:#4ade80;
+
+        box-shadow:0 0 14px #4ade80;
+
+        animation:pulse 1.5s infinite;
+    }
+
+    @keyframes pulse{
+
+        0%{
+            transform:scale(1);
+            opacity:1;
+        }
+
+        50%{
+            transform:scale(1.6);
+            opacity:0.6;
+        }
+
+        100%{
+            transform:scale(1);
+            opacity:1;
+        }
+
+    }
+
+    .flow-line{
+
+        position:absolute;
+
+        top:0;
+        left:-120%;
+
+        width:140%;
+        height:2px;
+
+        background:linear-gradient(
+            90deg,
+            transparent,
+          #22d3ee,
+          #8b5cf6,
+            transparent
+        );
+
+        opacity:0.9;
+
+        animation:flow 2.4s linear infinite;
+    }
+
+    .pipeline-card:nth-child(2) .flow-line{
+        animation-delay:0.4s;
+    }
+
+    .pipeline-card:nth-child(3) .flow-line{
+        animation-delay:0.8s;
+    }
+
+    .pipeline-card:nth-child(4) .flow-line{
+        animation-delay:1.2s;
+    }
+
+    @keyframes flow{
+
+        0%{
+        left:-120%;
+    }
+
+        100%{
+            left:120%;
+        }
+
+    }
+
+    @media(max-width:768px){
+
+      .pipeline{
+        grid-template-columns:1fr;
+      }
+
+      .nav-links{
+        display:none;
+      }
+
+      .section-title h2{
+        font-size:42px;
+      }
+
+      .cta h2{
+        font-size:44px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<div class="glow glow1"></div>
+<div class="glow glow2"></div>
+
+<div class="container">
+
+  <nav>
+
+    <div class="logo">RouteAI</div>
+
+    <div class="nav-links">
+
+      <a href="#how">How it Works</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#features">Features</a>
+
+      <a href="README.md" target="_blank">Docs</a>
+
+      <a href="https://github.com/" target="_blank">GitHub</a>
+
+      <a href="/dashboard.html">Dashboard</a>
+
+      <a href="mailto:hello@routeai.dev">Request Access</a>
+
+    </div>
+
+  </nav>
+
+
+  <section class="hero">
+
+    <div class="hero-badge">
+
+      <span>● OpenAI</span>
+      <span>● Claude</span>
+      <span>● Gemini</span>
+      <span>● Auto Recovery</span>
+
+    </div>
+
+    <h1>
+
+      Stop paying<br>
+
+      <span class="gradient-text">
+        GPT-4o prices
+      </span>
+
+      <br>
+
+      for simple prompts.
+
+    </h1>
+
+    <p>
+
+      RouteAI intelligently routes prompts across OpenAI, Claude, and Gemini —
+      automatically optimizing for cost, speed, fallback recovery, and reliability.
+
+    </p>
+
+    <div class="hero-buttons">
+
+        <a href="mailto:joshiatharva43@gmail.com"
+            class="btn btn-primary">
+
+            Get Early Access →
+
+        </a>
+
+        <a href="/dashboard.html"
+            class="btn btn-secondary">
+
+            Try Live Demo
+
+        </a>
+
+    </div>
+
+    <div class="metrics-strip">
+
+        <div class="metric-card">
+
+            <h3>94.7%</h3>
+
+            <p>Cost reduction</p>
+
+        </div>
+
+        <div class="metric-card">
+
+            <h3>66×</h3>
+
+            <p>Price gap optimized</p>
+
+        </div>
+
+        <div class="metric-card">
+
+            <h3>&lt;1ms</h3>
+
+            <p>Semantic cache speed</p>
+
+        </div>
+
+        <div class="metric-card">
+
+            <h3>3</h3>
+
+            <p>Providers supported</p>
+
+        </div>
+
+    </div>
+
+  </section>
+
+
+
+  <section id="how">
+
+  <div class="section-title">
+
+    <h2>
+      Real-time AI routing pipeline.
+    </h2>
+
+    <p>
+      Every prompt moves through RouteAI’s intelligent decision engine before reaching the optimal model.
+    </p>
+
+  </div>
+
+  <div class="pipeline">
+
+    <div class="pipeline-card">
+
+      <div class="pulse"></div>
+
+      <div class="flow-line"></div>
+
+      <div class="pipeline-top">
+
+        <span class="pipeline-tag">
+          STEP 1
+        </span>
+
+        <span class="pipeline-status live-status">
+          LIVE
+        </span>
+
+      </div>
+
+      <h3>Prompt Classification</h3>
+
+      <p>
+        Analyze complexity, latency sensitivity, intent, and estimated token cost.
+      </p>
+
+      <div class="pipeline-meta">
+        Complexity: Simple
+      </div>
+
+    </div>
+
+    <div class="pipeline-card">
+
+        <div class="pulse"></div>
+
+        <div class="flow-line"></div>
+
+        <div class="pipeline-top">
+
+        <span class="pipeline-tag">
+          STEP 2
+        </span>
+
+        <span class="pipeline-status">
+          ROUTING
+        </span>
+
+      </div>
+
+      <h3>Dynamic Provider Selection</h3>
+
+      <p>
+        Route requests across OpenAI, Claude, and Gemini based on active strategy.
+      </p>
+
+      <div class="providers-mini">
+
+        <span>GPT-4o-mini</span>
+        <span>Claude-Haiku</span>
+        <span>Gemini-Flash</span>
+
+      </div>
+
+    </div>
+
+    <div class="pipeline-card">
+
+        <div class="pulse"></div>
+
+        <div class="flow-line"></div>
+
+        <div class="pipeline-top">
+
+        <span class="pipeline-tag">
+          STEP 3
+        </span>
+
+        <span class="pipeline-status recovery">
+          RECOVERY
+        </span>
+
+      </div>
+
+      <h3>Automatic Fallback Recovery</h3>
+
+      <p>
+        Failed providers instantly recover through chained fallback execution.
+      </p>
+
+      <div class="pipeline-meta">
+        Recovery chain active
+      </div>
+
+    </div>
+
+    <div class="pipeline-card">
+
+        <div class="pulse"></div>
+
+        <div class="flow-line"></div>
+
+        <div class="pipeline-top">
+
+        <span class="pipeline-tag">
+          STEP 4
+        </span>
+
+        <span class="pipeline-status metrics">
+          METRICS
+        </span>
+
+      </div>
+
+      <h3>Observability + Analytics</h3>
+
+      <p>
+        Track latency, provider health, cache hits, savings, and routing performance.
+      </p>
+
+      <div class="pipeline-meta">
+        Saved $0.0048
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+  <section>
+
+    <div class="section-title">
+
+      <h2>Live routing decisions.</h2>
+
+      <p>
+        Every request is intelligently classified, routed, and monitored in real time.
+      </p>
+
+    </div>
+
+    <div class="logs">
+
+      <div class="log-card">
+
+        <div>
+          what is llm optimization?
+        </div>
+
+        <div class="badge live">
+          live → claude-haiku → 4.0s
+        </div>
+
+      </div>
+
+      <div class="log-card">
+
+        <div>
+          explain ai routing
+        </div>
+
+        <div class="badge fallback">
+          auto recovery → gpt-4o-mini
+        </div>
+
+      </div>
+
+      <div class="log-card">
+
+        <div>
+          what is node.js?
+        </div>
+
+        <div class="badge cached">
+          semantic cache hit → 8ms
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="architecture">
+
+    <div class="section-title">
+
+      <h2>Infrastructure-grade architecture.</h2>
+
+      <p>
+        Built as a lightweight intelligent routing layer for production AI applications.
+      </p>
+
+    </div>
+
+    <div class="architecture">
+
+      <div class="arch-node">User Application</div>
+
+      <div>↓</div>
+
+      <div class="arch-node">RouteAI API Gateway</div>
+
+      <div>↓</div>
+
+      <div class="arch-node">Complexity Classification Engine</div>
+
+      <div>↓</div>
+
+      <div class="arch-node">Routing + Recovery Layer</div>
+
+      <div>↓</div>
+
+      <div class="providers">
+
+        <div class="provider">OpenAI</div>
+        <div class="provider">Claude</div>
+        <div class="provider">Gemini</div>
+
+      </div>
+
+      <div>↓</div>
+
+      <div class="arch-node">Semantic Cache Layer</div>
+
+      <div>↓</div>
+
+      <div class="arch-node">Metrics + Analytics</div>
+
+    </div>
+
+  </section>
+
+  <section class="savings-section">
+
+    <div class="section-title">
+
+        <h2>
+            Real savings at production scale.
+        </h2>
+
+        <p>
+            RouteAI automatically routes requests to the most
+            cost-efficient model while preserving response quality.
+        </p>
+
+    </div>
+
+    <div class="savings-comparison">
+
+        <div class="savings-card">
+
+            <span class="savings-label">
+                GPT-4o only
+            </span>
+
+            <h3>$312.50</h3>
+
+            <p>100K requests/month</p>
+
+        </div>
+
+        <div class="savings-arrow">
+
+            ↓ 94.7%
+
+        </div>
+
+        <div class="savings-card savings-highlight">
+
+            <span class="savings-label">
+                RouteAI Cost Mode
+            </span>
+
+            <h3>$16.51</h3>
+
+            <p>Same workload</p>
+
+        </div>
+
+    </div>
+
+  </section>
+
+  <section id="features">
+
+    <div class="section-title">
+
+      <h2>Built for production AI systems.</h2>
+
+      <p>
+        RouteAI focuses on reliability, observability, and cost optimization.
+      </p>
+
+    </div>
+
+    <div class="features-grid">
+
+      <div class="feature-card">
+
+        <h3>Multi-provider routing</h3>
+
+        <p>
+          Route prompts across OpenAI, Claude, and Gemini automatically.
+        </p>
+
+      </div>
+
+      <div class="feature-card">
+
+        <h3>Automatic fallback recovery</h3>
+
+        <p>
+          Recover from provider failures and timeouts instantly.
+        </p>
+
+      </div>
+
+      <div class="feature-card">
+
+        <h3>Semantic caching</h3>
+
+        <p>
+          Serve repeated prompts instantly at near-zero cost.
+        </p>
+
+      </div>
+
+      <div class="feature-card">
+
+        <h3>Live observability</h3>
+
+        <p>
+          Track latency, costs, providers, cache hits, and recovery events.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <section>
+
+    <div class="section-title">
+
+      <h2>One-line integration.</h2>
+
+      <p>
+        Replace direct provider calls with RouteAI and get routing,
+        fallback recovery, caching, and observability automatically.
+      </p>
+
+    </div>
+
+    <div class="curl-box">
+
+<pre>
+curl -X POST https://api.routeai.dev/api/ai \
+-H "Content-Type: application/json" \
+-d '{
+  "prompt":"What is LLM routing?",
+  "mode":"balanced"
+}'
+</pre>
+
+    </div>
+
+  </section>
+
+
+
+  <section>
+
+    <div class="cta">
+
+      <h2>
+        Build smarter AI systems.
+      </h2>
+
+      <p>
+
+        RouteAI helps developers reduce costs, improve reliability,
+        and gain visibility across multiple LLM providers.
+
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="mailto:hello@routeai.dev"
+            class="btn btn-primary">
+
+            Get Early Access
+
+        </a>
+
+        <a href="https://cal.com"
+            target="_blank"
+            class="btn btn-secondary">
+
+            Book Demo
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <footer>
+
+    <div class="footer-links">
+
+      <a href="README.md">Docs</a>
+
+      <a href="https://github.com/" target="_blank">
+        GitHub
+      </a>
+
+      <a href="/dashboard.html">
+        Dashboard
+      </a>
+
+      <a href="mailto:hello@routeai.dev">
+        Contact
+      </a>
+
+      <a href="#">
+        Built in India 🇮🇳
+      </a>
+
+    </div>
+
+  </footer>
+
+</div>
+
+</body>
+</html>
