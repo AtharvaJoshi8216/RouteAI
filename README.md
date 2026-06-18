@@ -16,7 +16,7 @@ RouteAI is an API layer that sits between your application and multiple AI provi
 
 > The demo below shows RouteAI automatically routing requests, monitoring provider health, tracking analytics, and optimizing AI costs in real time.
 
-![RouteAI Demo](assets/demo.gif)
+![RouteAI Demo](assets/dashboard.gif)
 
 ---
 
