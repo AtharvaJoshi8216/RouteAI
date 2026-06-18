@@ -2011,6 +2011,10 @@ app.use((err, req, res, next) => {
   res.status(500).json({ success: false, error: "Internal server error" });
 });
 
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "dashboard.html"));
+});
+
 // ─────────────────────────────────────────────
 app.listen(PORT, () => {
   const env = isProd ? "production" : "development";
