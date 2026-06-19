@@ -1882,7 +1882,8 @@ curl -X POST \
       </div>
 
       <div class="wl-ok" id="wl-ok" style="display:none;">
-        ✅ You're on the list. I'll reach out personally within 24 hours.
+        🚀 You're in!<br><br>
+        Welcome to RouteAI Early Access.
       </div>
 
       <div class="cta-or">or</div>
@@ -1928,13 +1929,77 @@ curl -X POST \
 </footer>
 
 <script>
-function joinWL(){
-  const e=document.getElementById('wl-e').value.trim();
-  if(!e||!e.includes('@')){document.getElementById('wl-e').focus();return;}
-  document.querySelector('.wl').style.display='none';
-  document.getElementById('wl-ok').style.display='block';
+async function joinWL() {
+
+  const email =
+    document.getElementById("wl-e").value.trim();
+
+  if (!email || !email.includes("@")) {
+
+    document.getElementById("wl-e").focus();
+
+    return;
+
+  }
+
+  const button =
+    document.querySelector(".wl button");
+
+  button.disabled = true;
+
+  button.textContent = "Joining...";
+
+  try {
+
+    const res = await fetch("/api/waitlist", {
+
+      method: "POST",
+
+      headers: {
+        "Content-Type": "application/json"
+      },
+
+      body: JSON.stringify({
+        email
+      })
+
+    });
+
+    const data = await res.json();
+
+    if (!data.success) {
+
+      throw new Error(data.error || "Something went wrong.");
+
+    }
+
+    document.querySelector(".wl").style.display = "none";
+
+    document.getElementById("wl-ok").style.display = "block";
+
+  } catch (err) {
+
+    alert(err.message);
+
+    button.disabled = false;
+
+    button.textContent = "See your savings →";
+
+  }
+
 }
-document.getElementById('wl-e').addEventListener('keydown',ev=>{if(ev.key==='Enter')joinWL();});
+
+document
+  .getElementById("wl-e")
+  .addEventListener("keydown", e => {
+
+    if (e.key === "Enter") {
+
+      joinWL();
+
+    }
+
+  });
 
 const obs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});

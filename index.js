@@ -151,7 +151,13 @@ const RATE_LIMIT = parseInt(process.env.RATE_LIMIT_PER_MIN || "60");
 const rlMap = {};
 
 function requireApiKey(req, res, next) {
-  if (req.path === "/api/health" || req.path === "/api/metrics" || !req.path.startsWith("/api/")) return next();
+  if (req.path === "/api/health" || 
+      req.path === "/api/metrics" || 
+      req.path === "/api/waitlist" ||
+      !req.path.startsWith("/api/")
+    ) {
+      return next();
+    }  
 
   const key = req.headers["x-api-key"] || req.query.api_key;
   if (!key || !VALID_KEYS.has(key))
@@ -1997,6 +2003,68 @@ app.get("/api/metrics", (req, res) => {
       process.uptime(),
 
   });
+
+});
+
+app.post("/api/waitlist", async (req, res) => {
+
+  try {
+
+    const { email } = req.body;
+
+    if (!email) {
+      return res.status(400).json({
+        success: false,
+        error: "Email is required."
+      });
+    }
+
+    const response = await fetch(
+      "https://script.google.com/macros/s/AKfycbwvXEJD5a1HGnfpyG3Pd3rfKEkzGMDxOWWzBghFOlcJo_oF409YAA2epcms5lra-NAe-Q/exec",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          email,
+          source: "Landing Page"
+        })
+      }
+    );
+
+    const text = await response.text();
+
+    console.log("Google Response:");
+    console.log(text);
+
+    try {
+
+      const data = JSON.parse(text);
+      return res.json(data);
+
+    } catch {
+
+      console.error("Google returned non-JSON:");
+      console.error(text);
+
+      return res.status(500).json({
+        success: false,
+        error: text
+      });
+
+    }
+
+  } catch (err) {
+
+    console.error(err);
+
+    return res.status(500).json({
+      success: false,
+      error: "Failed to join waitlist."
+    });
+
+  }
 
 });
 

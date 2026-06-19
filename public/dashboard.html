@@ -631,6 +631,42 @@
     .test-btn:active { transform: scale(0.97); }
     .test-btn:disabled { opacity: 0.4; cursor: not-allowed; }
 
+    .demo-key-note{
+
+      margin:14px 0 18px;
+
+      padding:16px 18px;
+
+      border-radius:12px;
+
+      background:linear-gradient(
+        180deg,
+        rgba(124,106,247,.10),
+        rgba(79,217,179,.05)
+      );
+
+      border:1px solid rgba(124,106,247,.18);
+
+      color:#dbe4ff;
+
+      line-height:1.7;
+
+      font-size:.80rem;
+
+    }
+
+    .demo-key-note strong{
+
+      color:#ffffff;
+
+    }
+
+    .demo-key-note br{
+
+      line-height:2;
+
+    }
+
     .test-result {
       background: 
       linear-gradient(
@@ -1908,7 +1944,22 @@
 
   <!-- Test Panel -->
   <div class="test-panel">
-    <div class="test-title">⚡ Route a Request</div>
+
+    <div class="demo-key-note">
+
+      🚀 <strong>Welcome to the RouteAI Playground</strong><br><br>
+
+      ✓ Early Access<br>
+      ✓ API key already configured<br>
+      ✓ Enter a prompt and click <strong>Send</strong><br><br>
+
+      <span style="opacity:.8;">
+        Personal API keys coming soon.
+      </span>
+
+    </div>
+
+    <div class="test-title">⚡ Try RouteAI</div>
     <div class="prompt-row">
 
       <input
@@ -1947,15 +1998,8 @@
         placeholder="customerId (optional)"
       />
 
-      <input
-        type="text"
-        class="test-input small-control"
-        id="test-apikey"
-        placeholder="x-api-key"
-        value="dev-key-123"
-      />
-
     </div>
+
     <div class="test-result empty-state" id="test-result">
       Response will appear here...
     </div>
@@ -2143,8 +2187,10 @@
   }
 
   function getAuthHeaders() {
-    const key = document.getElementById("test-apikey")?.value || "dev-key-123";
-    return { "Content-Type": "application/json", "x-api-key": key };
+    return {
+        "Content-Type": "application/json",
+        "x-api-key": "routeai_dev123"
+    };
   }
 
   function renderModelBreakdown(breakdown, total) {
@@ -2475,7 +2521,7 @@
 
     try {
       const start = Date.now();
-      const apiKey = document.getElementById("test-apikey").value || "dev-key-123";
+      const apiKey = "routeai_dev123";
       const customerId = document.getElementById("test-customer").value.trim() || null;
       const res = await fetch("/api/ai", {
         method: "POST",

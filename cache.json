@@ -268,5 +268,15 @@
     "outputTokens": 223,
     "cost": 0.00013665,
     "baselineCost": 0.00344
+  },
+  "c32cd25ddc42e249d7e5c3608cf53996": {
+    "model": "gemini-flash",
+    "modelKey": "gemini-flash",
+    "response": "Hello! I'm RouteAI. How can I assist you today?",
+    "tokens": 18,
+    "inputTokens": 3,
+    "outputTokens": 15,
+    "cost": 0.000004725,
+    "baselineCost": 0.00024
   }
 }

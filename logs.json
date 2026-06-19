@@ -2997,5 +2997,98 @@
       "savedChars": 0
     },
     "timestamp": "2026-06-17T19:56:03.701Z"
+  },
+  {
+    "id": "8185f35e-7ab8-4f16-9c00-55cb91bd1631",
+    "success": true,
+    "cached": false,
+    "customerId": null,
+    "prompt": "Hello RouteAI",
+    "taskType": "general",
+    "confidence": {
+      "score": 75,
+      "level": "Low",
+      "color": "red"
+    },
+    "response": "Hello! I'm RouteAI. How can I assist you today?",
+    "modelKey": "gemini-flash",
+    "complexity": "simple",
+    "routingMode": "balanced",
+    "primaryProvider": "gemini-flash",
+    "routingReason": "Complexity: simple • Mode: balanced • Task: general • Selected: gemini-flash",
+    "routingTimeline": [
+      {
+        "step": "Prompt received",
+        "status": "success",
+        "time": "0ms"
+      },
+      {
+        "step": "Complexity classified: simple",
+        "status": "success",
+        "time": "12ms"
+      },
+      {
+        "step": "Task detected: general",
+        "status": "success",
+        "time": "18ms"
+      },
+      {
+        "step": "Routing mode: balanced",
+        "status": "success",
+        "time": "26ms"
+      },
+      {
+        "step": "Provider scoring completed",
+        "status": "success",
+        "time": "34ms"
+      },
+      {
+        "step": "gemini-flash selected",
+        "status": "success",
+        "time": "52ms"
+      },
+      {
+        "step": "Primary provider healthy",
+        "status": "done",
+        "time": "74ms"
+      },
+      {
+        "step": "Generating response",
+        "status": "success",
+        "time": "6587ms"
+      }
+    ],
+    "routingDetails": {
+      "complexity": "simple",
+      "mode": "balanced",
+      "taskType": "general",
+      "confidence": {
+        "score": 75,
+        "level": "Low",
+        "color": "red"
+      },
+      "provider": "gemini-flash",
+      "fallbackUsed": false,
+      "cached": false,
+      "stickySession": null,
+      "budgetTriggered": false,
+      "contexts": []
+    },
+    "fallbackUsed": false,
+    "attemptedProvider": "gemini-flash",
+    "tokens": 18,
+    "inputTokens": 3,
+    "outputTokens": 15,
+    "cost": 0.000004725,
+    "baselineCost": 0.00024,
+    "savedVsBaseline": 0.000235275,
+    "latency": 6587,
+    "compression": {
+      "compressed": "Hello RouteAI",
+      "originalLength": 13,
+      "compressedLength": 13,
+      "savedChars": 0
+    },
+    "timestamp": "2026-06-19T07:03:15.578Z"
   }
 ]
